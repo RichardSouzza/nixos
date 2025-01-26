@@ -47,7 +47,7 @@
   # services.xserver.displayManager.sddm.theme = "";
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "br-abnt2";
+  services.xserver.xkb.layout = "br";
   services.xserver.xkb.model = "pc105";
 
   # Enable Bluetooth
@@ -102,15 +102,14 @@
     hyprpaper
     kitty
     light
-    nerdfonts
     nwg-look
     waybar
     wl-clipboard
     wofi
   ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
