@@ -19,6 +19,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  nix.extraOptions = "
+    experimental-features = nix-command flakes
+  ";
+
   # Set your time zone.
   time.timeZone = "America/Maceio";
 
@@ -35,11 +39,6 @@
       terminus_font
     ];
   };
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -48,15 +47,16 @@
   # services.xserver.displayManager.sddm.theme = "";
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "br";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
+  services.xserver.xkb.layout = "br-abnt2";
+  services.xserver.xkb.model = "pc105";
+
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
   # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -72,13 +72,6 @@
   security.polkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
   users.users.richard = {
     isNormalUser = true;
     home = "/home/richard";
@@ -86,13 +79,10 @@
     extraGroups = [ "wheel" ];
   };
 
-  # programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-
-  # wayland.windowManager.hyprland.enable = true;
 
   hardware = {
     graphics.enable = true;
@@ -122,10 +112,6 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
   ];
-
-  nix.extraOptions = "
-    experimental-features = nix-command flakes
-  ";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

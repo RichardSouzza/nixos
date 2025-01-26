@@ -1,2 +1,0 @@
-# Nix
-My NixOS setup.
