@@ -107,6 +107,7 @@
     kitty
     light
     nwg-look
+    ranger
     waybar
     wl-clipboard
     wofi
