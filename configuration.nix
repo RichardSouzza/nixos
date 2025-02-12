@@ -109,6 +109,7 @@
     hyprpaper
     kitty
     light
+    neovim
     nwg-look
     ranger
     waybar
