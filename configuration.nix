@@ -68,6 +68,9 @@
   # Permission manager
   security.polkit.enable = true;
 
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.richard = {
     isNormalUser = true;
