@@ -13,3 +13,15 @@ Update home:
 ```sh
 home-manager switch
 ```
+
+List generations:
+
+```sh
+nixos-rebuild list-generations
+```
+
+Delete older generations:
+
+```sh
+nix-collect-garbage --delete-older-than 1d
+```
