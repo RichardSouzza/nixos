@@ -11,7 +11,7 @@ nixos-rebuild switch --flake /etc/nixos/#default
 Update home:
 
 ```sh
-home-manager switch
+home-manager switch --flake /etc/nixos/#richard
 ```
 
 List generations:

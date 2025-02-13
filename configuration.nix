@@ -71,12 +71,16 @@
   # Enable Flatpak
   services.flatpak.enable = true;
 
+  # Enable Docker daemon
+  virtualisation.docker.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.richard = {
     isNormalUser = true;
     home = "/home/richard";
     description = "Richard";
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -86,9 +90,13 @@
     };
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    zsh.enable = true;
   };
 
   hardware = {

@@ -26,12 +26,17 @@
           # {
           #   wayland.windowManager.hyprland = {
           #     enable = true;
-          #     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          #     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+          #     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hypr>
+          #     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system>
           #   };
           # }
         ];
       };
-    };
 
+      homeConfigurations."richard" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [ ./home.nix ];
+      };
+    };
 }
