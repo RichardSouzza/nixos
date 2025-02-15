@@ -70,6 +70,11 @@
 
   # Enable Flatpak
   services.flatpak.enable = true;
+  system.userActivationScripts = {
+    setupFlathub = ''
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
 
   # Enable Docker daemon
   virtualisation.docker.enable = true;
