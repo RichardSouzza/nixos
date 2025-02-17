@@ -15,7 +15,16 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Configure LUKS encryption.
+  boot.initrd.luks.devices = {
+    crypted = {
+      device = "/dev/disk/by-uuid/87902870-20e0-47ea-9eb4-acb903c26718";
+      preLVM = true;
+    };
+  };
+
+  # Configure network
+  networking.hostName = "nixos";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -178,4 +187,3 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
-
