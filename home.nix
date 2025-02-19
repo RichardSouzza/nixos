@@ -15,6 +15,10 @@
     vscode
   ];
 
+  services = {
+    swayosd.enable = true;
+  };
+
   programs = {
     home-manager.enable = true;
 
@@ -41,6 +45,8 @@
 
     vscode.enable = true;
 
+    waybar.enable = true;    
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -57,7 +63,7 @@
   };
 
   home.file = {
-    ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
-    ".local/share/nwg-look/gsettings".source = ./dotfiles/gsettings;
+    ".config/hypr/hyprland.conf".source = ./modules/hyprland/hyprland.conf;
+    ".local/share/nwg-look/gsettings".source = ./modules/nwg-look/gsettings;
   };
 }

@@ -10,32 +10,27 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, nvf, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.default
-          # {
-          #   wayland.windowManager.hyprland = {
-          #     enable = true;
-          #     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hypr>
-          #     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system>
-          #   };
-          # }
+          nvf.nixosModules.default
         ];
       };
 
       homeConfigurations."richard" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-
         modules = [ ./home.nix ];
       };
     };

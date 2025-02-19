@@ -121,6 +121,8 @@
       xwayland.enable = true;
     };
 
+    waybar.enable = true;
+
     zsh.enable = true;
   };
 
@@ -134,7 +136,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    dolphin
     dunst
     fastfetch
     gh git
@@ -144,12 +145,15 @@
     kitty
     librewolf
     light
+    nautilus
     neovim
     nwg-look
     ranger
+    swayosd
     waybar
     wl-clipboard
     wofi
+    yazi
   ];
 
   fonts.packages = [
@@ -157,7 +161,7 @@
   ];
 
   environment.etc = {
-    "gitconfig".source = ./dotfiles/gitconfig;
+    "gitconfig".source = ./modules/git/gitconfig;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
