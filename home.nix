@@ -7,12 +7,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = [
-    pkgs.docker
-    pkgs.jdk21_headless
-    pkgs.nodejs_23
-    pkgs.python313Full
-    pkgs.vscode
+  home.packages = with pkgs; [
+    docker
+    jdk21_headless
+    nodejs_23
+    python313Full
+    vscode
   ];
 
   programs = {
@@ -34,6 +34,11 @@
       };
     };
 
+    librewolf = {
+      enable = true;
+      languagePacks = [ "pt-BR" "us"];
+    };
+
     vscode.enable = true;
 
     zsh = {
@@ -43,7 +48,16 @@
     };
   };
 
+  gtk = {
+    enable = true;
+    font = {
+      name = "Josefin Sans";
+      size = 8;
+    };
+  };
+
   home.file = {
-    "~/.config/hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
+    ".config/hypr/hyprland.conf".source = ./dotfiles/hyprland.conf;
+    ".local/share/nwg-look/gsettings".source = ./dotfiles/gsettings;
   };
 }

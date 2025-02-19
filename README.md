@@ -25,3 +25,8 @@ Delete older generations:
 ```sh
 nix-collect-garbage --delete-older-than 1d
 ```
+
+See Home Manager manual
+```
+man home-configuration.nix
+```
