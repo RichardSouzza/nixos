@@ -47,6 +47,12 @@
 
     waybar.enable = true;    
 
+    yazi.settings = {
+      manager = {
+        show_hidden = true;
+      };
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -64,6 +70,5 @@
 
   home.file = {
     ".config/hypr/hyprland.conf".source = ./modules/hyprland/hyprland.conf;
-    ".local/share/nwg-look/gsettings".source = ./modules/nwg-look/gsettings;
   };
 }
