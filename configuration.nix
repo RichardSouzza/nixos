@@ -146,7 +146,7 @@
     librewolf
     light
     nautilus
-    neovim
+    vim neovim
     nwg-look
     ranger
     swayosd

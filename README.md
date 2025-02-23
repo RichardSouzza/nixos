@@ -73,3 +73,19 @@ nix-channel --update
 ```sh
 nix-shell '<home-manager>' -A install
 ```
+
+## Post Installation
+
+Connect to a PEAP network using NetworkManager:
+
+```sh
+sudo nmcli connection add type wifi \
+    ifname <deviceName> \
+    con-name <SSID> \
+    ssid <SSID> \
+    wifi-sec.key-mgmt wpa-eap \
+    802-1x.eap peap \
+    802-1x.identity "identity"
+    802-1x.password "password" \
+    802-1x.phase2-auth mschapv2
+```

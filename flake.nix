@@ -11,13 +11,25 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    nvf.url = "github:notashelf/nvf";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nvf, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      nixvimLib = nixvim.lib.${system};
+      nixvim' = nixvim.legacyPackages.${system};
+      nixvimModule = {
+        inherit system;
+        module = import ./modules/nixvim;
+      };
+      nvim = nixvim'.makeNixvimWithModule nixvimModule;
+
     in
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
@@ -25,15 +37,24 @@
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.default
-          nvf.nixosModules.default
+          #nvf.nixosModules.default
         ];
       };
 
+      environment.systemPackages = [
+        (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
+          enable = true;
+        })
+      ];
+
       homeConfigurations."richard" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit nixvim;
+        };
         modules = [
           ./home.nix
-          ./modules/nvf/nvf.nix
         ];
       };
     };

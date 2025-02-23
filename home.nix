@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+    ./modules/nixvim
+  ];
+
   home.username = "richard";
   home.homeDirectory = "/home/richard";
   home.stateVersion = "24.11";
@@ -42,6 +47,8 @@
       enable = true;
       languagePacks = [ "pt-BR" "us"];
     };
+
+    nixvim.enable = true;
 
     vscode.enable = true;
 
