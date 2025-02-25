@@ -23,22 +23,32 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       nixvimLib = nixvim.lib.${system};
-      nixvim' = nixvim.legacyPackages.${system};
+      nixvim = nixvim.legacyPackages.${system};
       nixvimModule = {
         inherit system;
         module = import ./modules/nixvim;
       };
-      nvim = nixvim'.makeNixvimWithModule nixvimModule;
+      nvim = nixvim.makeNixvimWithModule nixvimModule;
 
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
-          #nvf.nixosModules.default
-        ];
+      nixosConfigurations = {
+        default = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+
+        loki = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/loki ];
+          specialArgs = { inherit inputs; };
+        };
+
+        oracle = nixpkgs.lib.nixosSystem {
+          modules = [ ./hosts/oracle ];
+          specialArgs = { inherit inputs; };
+        };
       };
 
       environment.systemPackages = [
