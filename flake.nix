@@ -1,5 +1,5 @@
 {
-  description = "NixOS Flake Configurations";
+  description = "Richard's NixOS Flake Configurations";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -54,7 +54,7 @@
           inherit nixvim;
         };
         modules = [
-          ./home.nix
+          ./homes/richard/home.nix
         ];
       };
     };

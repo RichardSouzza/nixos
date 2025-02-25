@@ -23,12 +23,13 @@
     };
   };
 
-  # Configure network
+  # Configure network.
   networking.hostName = "nixos";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  # Extra Options, like Flakes.
   nix.extraOptions = "
     experimental-features = nix-command flakes
   ";
@@ -50,7 +51,6 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
-  # services.xserver.displayManager.sddm.theme = "";
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "br";
@@ -108,13 +108,6 @@
     trusted-users = [ "@wheel" ];
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "richard" = import ./home.nix;
-    };
-  };
-
   programs = {
     hyprland = {
       enable = true;
@@ -131,8 +124,6 @@
     nvidia.modesetting.enable = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -162,7 +153,7 @@
   ];
 
   environment.etc = {
-    "gitconfig".source = ./modules/git/gitconfig;
+    "gitconfig".source = ./homes/root/modules/git/gitconfig;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
