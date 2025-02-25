@@ -64,6 +64,13 @@
       enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        c = "clear";
+        hms = "home-manager switch --flake /etc/nixos/#richard";
+        tree = "tree --dirsfirst --gitignore";
+        y = "yazi";
+      };
     };
   };
 

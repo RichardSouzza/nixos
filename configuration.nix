@@ -146,10 +146,11 @@
     librewolf
     light
     nautilus
-    vim neovim
+    neovim
     nwg-look
     ranger
     swayosd
+    tree
     waybar
     wl-clipboard
     wofi
