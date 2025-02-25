@@ -1,3 +1,6 @@
 {
-  imports = [ ];
+  imports = [
+    ./theme.nix
+    ./wakatime.nix
+  ];
 }
