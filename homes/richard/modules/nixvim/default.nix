@@ -1,7 +1,15 @@
 {
   imports = [
-    ./theme.nix
-    ./treesitter.nix
-    ./wakatime.nix
+    ./plugins
   ];
+
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    nixpkgs.useGlobalPackages = true;
+
+    performance = {
+      combinePlugins.enable = true;
+    };
+  };
 }

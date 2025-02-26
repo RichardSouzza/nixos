@@ -48,8 +48,6 @@
       languagePacks = [ "pt-BR" "us"];
     };
 
-    nixvim.enable = true;
-
     vscode.enable = true;
 
     waybar.enable = true;    

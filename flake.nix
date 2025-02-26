@@ -22,14 +22,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      nixvimLib = nixvim.lib.${system};
-      nixvim = nixvim.legacyPackages.${system};
-      nixvimModule = {
-        inherit system;
-        module = import ./modules/nixvim;
-      };
-      nvim = nixvim.makeNixvimWithModule nixvimModule;
-
     in
     {
       nixosConfigurations = {
@@ -59,10 +51,12 @@
 
       homeConfigurations."richard" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
         extraSpecialArgs = {
           inherit inputs;
           inherit nixvim;
         };
+
         modules = [
           ./homes/richard/home.nix
         ];
