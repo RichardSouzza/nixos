@@ -94,7 +94,13 @@
   # Enable Docker daemon
   virtualisation.docker.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Groups and users.
+  users.groups = {
+    nixers = {
+      members = [ "richard" ];
+    };
+  };
+
   users.users.richard = {
     isNormalUser = true;
     home = "/home/richard";
@@ -107,6 +113,15 @@
     allowed-users = [ "@wheel" ];
     trusted-users = [ "@wheel" ];
   };
+
+  system.activationScripts = {
+    text = ''
+      chown -R :nixers /etc/nixos
+      chmod -R g+w /etc/nixos
+    '';
+  };
+
+  # Programs.
 
   programs = {
     hyprland = {
