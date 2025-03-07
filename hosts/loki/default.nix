@@ -1,19 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, inputs, lib, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      ../common
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Configure LUKS encryption.
   boot.initrd.luks.devices = {
@@ -23,106 +16,31 @@
     };
   };
 
-  # Configure network.
+  # Configure hostname.
   networking.hostName = "loki";
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Extra Options, like Flakes.
-  nix.extraOptions = "
-    experimental-features = nix-command flakes
-  ";
-
-  # Set your time zone.
-  time.timeZone = "America/Maceio";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "pt_BR.UTF-8";
-  console = {
-    font = "ter-v14n";
-    keyMap = "br-abnt2";
-    packages = with pkgs; [
-      terminus_font
-    ];
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
 
-  # Configure keymap in X11
+  # Configure keymap in X11.
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.model = "pc105";
 
-  # Enable Bluetooth
+  # Enable Bluetooth.
   hardware.bluetooth.enable = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  # Enable brightness.
-  services.illum.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Message-oriented middleware
+  # Message-oriented middleware.
   services.dbus.enable = true;
 
-  # Permission manager
+  # Permission manager.
   security.polkit.enable = true;
 
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
-  systemd.services.flatpak-repo = {
-    wantedBy= [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  # Enable Docker daemon
-  virtualisation.docker.enable = true;
-
-  # Groups and users.
-  users.groups = {
-    nixers = {
-      members = [ "richard" ];
-    };
-  };
-
-  users.users.richard = {
-    isNormalUser = true;
-    home = "/home/richard";
-    description = "Richard";
-    extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
-  };
-
-  nix.settings = {
-    allowed-users = [ "@wheel" ];
-    trusted-users = [ "@wheel" ];
-  };
-
-  system.activationScripts = {
-    text = ''
-      chown -R :nixers /etc/nixos
-      chmod -R g+w /etc/nixos
-    '';
-  };
-
-  # Programs.
-
+  # Configure programs.
   programs = {
     hyprland = {
       enable = true;
@@ -139,8 +57,6 @@
     nvidia.modesetting.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     dunst
     fastfetch
@@ -154,7 +70,6 @@
     nautilus
     neovim
     nwg-look
-    ranger
     swayosd
     tree
     waybar
@@ -166,10 +81,6 @@
   fonts.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
-
-  environment.etc = {
-    "gitconfig".source = ../../homes/root/modules/git/gitconfig;
-  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
@@ -187,7 +98,7 @@
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
   #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion.
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }

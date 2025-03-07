@@ -38,7 +38,7 @@
       settings = {
         confirm_os_window_close = 0;
         background_opacity = 0.5;
-	font_size = 8;
+        font_size = 8;
         font_name = "JetBrainsMono Nerd Font";
       };
     };
