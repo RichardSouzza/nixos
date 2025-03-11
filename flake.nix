@@ -58,7 +58,7 @@
         };
 
         modules = [
-          ./homes/richard/home.nix
+          ./homes/richard
         ];
       };
     };

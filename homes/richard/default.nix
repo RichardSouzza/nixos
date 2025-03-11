@@ -46,6 +46,10 @@
     librewolf = {
       enable = true;
       languagePacks = [ "pt-BR" "us"];
+      settings = {
+        "privacy.clearOnShutdown.history" = false;
+        "privacy.clearOnShutdown.cookies" = false;
+      };
     };
 
     vscode.enable = true;
@@ -69,14 +73,6 @@
         tree = "tree --dirsfirst --gitignore";
         y = "yazi";
       };
-    };
-  };
-
-  gtk = {
-    enable = true;
-    font = {
-      name = "Josefin Sans";
-      size = 8;
     };
   };
 
