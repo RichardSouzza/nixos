@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./modules/git
     ./modules/nixvim
   ];
 
@@ -26,12 +27,6 @@
 
   programs = {
     home-manager.enable = true;
-
-    git = {
-      enable = true;
-      userName = "Richard Souza";
-      userEmail = "souzza.richard25@gmail.com";
-    };
 
     kitty = {
       enable = true;

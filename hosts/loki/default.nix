@@ -60,7 +60,7 @@
   environment.systemPackages = with pkgs; [
     dunst
     fastfetch
-    gh git
+    gh git gitui
     gtk4
     hyprland
     hyprpaper
