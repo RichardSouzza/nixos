@@ -42,13 +42,6 @@
 
   # Configure programs.
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-
-    waybar.enable = true;
-
     zsh.enable = true;
   };
 
@@ -56,19 +49,6 @@
     graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    dunst
-    gtk4
-    hyprland
-    hyprpaper
-    light
-    nwg-look
-    swayosd
-    waybar
-    wl-clipboard
-    wofi
-  ];
 
   fonts.packages = [
     pkgs.nerd-fonts.jetbrains-mono
