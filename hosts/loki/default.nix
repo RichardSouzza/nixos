@@ -3,7 +3,8 @@
 {
   imports =
     [
-      ../common
+      ./../-common
+      ./../-modules/hyprland
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
