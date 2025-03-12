@@ -59,23 +59,15 @@
 
   environment.systemPackages = with pkgs; [
     dunst
-    fastfetch
-    gh git gitui
     gtk4
     hyprland
     hyprpaper
-    kitty
-    librewolf
     light
-    nautilus
-    neovim
     nwg-look
     swayosd
-    tree
     waybar
     wl-clipboard
     wofi
-    yazi
   ];
 
   fonts.packages = [

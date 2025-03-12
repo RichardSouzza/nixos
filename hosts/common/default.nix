@@ -85,6 +85,17 @@
 
   # Configure programs.
   nixpkgs.config.allowUnfree = true;
+  
+  environment.systemPackages = with pkgs; [
+    fastfetch
+    gh git gitui
+    kitty
+    librewolf
+    nautilus
+    neovim
+    tree
+    yazi
+  ];
 
   environment.etc = {
     "gitconfig".source = ../../homes/root/modules/git/gitconfig;
