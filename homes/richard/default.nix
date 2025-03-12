@@ -5,12 +5,13 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/git
     ./modules/nixvim
+    ./modules/zsh
   ];
 
   home.username = "richard";
   home.homeDirectory = "/home/richard";
   home.stateVersion = "24.11";
-
+  
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -22,7 +23,10 @@
   ];
 
   services = {
-    swayosd.enable = true;
+    swayosd = {
+      enable = true;
+      display = "eDP-1";
+    };
   };
 
   programs = {
@@ -57,18 +61,6 @@
       };
     };
 
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-
-      shellAliases = {
-        c = "clear";
-        hms = "home-manager switch --flake /etc/nixos/#richard";
-        tree = "tree --dirsfirst --gitignore";
-        y = "yazi";
-      };
-    };
   };
 
   home.file = {
