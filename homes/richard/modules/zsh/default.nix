@@ -7,6 +7,7 @@
     shellAliases = {
       c    = "clear";
       cc   = "cd /etc/nixos";
+      dok  = "lazydocker";
       hms  = "home-manager switch --flake /etc/nixos/#richard";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";

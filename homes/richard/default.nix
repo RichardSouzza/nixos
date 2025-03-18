@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     docker
     jdk21_headless
+    lazydocker
     nodejs_23
     python313Full
     vscode
@@ -25,7 +26,6 @@
   services = {
     swayosd = {
       enable = true;
-      display = "eDP-1";
     };
   };
 
