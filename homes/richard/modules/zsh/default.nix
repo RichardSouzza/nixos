@@ -5,13 +5,14 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      c = "clear";
-      hms = "home-manager switch --flake /etc/nixos/#richard";
+      c    = "clear";
+      cc   = "cd /etc/nixos";
+      hms  = "home-manager switch --flake /etc/nixos/#richard";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
       tree = "tree --dirsfirst --gitignore";
-      y = "yazi";
       v    = "nvim .";
+      y    = "yazi";
     };
   };
 }
