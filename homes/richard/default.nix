@@ -5,6 +5,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/git
     ./modules/nixvim
+    ./modules/swayosd
     ./modules/zsh
   ];
 
@@ -22,12 +23,6 @@
     python313Full
     vscode
   ];
-
-  services = {
-    swayosd = {
-      enable = true;
-    };
-  };
 
   programs = {
     home-manager.enable = true;
