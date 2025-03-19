@@ -71,18 +71,17 @@
   virtualisation.docker.enable = true;
 
   # Groups and users.
-  users.groups = {
-    nixers = {
-      members = [ "richard" ];
-    };
-  };
-
   users.users.richard = {
     isNormalUser = true;
     home = "/home/richard";
     description = "Richard";
-    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
+  };
+
+  users.groups = {
+    docker.members = [ "richard" ];
+    nixers.members = [ "richard" ];
+    wheel.members  = [ "richard" ];
   };
 
   nix.settings = {
