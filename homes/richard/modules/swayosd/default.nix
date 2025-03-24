@@ -1,6 +1,11 @@
 {
   services.swayosd = {
     enable = true;
-    stylePath = ./style.scss;
+    topMargin = 0.8;
+  };
+
+  home.file = {
+    ".config/swayosd/style.css".source = ./style.css;
   };
 }
+

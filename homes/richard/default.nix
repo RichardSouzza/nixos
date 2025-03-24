@@ -4,6 +4,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/git
+    ./modules/hyprland
     ./modules/nixvim
     ./modules/swayosd
     ./modules/zsh
@@ -56,9 +57,5 @@
       };
     };
 
-  };
-
-  home.file = {
-    ".config/hypr/hyprland.conf".source = ./modules/hyprland/hyprland.conf;
   };
 }
