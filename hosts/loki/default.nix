@@ -41,18 +41,17 @@
   # Permission manager.
   security.polkit.enable = true;
 
-  # Configure programs.
-  programs = {
-    zsh.enable = true;
-  };
 
   hardware = {
     graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
 
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
+  # Install packages.  
+  environment.systemPackages = with pkgs; [];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

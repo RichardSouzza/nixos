@@ -27,6 +27,14 @@
   programs = {
     home-manager.enable = true;
 
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "adapta";
+        update_ms = 100;
+      };
+    };
+
     kitty = {
       enable = true;
       settings = {

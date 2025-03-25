@@ -83,15 +83,24 @@
   
   environment.systemPackages = with pkgs; [
     brightnessctl
+    btop
     fastfetch
     gh git gitui
     kitty
+    lazysql
     librewolf
+    libqalculate 
+    lshw
     nautilus
     neovim
     tree
     yazi
   ];
+
+  programs = {
+    zsh.enable = true;
+  };
+
 
   environment.extraInit = ''
     unset -v SSH_ASKPASS
