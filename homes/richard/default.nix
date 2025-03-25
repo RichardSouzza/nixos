@@ -6,7 +6,6 @@
     ./modules/git
     ./modules/hyprland
     ./modules/nixvim
-    ./modules/swayosd
     ./modules/zsh
   ];
 

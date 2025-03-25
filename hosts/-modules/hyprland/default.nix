@@ -17,7 +17,6 @@
     hyprpaper
     light
     nwg-look
-    swayosd
     waybar
     wl-clipboard
     wofi
