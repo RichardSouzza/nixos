@@ -93,6 +93,10 @@
     yazi
   ];
 
+  environment.extraInit = ''
+    unset -v SSH_ASKPASS
+  '';
+
   environment.etc = {
     "gitconfig".source = ../../homes/root/modules/git/gitconfig;
   };
