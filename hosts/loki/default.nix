@@ -41,10 +41,30 @@
   # Permission manager.
   security.polkit.enable = true;
 
+  # Load nvidia driver for Xorg and Wayland.
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
+    # Enable OpenGL.
     graphics.enable = true;
-    nvidia.modesetting.enable = true;
+
+    # Nvidia settings.
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      nvidiaSettings = true;
+
+      prime = {
+        offload = {
+			enable = true;
+			enableOffloadCmd = true;
+		};
+        # Make sure to use the correct Bus ID values for your system!
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
   };
 
   # Install packages.  
