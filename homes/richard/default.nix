@@ -16,9 +16,9 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    dbeaver-bin
     docker
     jdk21_headless
-    lazydocker
     nodejs_23
     python313Full
     vscode
