@@ -87,12 +87,12 @@
     fastfetch
     gh git gitui
     kitty
-    lazysql
     librewolf
     libqalculate 
     lshw
     nautilus
     neovim
+    television
     tree
     yazi
   ];
