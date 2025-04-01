@@ -11,6 +11,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    clipse
     dunst
     gtk4
     hyprland
@@ -19,6 +20,5 @@
     nwg-look
     walker
     waybar
-    wl-clipboard
   ];
 }
