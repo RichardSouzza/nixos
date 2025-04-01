@@ -11,6 +11,7 @@
       dok  = "lazydocker";
       g    = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#richard";
+      hr   = "hyprctl reload";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
       tree = "tree --dirsfirst --gitignore";
