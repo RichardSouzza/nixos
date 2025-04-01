@@ -17,8 +17,8 @@
     hyprpaper
     light
     nwg-look
+    walker
     waybar
     wl-clipboard
-    wofi
   ];
 }
