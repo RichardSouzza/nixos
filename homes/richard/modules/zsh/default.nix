@@ -9,6 +9,7 @@
       cc   = "cd /etc/nixos";
       db   = "dbeaver";
       dok  = "lazydocker";
+      e    = "superfile";
       g    = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#richard";
       hr   = "hyprctl reload";
@@ -16,7 +17,6 @@
       manh = "man home-configuration.nix";
       tree = "tree --dirsfirst --gitignore";
       v    = "nvim .";
-      y    = "yazi";
     };
   };
 }

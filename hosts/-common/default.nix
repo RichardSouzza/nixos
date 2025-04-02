@@ -92,9 +92,9 @@
     lshw
     nautilus
     neovim
+    superfile
     television
     tree
-    yazi
   ];
 
   programs = {
