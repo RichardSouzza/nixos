@@ -16,6 +16,7 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    ansible
     dbeaver-bin
     docker
     jdk21_headless
