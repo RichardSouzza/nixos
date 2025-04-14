@@ -21,6 +21,7 @@
     jdk21_headless
     nodejs_23
     python313Full
+    smile
     vscode
   ];
 
