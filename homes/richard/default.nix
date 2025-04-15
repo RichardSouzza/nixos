@@ -5,6 +5,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./modules/git
     ./modules/hyprland
+    ./modules/kitty
     ./modules/nixvim
     ./modules/zsh
   ];
@@ -34,16 +35,6 @@
       settings = {
         color_theme = "adapta";
         update_ms = 100;
-      };
-    };
-
-    kitty = {
-      enable = true;
-      settings = {
-        confirm_os_window_close = 0;
-        background_opacity = 0.5;
-        font_size = 8;
-        font_name = "JetBrainsMono Nerd Font";
       };
     };
 
