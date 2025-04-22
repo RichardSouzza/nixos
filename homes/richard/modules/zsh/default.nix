@@ -16,6 +16,8 @@
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
       s    = "sudo -i";
+      rm   = "gtrash put";
+      rs   = "gtrash restore";
       tree = "tree --dirsfirst --gitignore";
       v    = "nvim .";
       y    = "yazi";

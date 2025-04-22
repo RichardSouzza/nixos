@@ -86,6 +86,7 @@
     btop
     fastfetch
     gh git gitui
+    gtt
     kitty
     librewolf
     libqalculate 

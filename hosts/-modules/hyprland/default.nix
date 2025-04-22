@@ -14,6 +14,7 @@
     clipse
     dunst
     gtk4
+    gtrash
     hyprland
     hyprpaper
     light
