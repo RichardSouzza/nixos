@@ -80,7 +80,7 @@
 
   # Configure programs.
   nixpkgs.config.allowUnfree = true;
-  
+
   environment.systemPackages = with pkgs; [
     brightnessctl
     btop
@@ -95,6 +95,7 @@
     superfile
     television
     tree
+    yazi
   ];
 
   programs = {

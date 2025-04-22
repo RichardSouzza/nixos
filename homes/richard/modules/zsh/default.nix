@@ -17,6 +17,7 @@
       manh = "man home-configuration.nix";
       tree = "tree --dirsfirst --gitignore";
       v    = "nvim .";
+      y    = "yazi";
     };
   };
 }
