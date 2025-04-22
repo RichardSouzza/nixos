@@ -15,6 +15,7 @@
       hr   = "hyprctl reload";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
+      s    = "sudo -i";
       tree = "tree --dirsfirst --gitignore";
       v    = "nvim .";
       y    = "yazi";
