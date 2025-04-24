@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     clipse
     dunst
+    grimblast
     gtk4
     gtrash
     hyprland
