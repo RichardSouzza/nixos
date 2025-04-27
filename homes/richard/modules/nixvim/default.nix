@@ -1,5 +1,6 @@
 {
   imports = [
+    ./keymaps.nix
     ./plugins
   ];
 
@@ -9,6 +10,8 @@
     viAlias = true;
     vimAlias = true;
     nixpkgs.useGlobalPackages = true;
+
+    clipboard.providers.wl-copy.enable = true;
 
     performance = {
       combinePlugins.enable = true;
