@@ -22,5 +22,6 @@
     nwg-look
     walker
     waybar
+    wl-clipboard
   ];
 }
