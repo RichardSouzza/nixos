@@ -85,16 +85,13 @@
     brightnessctl
     btop
     fastfetch
-    gh git gitui
-    gtt
+    git
     kitty
     librewolf
-    libqalculate 
     lshw
     nautilus
     neovim
     superfile
-    television
     tree
     yazi
   ];
@@ -102,7 +99,6 @@
   programs = {
     zsh.enable = true;
   };
-
 
   environment.extraInit = ''
     unset -v SSH_ASKPASS

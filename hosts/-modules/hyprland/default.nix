@@ -18,7 +18,6 @@
     gtrash
     hyprland
     hyprpaper
-    light
     nwg-look
     walker
     waybar

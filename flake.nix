@@ -33,13 +33,13 @@
         };
 
         loki = nixpkgs.lib.nixosSystem {
-          modules = [ ./hosts/loki ];
           specialArgs = { inherit inputs; };
+          modules = [ ./hosts/loki ];
         };
 
         oracle = nixpkgs.lib.nixosSystem {
-          modules = [ ./hosts/oracle ];
           specialArgs = { inherit inputs; };
+          modules = [ ./hosts/oracle ];
         };
       };
 

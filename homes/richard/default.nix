@@ -19,12 +19,18 @@
   home.packages = with pkgs; [
     ansible
     dbeaver-bin
-    docker
+    discord
+    docker docker-compose lazydocker
+    gh gitnr lazygit
+    gtt
     jdk21_headless
+    libqalculate
     nodejs_23
-    python313Full
+    obs-studio
+    python311Full
     smile
-    vscode
+    television
+    wiper
   ];
 
   programs = {
@@ -38,17 +44,6 @@
       };
     };
 
-    librewolf = {
-      enable = true;
-      languagePacks = [ "pt-BR" "us"];
-      settings = {
-        "privacy.clearOnShutdown.history" = false;
-        "privacy.clearOnShutdown.cookies" = false;
-      };
-    };
-
-    vscode.enable = true;
-
     waybar.enable = true;    
 
     yazi.settings = {
@@ -56,6 +51,5 @@
         show_hidden = true;
       };
     };
-
   };
 }

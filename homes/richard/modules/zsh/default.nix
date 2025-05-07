@@ -2,6 +2,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
@@ -10,7 +12,8 @@
       db   = "dbeaver";
       dok  = "lazydocker";
       e    = "superfile";
-      g    = "gitui";
+      g    = "lazygit";
+      gg   = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#richard";
       hr   = "hyprctl reload";
       manc = "man configuration.nix";
