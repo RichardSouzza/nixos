@@ -4,7 +4,7 @@
     
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = 0.5;
+      background_opacity = 0.6;
       font_size = 8;
       font_name = "JetBrainsMono Nerd Font";
       mouse_map = "right click ungrabbed paste_from_clipboard";
