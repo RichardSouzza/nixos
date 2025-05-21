@@ -10,23 +10,7 @@
 
     keymaps = [
       {
-        action = "<cmd>tabnext<CR>";
-        key = "<C-tab";
-        mode = "n";
-        options = {
-          desc = "Focus on tree view.";
-        };
-      }
-      {
-        action = "<cmd>tabprevious<CR>";
-        key = "<C-tab";
-        mode = "n";
-        options = {
-          desc = "Focus on tree view.";
-        };
-      }
-      {
-        action = "<cmd>Neotree focus<CR>";
+        action = "<CMD>Neotree focus<CR>";
         key = "e";
         mode = "n";
         options = {
@@ -34,7 +18,7 @@
         };
       }
       {
-        action = "<cmd>Neotree toggle<CR>";
+        action = "<CMD>Neotree toggle<CR>";
         key = "<S-e>";
         mode = "n";
         options = {
