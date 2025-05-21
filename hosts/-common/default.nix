@@ -104,6 +104,10 @@
     unset -v SSH_ASKPASS
   '';
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   environment.etc = {
     "gitconfig".source = ../../homes/root/modules/git/gitconfig;
   };
