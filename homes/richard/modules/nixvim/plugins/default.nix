@@ -5,6 +5,7 @@
     ./startup.nix
     ./tabline.nix
     ./theme.nix
+    ./utils.nix
     ./wakatime.nix
   ];
 }
