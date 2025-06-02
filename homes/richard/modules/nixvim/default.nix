@@ -9,19 +9,22 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    nixpkgs.useGlobalPackages = true;
 
+    nixpkgs.useGlobalPackages = true;
+    
     clipboard.providers.wl-copy.enable = true;
 
     performance = {
       combinePlugins.enable = true;
     };
 
-    extraConfigLua = "
-      vim.opt.expandtab = true
-      vim.opt.relativenumber = true
-      vim.opt.shiftwidth = 2
-      vim.opt.tabstop = 4
-    ";
+    opts = {
+      expandtab = true;
+      number = true;
+      scrolloff = 1000;
+      shiftwidth = 2;
+      tabstop = 4;
+      wrap = false;
+    };
   };
 }
