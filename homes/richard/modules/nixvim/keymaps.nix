@@ -21,6 +21,16 @@
       };
     }
     {
+      mode = "i";
+      key = "<C-s>";
+      action = "<Esc>:w<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Save file";
+      };
+    }
+    {
       mode = "n";
       key = "<C-c>";
       action = "\"+yy";
@@ -38,6 +48,26 @@
         noremap = true;
         silent = true;
         desc = "Copy selected text to clipboard";
+      };
+    }
+    {
+      mode = "v";
+      key = "<";
+      action = "<gv";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Unindent while keeping selection";
+      };
+    }
+    {
+      mode = "v";
+      key = ">";
+      action = ">gv";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Indent while keeping selectio";
       };
     }
     {
