@@ -16,7 +16,7 @@
   
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs // inputs; [
     ansible
     dbeaver-bin
     discord
@@ -27,10 +27,14 @@
     libqalculate
     nodejs_23
     obs-studio
+    onlyoffice-desktopeditors
+    openssl
     python311Full
     smile
+    systemctl-tui
     television
     wiper
+    zen-browser.packages."${system}".default
   ];
 
   programs = {
