@@ -1,0 +1,87 @@
+@define-color transparent   rgba(0, 0, 0, 0   );
+@define-color translucent   rgba(0, 0, 0, 0.25);
+@define-color red    #d20f39;
+@define-color maroon #e64553;
+@define-color peach  #fe640b;
+@define-color yellow #df8e1d;
+@define-color green  #40a02b;
+@define-color teal   #179299;
+@define-color sky    #04a5e5;
+
+
+* {
+    color: #fff;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 11px;
+}
+
+#waybar {
+    background: @transparent;
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding: 0 14px;
+    border-radius: 20px;
+}
+
+.modules-left, .modules-right {
+    background: @sky;
+}
+
+.modules-center * {
+    margin: 0;
+    padding: 0;
+}
+
+#battery, #temperature {
+    padding: 0 2px;
+    border-radius: 8px;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#battery.warning {
+    animation-name: warning;
+}
+
+#battery.critical {
+    animation-name: critical;
+}
+
+#temperature.critical {
+    animation-name: critical;
+}
+
+@keyframes warning {
+    0%   { }
+    90%  { background: @yellow; }
+    100% { background: @yellow; }
+}
+
+@keyframes critical {
+    0%   { }
+    90%  { background: @red; }
+    100% { background: @red; }
+}
+
+#workspaces button {
+    margin: 0 4px;
+    padding: 0 1px;
+}
+
+#workspaces button * {
+    font-size: 12px;
+}
+
+#workspaces button.active * {
+    color: @sky;
+}
+
+#workspaces button:hover {
+    border: none;
+    background: @translucent;
+    box-shadow: none;
+}

@@ -7,6 +7,7 @@
     ./modules/hyprland
     ./modules/kitty
     ./modules/nixvim
+    ./modules/waybar
     ./modules/zsh
   ];
 
@@ -47,8 +48,6 @@
         update_ms = 100;
       };
     };
-
-    waybar.enable = true;    
 
     yazi.settings = {
       manager = {
