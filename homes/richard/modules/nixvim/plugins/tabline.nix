@@ -1,38 +1,53 @@
 {
   programs.nixvim = {
-    plugins.bufferline = {
-      enable = true;
+    plugins = {
+      bufferline = {
+        enable = true;
 
-      settings = {
-        highlights.buffer_selected.italic = false;
+        settings = {
+          highlights.buffer_selected.italic = false;
 
-        options = {
-          offsets = [
-          {
-              filetype = "neo-tree";
-              text = "File Explorer";
-              text_align = "center";
-              separator = true;
-          }];
+          options = {
+            offsets = [
+              {
+                filetype = "neo-tree";
+                text = "File Explorer";
+                text_align = "center";
+                separator = true;
+              }
+            ];
+          };
         };
+      };
+
+      bufdelete = {
+        enable = true;
       };
     };
 
     keymaps = [
       {
-        action = ":BufferLineCycleNext<CR>";
-        key = "<S-tab>";
         mode = "n";
+        key = "<S-tab>";
+        action = ":BufferLineCycleNext<CR>";
         options = {
           desc = "Next buffer";
         };
       }
       {
-        action = ":BufferLineCyclePrev<CR>";
-        key = "<S-A-tab>";
         mode = "n";
+        key = "<S-A-tab>";
+        action = ":BufferLineCyclePrev<CR>";
         options = {
           desc = "Next buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<S-w>";
+        action = ":Bdelete<CR>";
+        options = {
+          desc = "Close buffer";
         };
       }
     ];
