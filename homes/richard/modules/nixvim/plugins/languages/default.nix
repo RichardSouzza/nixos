@@ -1,5 +1,6 @@
 {
   imports = [
+    ./markdown.nix
     ./python.nix
     ./typescript.nix
   ];
@@ -8,13 +9,15 @@
     plugins = {
       cmp = {
         enable = true;
-        
+
         settings.sources = [
           { name = "nvim_lsp"; }
           { name = "path";     }
           { name = "buffer";   }
         ];
       };
+
+      efmls-configs.enable = true;
 
       lsp = {
         enable = true;
