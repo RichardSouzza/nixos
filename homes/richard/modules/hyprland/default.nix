@@ -8,11 +8,11 @@
 
     settings = {
       preload = [
-          "~/imgs/wallpapers/The Megalodon.png"
-        ];
+        # "~/imgs/wallpapers/.png"
+      ];
 
       wallpaper = [
-        "eDP-1, ~/imgs/wallpapers/The Megalodon.png"
+        # "eDP-1, ~/imgs/wallpapers/.png"
       ];
     };
   };
