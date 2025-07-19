@@ -32,6 +32,11 @@
     ];
   };
 
+  # Fonts.
+  fonts.packages = with pkgs; [
+    texlivePackages.josefin
+  ];
+
   # Enable sound.
   services.pipewire = {
     enable = true;
@@ -91,6 +96,7 @@
     lshw
     nautilus
     neovim
+    posting
     superfile
     tree
     yazi
