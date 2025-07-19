@@ -1,3 +1,5 @@
+{ config, pkgs, inputs, ... }:
+
 {
   programs.zsh = {
     enable = true;
@@ -7,7 +9,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      c    = "clear";
+      c    = "tput clear";
       cc   = "cd /etc/nixos";
       db   = "dbeaver";
       dok  = "lazydocker";
