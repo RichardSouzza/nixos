@@ -1,5 +1,9 @@
 { config, pkgs, inputs, ... }:
 
+let
+  pkgsUnstable = import <nixpkgs-unstable> {};
+
+in
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
