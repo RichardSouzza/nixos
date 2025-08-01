@@ -13,11 +13,11 @@
     {
       mode = "v";
       key = "<A-up>";
-      action = ":m '>-2<CR>gv=gv";
+      action = ":m '<-2<CR>gv=gv";
       options = {
         noremap = true;
         silent = true;
-        desc = "Move selected line up";
+        desc = "Move selected lines up";
       };
     }
     {
@@ -27,7 +27,7 @@
       options = {
         noremap = true;
         silent = true;
-        desc = "Move selected line down";
+        desc = "Move selected lines down";
       };
     }
     {
