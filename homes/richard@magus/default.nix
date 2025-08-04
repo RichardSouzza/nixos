@@ -6,17 +6,10 @@ let
 in
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    ../shared/git
-    ../shared/nixvim
-    ../shared/zsh
+    ../common.nix
   ];
 
-  home.username = "richard";
-  home.homeDirectory = "/home/richard";
   home.stateVersion = "25.05";
-  
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     gh gitnr lazygit
