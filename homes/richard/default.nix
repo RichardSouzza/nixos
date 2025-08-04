@@ -7,6 +7,7 @@ in
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./modules/dunst
     ./modules/git
     ./modules/hyprland
     ./modules/kitty
