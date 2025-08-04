@@ -28,6 +28,19 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
+      makeHomeConfiguration = username: hostname:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          extraSpecialArgs = {
+            inherit inputs nixvim;
+          };
+
+          modules = [
+            (import (./homes + "/${username}@${hostname}"))
+          ];
+        };
+
     in
     {
       nixosConfigurations = {
@@ -57,23 +70,15 @@
         };
       };
 
+      homeConfigurations = {
+        "richard@loki"  = makeHomeConfiguration "richard" "loki";
+        "richard@magus" = makeHomeConfiguration "richard" "magus";
+      };
+
       environment.systemPackages = [
         (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
           enable = true;
         })
       ];
-
-      homeConfigurations."richard" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        extraSpecialArgs = {
-          inherit inputs;
-          inherit nixvim;
-        };
-
-        modules = [
-          ./homes/richard
-        ];
-      };
     };
 }
