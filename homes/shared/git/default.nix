@@ -23,4 +23,6 @@
 
     gitui.enable = true;
   };
+
+  home.file.".gitconfig".source = ./gitconfig;
 }

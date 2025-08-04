@@ -22,6 +22,6 @@
   };
 
   environment.etc = {
-    "gitconfig".source = ../homes/root/modules/git/gitconfig;
+    "gitconfig".source = ../modules/git/gitconfig;
   };
 }
