@@ -1,11 +1,6 @@
 { config, inputs, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      inputs.home-manager.nixosModules.default
-    ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -13,11 +8,6 @@
   # Configure network.
   # networking.wireless.enable = true;      # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Extra Options, like Flakes.
-  nix.extraOptions = "
-    experimental-features = nix-command flakes
-  ";
 
   # Time zone.
   time.timeZone = "America/Maceio";
@@ -74,11 +64,6 @@
     wheel.members  = [ "richard" ];
   };
 
-  nix.settings = {
-    allowed-users = [ "@wheel" ];
-    trusted-users = [ "@wheel" ];
-  };
-
   system.activationScripts = {
     text = ''
       chown -R :nixers /etc/nixos
@@ -86,9 +71,7 @@
     '';
   };
 
-  # Configure programs.
-  nixpkgs.config.allowUnfree = true;
-
+  # Install shared programs.
   environment.systemPackages = with pkgs; [
     brightnessctl
     btop
@@ -104,19 +87,11 @@
     yazi
   ];
 
-  programs = {
-    zsh.enable = true;
-  };
-
   environment.extraInit = ''
     unset -v SSH_ASKPASS
   '';
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-  };
-
-  environment.etc = {
-    "gitconfig".source = ../../homes/root/modules/git/gitconfig;
   };
 }
