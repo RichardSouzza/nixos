@@ -6,6 +6,8 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +23,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, nixvim, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-wsl, home-manager, hyprland, nixvim, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -39,6 +41,14 @@
         loki = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/loki ];
+        };
+
+        magus = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/magus
+            nixos-wsl.nixosModules.default
+          ];
         };
 
         oracle = nixpkgs.lib.nixosSystem {
