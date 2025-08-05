@@ -63,7 +63,6 @@
     neovim
     superfile
     tree
-    yazi
   ];
 
   environment.extraInit = ''

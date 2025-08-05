@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, inputs, pkgs, ... }:
 
 let
   pkgsUnstable = import <nixpkgs-unstable> {};
@@ -21,22 +21,4 @@ in
     systemctl-tui
     television
   ];
-
-  programs = {
-    home-manager.enable = true;
-
-    btop = {
-      enable = true;
-      settings = {
-        color_theme = "adapta";
-        update_ms = 100;
-      };
-    };
-
-    yazi.settings = {
-      manager = {
-        show_hidden = true;
-      };
-    };
-  };
 }

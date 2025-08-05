@@ -3,8 +3,10 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./shared/btop
     ./shared/git
     ./shared/nixvim
+    ./shared/yazi
     ./shared/zsh
   ];
 
