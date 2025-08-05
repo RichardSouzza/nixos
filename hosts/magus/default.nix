@@ -20,7 +20,6 @@
     fastfetch
     git
     neovim
-    superfile
     tree
     yazi
   ];

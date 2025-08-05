@@ -17,9 +17,27 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs = {
-    zsh.enable = true;
+  users.users.richard = {
+    isNormalUser = true;
+    home = "/home/richard";
+    description = "Richard";
+    shell = pkgs.zsh;
   };
+
+  users.groups = {
+    docker.members = [ "richard" ];
+    nixers.members = [ "richard" ];
+    wheel.members  = [ "richard" ];
+  };
+
+  system.activationScripts = {
+    text = ''
+      chown -R :nixers /etc/nixos
+      chmod -R 770 /etc/nixos
+    '';
+  };
+
+  programs.zsh.enable = true;
 
   environment.etc = {
     "gitconfig".source = ../modules/git/gitconfig;
