@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+
 {
   programs.nixvim = {
     plugins = {
@@ -6,4 +8,10 @@
       which-key.enable = true;
     };
   };
+
+  home.packages = with pkgs; [
+    wakatime-cli
+  ];
+
+  home.file.".wakatime/wakatime-cli".source = "${pkgs.wakatime}/bin/wakatime-cli";
 }
