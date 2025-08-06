@@ -33,7 +33,7 @@
           inherit pkgs;
 
           extraSpecialArgs = {
-            inherit inputs nixvim;
+            inherit hostname inputs nixvim username;
           };
 
           modules = [

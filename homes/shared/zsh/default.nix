@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, hostname, pkgs, username, ... }:
 
 {
   programs.zsh = {
@@ -16,7 +16,7 @@
       e    = "superfile";
       g    = "lazygit";
       gg   = "gitui";
-      hms  = "home-manager switch --flake /etc/nixos/#richard";
+      hms  = "home-manager switch --flake /etc/nixos/#${username}@${hostname}";
       hr   = "hyprctl reload";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";

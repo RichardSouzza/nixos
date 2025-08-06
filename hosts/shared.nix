@@ -56,6 +56,7 @@
     btop
     fastfetch
     git
+    gtrash
     kitty
     librewolf
     lshw

@@ -15,7 +15,6 @@
     dunst
     grimblast
     gtk4
-    gtrash
     hyprland
     hyprpaper
     nwg-look
