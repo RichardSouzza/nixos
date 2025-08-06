@@ -11,7 +11,7 @@
     vimAlias = true;
 
     nixpkgs.useGlobalPackages = true;
-    
+
     clipboard.providers.wl-copy.enable = true;
 
     performance = {
@@ -22,6 +22,7 @@
       expandtab = true;
       number = true;
       scrolloff = 1000;
+      showmode = false;
       shiftwidth = 2;
       tabstop = 4;
       wrap = false;
