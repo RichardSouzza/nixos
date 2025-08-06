@@ -37,6 +37,14 @@
     '';
   };
 
+  environment.systemPackages = with pkgs; [
+    fastfetch
+    git
+    gtrash
+    neovim
+    tree
+  ];
+
   programs.zsh.enable = true;
 
   environment.etc = {

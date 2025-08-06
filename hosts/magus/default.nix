@@ -16,14 +16,6 @@
   wsl.defaultUser = "richard";
   wsl.wslConf.network.hostname = "magus";
 
-  environment.systemPackages = with pkgs; [
-    fastfetch
-    git
-    gtrash
-    neovim
-    tree
-  ];
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # This value determines the NixOS release from which the default

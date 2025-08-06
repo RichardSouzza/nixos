@@ -54,16 +54,11 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     btop
-    fastfetch
-    git
-    gtrash
     kitty
     librewolf
     lshw
     nautilus
-    neovim
     superfile
-    tree
   ];
 
   environment.extraInit = ''
