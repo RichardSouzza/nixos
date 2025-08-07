@@ -18,12 +18,13 @@
       gg   = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#${username}@${hostname}";
       hr   = "hyprctl reload";
+      ls   = "lsd --group-directories-first";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
       s    = "sudo -i";
       rm   = "gtrash put";
       rs   = "gtrash restore";
-      tree = "tree --dirsfirst --gitignore";
+      tree = "lsd --tree";
       v    = "nvim .";
       y    = "yazi";
     };

@@ -16,4 +16,16 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    gh gitnr lazygit # Git Gang
+    gtt              # Translator
+    fastfetch        # System informations
+    gtrash           # Trash manager
+    libqalculate     # Calculator
+    lsd              # LS Deluxe
+    systemctl-tui    # Systemd services manager
+    tealdeer         # Cheatsheets
+    television       # Fuzzy file finder
+  ];
 }
