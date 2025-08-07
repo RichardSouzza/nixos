@@ -9,6 +9,7 @@
     ./shared/nixvim
     ./shared/yazi
     ./shared/zsh
+    ../packages
   ];
 
   home.username = "richard";
