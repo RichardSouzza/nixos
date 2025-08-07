@@ -5,6 +5,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./shared/btop
     ./shared/git
+    ./shared/gtt
     ./shared/nixvim
     ./shared/yazi
     ./shared/zsh
@@ -19,7 +20,6 @@
 
   home.packages = with pkgs; [
     gh gitnr lazygit # Git Gang
-    gtt              # Translator
     fastfetch        # System informations
     gtrash           # Trash manager
     libqalculate     # Calculator
