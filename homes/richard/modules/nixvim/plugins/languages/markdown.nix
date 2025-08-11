@@ -1,10 +1,12 @@
 {
   programs.nixvim.plugins = {
-    efmls-configs.setup.markdown = {
-      formatter = "mdformat";
-      linter = "markdownlint";
+    efmls-configs = {
+      setup.markdown = {
+        formatter = "mdformat";
+        linter = "markdownlint";
+      };
     };
 
-    # render-markdown.enable = true;
+    markdown-preview.enable = true;
   };
 }
