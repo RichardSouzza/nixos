@@ -3,6 +3,13 @@
     plugins = {
       neo-tree = {
         enable = true;
+
+        filesystem = {
+          followCurrentFile.enabled = true;
+          window.mappings = {
+            "e".__raw = "function() vim.cmd('wincmd p') end";
+          };
+        };
       };
 
       web-devicons.enable = true;

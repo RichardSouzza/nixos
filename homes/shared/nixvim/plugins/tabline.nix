@@ -20,34 +20,35 @@
         };
       };
 
-      bufdelete = {
-        enable = true;
-      };
+      snacks.settings.bufdelete.enabled = true;
     };
 
     keymaps = [
       {
-        mode = "n";
-        key = "<S-tab>";
-        action = ":BufferLineCycleNext<CR>";
-        options = {
-          desc = "Next buffer";
-        };
-      }
-      {
-        mode = "n";
-        key = "<S-A-tab>";
-        action = ":BufferLineCyclePrev<CR>";
-        options = {
-          desc = "Next buffer";
-        };
-      }
-      {
-        mode = "n";
+        action = "<CMD>lua Snacks.bufdelete()<CR>";
         key = "<S-w>";
-        action = ":Bdelete<CR>";
+        mode = "n";
         options = {
           desc = "Close buffer";
+          silent = true;
+        };
+      }
+      {
+        action = "<CMD>BufferLineCycleNext<CR>";
+        key = "<S-tab>";
+        mode = "n";
+        options = {
+          desc = "Next buffer";
+          silent = true;
+        };
+      }
+      {
+        action = "<CMD>BufferLineCyclePrev<CR>";
+        key = "<S-A-tab>";
+        mode = "n";
+        options = {
+          desc = "Next buffer";
+          silent = true;
         };
       }
     ];

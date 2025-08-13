@@ -1,8 +1,8 @@
 {
   programs.nixvim.plugins = {
     alpha = {
-      enable = false;
-      theme = "doom";
+      enable = true;
+      theme = "startify";
     };
   };
 }
