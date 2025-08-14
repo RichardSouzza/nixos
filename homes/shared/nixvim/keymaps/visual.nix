@@ -15,7 +15,6 @@
       key = "<A-up>";
       action = ":m '<-2<CR>gv=gv";
       options = {
-        noremap = true;
         silent = true;
         desc = "Move selected lines up";
       };
@@ -25,7 +24,6 @@
       key = "<A-down>";
       action = ":m '>+1<CR>gv=gv";
       options = {
-        noremap = true;
         silent = true;
         desc = "Move selected lines down";
       };
@@ -35,7 +33,6 @@
       key = "<";
       action = "<gv";
       options = {
-        noremap = true;
         silent = true;
         desc = "Unindent while keeping selection";
       };
@@ -45,7 +42,6 @@
       key = ">";
       action = ">gv";
       options = {
-        noremap = true;
         silent = true;
         desc = "Indent while keeping selectio";
       };

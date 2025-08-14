@@ -5,7 +5,6 @@
       key = "<C-q>";
       action = ":qa<CR>";
       options = {
-        noremap = true;
         silent = true;
         desc = "Exit NeoVim";
       };
@@ -15,7 +14,6 @@
       key = "<C-s>";
       action = ":w<CR>";
       options = {
-        noremap = true;
         silent = true;
         desc = "Save file";
       };
@@ -25,7 +23,6 @@
       key = "<C-c>";
       action = "\"+yy";
       options = {
-        noremap = true;
         silent = true;
         desc = "Copy line to clipboard";
       };
@@ -35,7 +32,6 @@
       key = "<A-up>";
       action = ":m .-2<CR>==";
       options = {
-        noremap = true;
         silent = true;
         desc = "Move line up";
       };
@@ -45,7 +41,6 @@
       key = "<A-down>";
       action = ":m .+1<CR>==";
       options = {
-        noremap = true;
         silent = true;
         desc = "Move line down";
       };
