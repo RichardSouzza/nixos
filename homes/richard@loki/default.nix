@@ -6,14 +6,19 @@ let
 in
 {
   imports = [
+    ../common.nix
+    ../shared/btop
+    ../shared/dunst
+    ../shared/git
+    ../shared/gtt
+    ../shared/hyprland
+    ../shared/kitty
+    ../shared/nixvim
+    ../shared/starship
+    ../shared/waybar
+    ../shared/yazi
+    ../shared/zsh
     inputs.nixvim.homeManagerModules.nixvim
-    ./modules/dunst
-    ./modules/git
-    ./modules/hyprland
-    ./modules/kitty
-    ./modules/nixvim
-    ./modules/waybar
-    ./modules/zsh
   ];
 
   home.username = "richard";
