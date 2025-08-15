@@ -6,13 +6,10 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  nix.extraOptions = "
-    experimental-features = nix-command flakes
-  ";
-
   nix.settings = {
     allowed-users = [ "@wheel" ];
     trusted-users = [ "@wheel" ];
+    experimental-features = "flakes nix-command pipe-operators";
   };
 
   nixpkgs.config.allowUnfree = true;
