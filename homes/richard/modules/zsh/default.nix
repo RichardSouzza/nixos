@@ -15,7 +15,6 @@
       dok  = "lazydocker";
       e    = "superfile";
       g    = "lazygit";
-      gg   = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#richard";
       hr   = "hyprctl reload";
       manc = "man configuration.nix";
