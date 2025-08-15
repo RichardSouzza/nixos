@@ -7,6 +7,7 @@
     ./shared/git
     ./shared/gtt
     ./shared/nixvim
+    ./shared/starship
     ./shared/yazi
     ./shared/zsh
     ../packages

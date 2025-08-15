@@ -1,0 +1,39 @@
+format = """
+$nix_shell\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+\n$character"""
+
+[username]
+format = '[$user]($style)'
+style_user = 'white'
+style_root = 'bold red'
+show_always = true
+
+[hostname]
+format = '[@$hostname]($style):'
+style = 'white'
+ssh_only = false
+
+[directory]
+format = '[$path]($style) '
+style = 'white'
+truncate_to_repo = false
+home_symbol = '~/'
+use_os_path_sep = false
+
+[git_branch]
+symbol = ' '
+style = 'bold blue'
+
+[git_status]
+format = '([$ahead_behind$diverged]($style))'
+ahead  = '[⇡${count}](bold green)'
+behind = '[⇣${count}](bold yellow)'
+
+[nix_shell]
+format = '$symbol'
+symbol = '❄️ '
