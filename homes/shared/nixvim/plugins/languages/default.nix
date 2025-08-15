@@ -1,8 +1,15 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./markdown.nix
+    ./nix.nix
     ./python.nix
     ./typescript.nix
+  ];
+
+  home.packages = with pkgs; [
+    efm-langserver
   ];
 
   programs.nixvim = {
@@ -17,12 +24,30 @@
         ];
       };
 
-      efmls-configs.enable = true;
 
       lsp = {
         enable = true;
-        autoLoad = true;
         inlayHints = true;
+      };
+
+      lsp.servers.efm = {
+        enable = true;
+
+        extraOptions.init_options = {
+          documentFormatting = true;
+          documentRangeFormatting = true;
+          hover = true;
+          documentSymbol = true;
+          codeAction = true;
+          completion = true;
+        };
+      };
+
+      efmls-configs.enable = true;
+
+      lsp-format = {
+        enable = true;
+        lspServersToEnable = "all";
       };
     };
 

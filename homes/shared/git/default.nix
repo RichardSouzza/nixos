@@ -10,18 +10,21 @@
           editor = "nvim";
         };
         diff = {
-          tool = "gitui";
+          algorithm = "histogram";
+          tool = "nvimdiff";
         };
         difftool = {
+          cmd = "nvimdiff";
           prompt = false;
         };
-        pull = {
-          rebase = false;
+        merge = {
+          tool = "nvimdiff2";
+        };
+        push = {
+          autoSetupRemote = true;
         };
       };
     };
-
-    gitui.enable = true;
   };
 
   home.file.".gitconfig".source = ./gitconfig;

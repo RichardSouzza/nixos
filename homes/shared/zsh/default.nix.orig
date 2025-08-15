@@ -1,4 +1,4 @@
-{ hostname, username, ... }:
+{ config, hostname, pkgs, username, ... }:
 
 {
   programs.zsh = {
@@ -15,8 +15,12 @@
       dok  = "lazydocker";
       e    = "superfile";
       g    = "lazygit";
+<<<<<<< HEAD:homes/shared/zsh/default.nix
       gg   = "gitui";
       hms  = "home-manager switch --flake /etc/nixos/#${username}@${hostname}";
+=======
+      hms  = "home-manager switch --flake /etc/nixos/#richard";
+>>>>>>> master:homes/richard/modules/zsh/default.nix
       hr   = "hyprctl reload";
       ls   = "lsd --group-directories-first";
       manc = "man configuration.nix";
