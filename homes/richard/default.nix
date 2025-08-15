@@ -1,7 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 let
-  pkgsUnstable = import <nixpkgs-unstable> {};
+  pkgsUnstable = import <nixpkgs> {};
 
 in
 {
@@ -19,7 +19,7 @@ in
   home.username = "richard";
   home.homeDirectory = "/home/richard";
   home.stateVersion = "24.11";
-  
+
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs // inputs; [
@@ -41,7 +41,9 @@ in
     television
     wiper
     zen-browser.packages."${system}".default
-  ];
+  ] ++ (with pkgsUnstable; [
+    posting
+  ]);
 
   programs = {
     home-manager.enable = true;
