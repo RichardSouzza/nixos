@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -41,13 +41,6 @@
 
   # Permission manager.
   security.polkit.enable = true;
-
-  # Install packages.  
-  environment.systemPackages = with pkgs; [];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

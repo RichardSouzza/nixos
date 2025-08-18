@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Use the systemd-boot EFI boot loader.
@@ -22,8 +22,9 @@
     ];
   };
 
-  # Fonts.
+  # Add fonts.
   fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
     texlivePackages.josefin
   ];
 
@@ -52,13 +53,12 @@
 
   # Install shared programs.
   environment.systemPackages = with pkgs; [
-    brightnessctl
-    btop
-    kitty
-    librewolf
-    lshw
-    nautilus
-    superfile
+    brightnessctl # Brightness controller
+    btop          # Resource monitor
+    kitty         # Feline terminal
+    librewolf     # Privacy fox
+    nautilus      # Gnome files
+    superfile     # A super filer
   ];
 
   environment.extraInit = ''

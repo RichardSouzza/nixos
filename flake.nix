@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,13 +42,6 @@
     in
     {
       nixosConfigurations = {
-        default = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-
         loki = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/loki ];
@@ -71,11 +65,5 @@
         "richard@loki"  = makeHomeConfiguration "richard" "loki";
         "richard@magus" = makeHomeConfiguration "richard" "magus";
       };
-
-      environment.systemPackages = [
-        (nixvim.legacyPackages."${pkgs.stdenv.hostPlatform.system}".makeNixvim {
-          enable = true;
-        })
-      ];
     };
 }
