@@ -12,14 +12,11 @@
 
   environment.systemPackages = with pkgs; [
     clipse
-    dunst
     grimblast
     gtk4
     hyprland
     hyprpaper
     nwg-look
-    walker
-    waybar
     wl-clipboard
   ];
 }

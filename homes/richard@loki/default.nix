@@ -7,18 +7,11 @@ in
 {
   imports = [
     ../common.nix
-    ../shared/btop
     ../shared/dunst
-    ../shared/git
-    ../shared/gtt
     ../shared/hyprland
     ../shared/kitty
-    ../shared/nixvim
-    ../shared/starship
+    ../shared/walker
     ../shared/waybar
-    ../shared/yazi
-    ../shared/zsh
-    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   home.username = "richard";
@@ -36,7 +29,7 @@ in
     gtt
     jdk21_headless
     libqalculate
-    nodejs_23
+    nodejs_24
     obs-studio
     onlyoffice-desktopeditors
     openssl
