@@ -13,7 +13,7 @@
   # Configure LUKS encryption.
   boot.initrd.luks.devices = {
     crypted = {
-      device = "/dev/disk/by-uuid/87902870-20e0-47ea-9eb4-acb903c26718";
+      device = "/dev/disk/by-uuid/92aaebc1-b40b-44bc-aca7-0d7e2a03a274";
       preLVM = true;
     };
   };
