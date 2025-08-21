@@ -21,6 +21,7 @@
       ls   = "lsd --group-directories-first";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
+      nsh  = "nix-shell --command 'zsh'";
       s    = "sudo -i";
       rm   = "gtrash put";
       rs   = "gtrash restore";
