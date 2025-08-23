@@ -8,6 +8,7 @@
     ./shared/gtt
     ./shared/nixvim
     ./shared/starship
+    ./shared/tealdeer
     ./shared/yazi
     ./shared/zsh
     ../packages
@@ -27,7 +28,6 @@
     libqalculate     # Calculator
     lsd              # LS Deluxe
     systemctl-tui    # Systemd services manager
-    tealdeer         # Cheatsheets
     television       # Fuzzy file finder
   ];
 }
