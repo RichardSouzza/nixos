@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.yazi = {
@@ -13,10 +13,43 @@
       } + "/catppuccin-frappe.yazi";
     };
 
+    initLua = ''
+      require("full-border"):setup()
+      require("git"):setup()
+    '';
+
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = "f";
+          run = "plugin jump-to-char";
+          desc = "Jump to char";
+        }
+      ];
+    };
+
+    plugins = with pkgs; {
+      full-border = yaziPlugins.full-border;
+      git = yaziPlugins.git;
+      jump-to-char = yaziPlugins.jump-to-char;
+    };
+
     settings = {
-      manager = {
+      mgr = {
         show_hidden = true;
       };
+      plugin.prepend_fetchers = [
+        {
+          id = "git";
+          name = "*";
+          run = "git";
+        }
+        {
+          id = "git";
+          name = "*/";
+          run = "git";
+        }
+      ];
     };
 
     theme = {
