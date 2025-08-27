@@ -29,8 +29,7 @@
 
   system.activationScripts = {
     text = ''
-      chown -R :nixers /etc/nixos
-      chmod -R 770 /etc/nixos
+      source /etc/nixos/hosts/activation.sh
     '';
   };
 

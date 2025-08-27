@@ -16,7 +16,7 @@
       e    = "superfile";
       g    = "lazygit";
       gg   = "gitui";
-      hms  = "home-manager switch --flake /etc/nixos/#${username}@${hostname}";
+      hms  = "source /etc/nixos/hosts/activation.sh && home-manager switch --flake /etc/nixos/#${username}@${hostname}";
       hr   = "hyprctl reload";
       ls   = "lsd --group-directories-first";
       manc = "man configuration.nix";
