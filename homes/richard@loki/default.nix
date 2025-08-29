@@ -12,6 +12,7 @@ in
     ../shared/kitty
     ../shared/walker
     ../shared/waybar
+    ../shared/zen-browser
   ];
 
   home.username = "richard";
@@ -38,7 +39,6 @@ in
     systemctl-tui
     television
     wiper
-    zen-browser.packages."${system}".default
   ] ++ (with pkgsUnstable; [
     posting
   ]);
