@@ -9,5 +9,14 @@
         desc = "Save file";
       };
     }
+    {
+      mode = "i";
+      key = "<C-delete>";
+      action = "<C-o>dw";
+      options = {
+        silent = true;
+        desc = "Delete word ahead of the cursor.";
+      };
+    }
   ];
 }

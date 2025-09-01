@@ -5,9 +5,17 @@
       key = "<C-c>";
       action = "\"+y";
       options = {
-        noremap = true;
         silent = true;
         desc = "Copy selected text to clipboard";
+      };
+    }
+    {
+      mode = "v";
+      key = "<C-s>";
+      action = "<Esc>:w<CR>";
+      options = {
+        silent = true;
+        desc = "Save file";
       };
     }
     {

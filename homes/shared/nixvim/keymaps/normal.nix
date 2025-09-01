@@ -45,6 +45,23 @@
         desc = "Move line down";
       };
     }
-
+    {
+      mode = "n";
+      key = "<S-A-up>";
+      action = "<CMD>t. -1<CR>";
+      options = {
+        silent = true;
+        desc = "Duplicate line up.";
+      };
+    }
+    {
+      mode = "n";
+      key = "<S-A-down>";
+      action = "<CMD>t.<CR>";
+      options = {
+        silent = true;
+        desc = "Duplicate line down.";
+      };
+    }
   ];
 }
