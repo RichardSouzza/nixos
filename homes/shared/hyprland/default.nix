@@ -8,11 +8,11 @@
 
     settings = {
       preload = [
-        # "~/imgs/wallpapers/.png"
+        "~/imgs/wallpapers/mountains.jpg"
       ];
 
       wallpaper = [
-        # "eDP-1, ~/imgs/wallpapers/.png"
+        "eDP-1, ~/imgs/wallpapers/mountains.jpg"
       ];
     };
   };

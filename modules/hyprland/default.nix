@@ -16,6 +16,7 @@
     gtk4
     hyprland
     hyprpaper
+    hyprpicker
     nwg-look
     wl-clipboard
   ];
