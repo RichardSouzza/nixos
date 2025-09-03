@@ -22,7 +22,7 @@ ssh_only = false
 format = '[$path]($style) '
 style = 'white'
 truncate_to_repo = false
-home_symbol = '~/'
+home_symbol = '~'
 use_os_path_sep = false
 
 [git_branch]

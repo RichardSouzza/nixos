@@ -21,8 +21,8 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = with pkgs // inputs; [
-    ansible
+  home.packages = with pkgs; [
+    bluetui
     dbeaver-bin
     discord
     docker docker-compose lazydocker

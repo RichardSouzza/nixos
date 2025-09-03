@@ -22,6 +22,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    charasay          # Gabby characters
     gh gitnr lazygit # Git Gang
     fastfetch        # System informations
     gtrash           # Trash manager
