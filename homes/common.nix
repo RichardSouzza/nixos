@@ -29,5 +29,6 @@
     lsd              # LS Deluxe
     systemctl-tui    # Systemd services manager
     television       # Fuzzy file finder
+    tree             # Tree view
   ];
 }

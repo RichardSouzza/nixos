@@ -22,6 +22,7 @@
       ls   = "lsd --group-directories-first";
       manc = "man configuration.nix";
       manh = "man home-configuration.nix";
+      mann = "man nixvim";
       nsh  = "nix-shell --command 'zsh'";
       s    = "sudo -i";
       rm   = "gtrash put";
@@ -33,6 +34,8 @@
     };
 
     initContent = ''
+      # Move to the current folder when exiting Yazi.
+      # https://github.com/sxyazi/yazi/discussions/1034#discussioncomment-12891811
       function y() {
           local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
           yazi "$@" --cwd-file="$tmp"
@@ -42,6 +45,13 @@
           fi
           rm -f -- "$tmp"
       }
+    '';
+  };
+
+  home.file = {
+    ".inputrc".text = ''
+      "\e[1;5D": backward-word
+      "\e[1;5C": forward-word
     '';
   };
 }
