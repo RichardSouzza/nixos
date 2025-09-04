@@ -2,6 +2,7 @@
   imports = [
     ./languages
     ./dashboard.nix
+    ./editor.nix
     ./fileExplorer.nix
     ./statusline.nix
     ./tabline.nix

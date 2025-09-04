@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 with lib;
 
@@ -12,13 +12,13 @@ in
     plugins = {
       snacks = {
         settings = {
+          indent.enabled = true;
           notifier.enabled = true;
           quickfile.enabled = true;
         };
       };
 
       lazygit.enable = isLazygitInstalled;
-      trim.enable = true;
       wakatime.enable = true;
       which-key.enable = true;
     };
