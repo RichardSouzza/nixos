@@ -34,7 +34,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    git
+    git jq
     neovim
   ];
 

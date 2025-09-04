@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./json.nix
     ./markdown.nix
     ./nix.nix
     ./python.nix
