@@ -1,4 +1,4 @@
-{ inputs, nurpkgs, ... }:
+{ inputs, lib, nurpkgs, username, ... }:
 
 {
   imports = [
@@ -39,6 +39,7 @@
         force = true;
         packages = with nurpkgs.repos.rycee.firefox-addons; [
           darkreader
+          # qr-code-address-bar
           ublock-origin
         ];
       };
@@ -57,4 +58,10 @@
       };
     };
   };
+
+  home.activation.cleanupZen = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    rm -f /home/${username}/.zen/default/search.json.mozlz4
+  '';
+
+  home.file.".zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
 }
