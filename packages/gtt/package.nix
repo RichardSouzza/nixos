@@ -1,37 +1,64 @@
-{ config, lib, options, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+with lib;
 
 let
   cfg = config.gtt;
+  settingsFormat = pkgs.formats.yaml { };
 
 in
 {
   options = {
-    gtt.enable = lib.mkEnableOption "Enable Google Translate TUI (gtt)";
+    gtt.enable = mkEnableOption "Enable Google Translate TUI (GTT)";
 
-    gtt.keymap = lib.mkOption {
-      type = with lib.types; nullOr path;
-      default = null;
-      description = "Custom keymap file.";
+    gtt.package = mkPackageOption pkgs "gtt" { };
+
+    gtt.settings = mkOption {
+      inherit (settingsFormat) type;
+      default = { };
+      description = ''
+        GTT configuration.
+
+        See <https://github.com/eeeXun/gtt/blob/master/config.go#L39-L63> for documentation.
+      '';
     };
 
-    gtt.theme = lib.mkOption {
-      type = with lib.types; nullOr path;
-      default = null;
-      description = "Custom theme file.";
+    gtt.keymaps = mkOption {
+      inherit (settingsFormat) type;
+      default = { };
+      description = ''
+        GTT keymap file.
+
+        See <https://github.com/eeeXun/gtt?tab=readme-ov-file#key-map> for documentation.
+      '';
+    };
+
+    gtt.themes = mkOption {
+      inherit (settingsFormat) type;
+      default = { };
+      description = ''
+        GTT theme file.
+
+        See <https://github.com/eeeXun/gtt?tab=readme-ov-file#customize-theme> for documentation.
+      '';
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [ gtt ];
+  config = mkIf cfg.enable {
+    home.packages = mkIf (cfg.package != null) [ cfg.package ];
 
-    home.file = lib.mkMerge [
-      (lib.mkIf (cfg.keymap != null) {
-        ".config/gtt/keymap.yaml".source = config.gtt.keymap;
-      })
+    xdg.configFile = {
+      "gtt/gtt.yaml" = mkIf (cfg.settings != { }) {
+        source = settingsFormat.generate "gtt-settings" cfg.settings;
+      };
 
-      (lib.mkIf (cfg.keymap != null) {
-        ".config/gtt/theme.yaml".source = config.gtt.theme;
-      })
-    ];
+      "gtt/keymap.yaml" = mkIf (cfg.keymaps != { }) {
+        source = settingsFormat.generate "gtt-keymaps" cfg.keymaps;
+      };
+
+      "gtt/theme.yaml" = mkIf (cfg.themes != { }) {
+        source = settingsFormat.generate "gtt-themes" cfg.themes;
+      };
+    };
   };
 }
