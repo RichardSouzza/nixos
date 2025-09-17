@@ -1,18 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # Use the systemd-boot EFI boot loader.
+  # Use the systemd-boot EFI boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Configure network.
-  # networking.wireless.enable = true;      # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # Configure network
+  networking.networkmanager.enable = true;
 
-  # Time zone.
+  # Time zone
   time.timeZone = "America/Maceio";
 
-  # Internationalisation properties.
+  # Internationalisation properties
   i18n.defaultLocale = "pt_BR.UTF-8";
   console = {
     font = "ter-v14n";
@@ -22,22 +21,22 @@
     ];
   };
 
-  # Add fonts.
+  # Add fonts
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     texlivePackages.josefin
   ];
 
-  # Enable sound.
+  # Enable sound
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
 
-  # Enable battery saver.
+  # Enable battery saver
   services.tlp.enable = true;
 
-  # Enable Flatpak.
+  # Enable Flatpak
   services.flatpak.enable = true;
 
   systemd.services.flatpak-repo = {
@@ -51,12 +50,11 @@
   # Enable Docker daemon
   virtualisation.docker.enable = true;
 
-  # Install shared programs.
+  # Install shared programs
   environment.systemPackages = with pkgs; [
     brightnessctl # Brightness controller
     btop          # Resource monitor
     kitty         # Feline terminal
-    librewolf     # Privacy fox
     nautilus      # Gnome files
     superfile     # A super filer
   ];

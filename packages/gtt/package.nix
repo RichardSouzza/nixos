@@ -11,7 +11,7 @@ in
   options = {
     gtt.enable = mkEnableOption "Enable Google Translate TUI (GTT)";
 
-    gtt.package = mkPackageOption pkgs "gtt" { };
+    gtt.package = mkPackageOption pkgs "gtt" { nullable = true; };
 
     gtt.settings = mkOption {
       inherit (settingsFormat) type;

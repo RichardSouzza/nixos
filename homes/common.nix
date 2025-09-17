@@ -30,6 +30,7 @@
     lsd              # LS Deluxe
     systemctl-tui    # Systemd services manager
     television       # Fuzzy file finder
+    tgpt             # Chat AI on the terminal
     tree             # Tree view
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 let
   pkgsUnstable = import <nixpkgs> {};
@@ -22,17 +22,15 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    bluetui
+    bluetui bluetuith
     dbeaver-bin
     discord
     docker docker-compose lazydocker
     gh gitnr lazygit
     gtt
-    jdk21_headless
     libqalculate
     nodejs_24
     obs-studio
-    onlyoffice-desktopeditors
     openssl
     python311Full
     smile
