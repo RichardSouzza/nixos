@@ -1,4 +1,4 @@
-{ inputs, lib, nurpkgs, username, ... }:
+{ inputs, lib, pkgs, username, ... }:
 
 {
   imports = [
@@ -37,9 +37,10 @@
 
       extensions = {
         force = true;
-        packages = with nurpkgs.repos.rycee.firefox-addons; [
+        packages = with pkgs.firefoxAddons; [
           darkreader
-          # qr-code-address-bar
+          mouse-tooltip-translator-pdf
+          qr-code-address-bar
           ublock-origin
         ];
       };
@@ -50,6 +51,8 @@
         "browser.translations.automaticallyPopup" = false;
         "extensions.autoDisableScopes" = 0;
         "extensions.update.enabled" = false;
+        "layout.css.zoom" = "1.1";
+        "layout.spellcheckDefault" = 0;
         "middlemouse.paste" = false;
         "zen.theme.accent-color" = "#424A62";
         "zen.theme.color-prefs.use-workspace-colors" = true;

@@ -234,12 +234,12 @@
     },
     {
       "id": "key_quitApplication",
-      "key": "",
-      "keycode": "",
+      "key": "q",
+      "keycode": null,
       "group": "windowAndTabManagement",
       "l10nId": "zen-quit-app-shortcut",
       "modifiers": {
-        "control": false,
+        "control": true,
         "alt": false,
         "shift": false,
         "meta": false
@@ -1806,7 +1806,7 @@
     },
     {
       "id": "zen-toggle-sidebar",
-      "key": "b",
+      "key": "c",
       "keycode": "",
       "group": "zen-other",
       "l10nId": "zen-sidebar-shortcut-toggle",
