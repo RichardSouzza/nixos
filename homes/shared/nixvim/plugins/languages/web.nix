@@ -1,7 +1,20 @@
 {
   programs.nixvim.plugins = {
     lsp.servers = {
-      eslint.enable = true;
+      cssls.enable = true;
+
+      html.enable = true;
+
+      # jsonls = {
+      #   enable = true;
+      #   settings = {
+      #     json = {
+      #       format.enable = true;
+      #       validate.enable = true;
+      #     };
+      #   };
+      # };
+
       tailwindcss.enable = true;
 
       ts_ls = {

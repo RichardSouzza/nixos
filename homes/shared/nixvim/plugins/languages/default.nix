@@ -1,16 +1,9 @@
-{ pkgs, ... }:
-
 {
   imports = [
-    ./json.nix
     ./markdown.nix
     ./nix.nix
     ./python.nix
-    ./typescript.nix
-  ];
-
-  home.packages = with pkgs; [
-    efm-langserver
+    ./web.nix
   ];
 
   programs.nixvim = {
@@ -43,8 +36,6 @@
           completion = true;
         };
       };
-
-      efmls-configs.enable = true;
 
       lsp-format = {
         enable = true;

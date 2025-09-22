@@ -4,11 +4,11 @@
       ruff.enable = true;
     };
 
-    efmls-configs = {
-      setup.python = {
-        formatter = "ruff";
-        linter = "ruff";
-      };
-    };
+    # efmls-configs = {
+    #   setup.python = {
+    #     formatter = "ruff";
+    #     linter = "ruff";
+    #   };
+    # };
   };
 }
