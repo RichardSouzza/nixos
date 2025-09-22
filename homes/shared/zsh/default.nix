@@ -64,9 +64,10 @@
 
       bindkey "^[OH"    beginning-of-line   # home
       bindkey "^[OF"    end-of-line         # end
+      bindkey "^[[3~"   delete-char         # delete
       bindkey "^[[1;5D" backward-word       # C-left
       bindkey "^[[1;5C" forward-word        # C-right
-      bindkey "^[[3~"   delete-char         # delete
+      bindkey "^[[3;5~" delete-word         # C-delete
       bindkey "^P"      yank                # C-p
       bindkey "^X"      backward-kill-word  # C-x
       bindkey "^Y"      copy-region-as-kill # C-y

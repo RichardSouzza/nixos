@@ -12,10 +12,19 @@
     {
       mode = "i";
       key = "<C-delete>";
-      action = "<C-o>dw";
+      action = "<Esc>ldwi";
       options = {
         silent = true;
-        desc = "Delete word ahead of the cursor.";
+        desc = "Delete word ahead of the cursor";
+      };
+    }
+    {
+      mode = "i";
+      key = "<C-kDel>";
+      action = "<Esc>ldwi";
+      options = {
+        silent = true;
+        desc = "Delete word ahead of the cursor";
       };
     }
   ];

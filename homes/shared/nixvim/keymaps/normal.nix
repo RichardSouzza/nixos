@@ -29,6 +29,15 @@
     }
     {
       mode = "n";
+      key = "<C-delete>";
+      action = "dw";
+      options = {
+        silent = true;
+        desc = "Delete word ahead of the cursor.";
+      };
+    }
+    {
+      mode = "n";
       key = "<A-up>";
       action = ":m .-2<CR>==";
       options = {
