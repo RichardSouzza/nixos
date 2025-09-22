@@ -1,4 +1,4 @@
-{ hostname, username, ... }:
+{ pkgs, hostname, username, ... }:
 
 {
   programs.zsh = {
@@ -7,6 +7,19 @@
 
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    plugins = [
+      {
+        name = "zsh-shift-select";
+        file = "zsh-shift-select.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "jirutka";
+          repo = "zsh-shift-select";
+          rev = "v0.1.1";
+          sha256 = "sha256-4kUUBH2GTMb/d6PUNiSNFogkvDUSwMX823j4xsroJKs=";
+        };
+      }
+    ];
 
     shellAliases = {
       act   = "sudo /etc/nixos/hosts/activation.sh";
@@ -49,10 +62,14 @@
       # Configure keybinds
       bindkey -e
 
-      bindkey "^[OH"    beginning-of-line
-      bindkey "^[OF"    end-of-line
-      bindkey "^[[1;5D" backward-word
-      bindkey "^[[1;5C" forward-word
+      bindkey "^[OH"    beginning-of-line   # home
+      bindkey "^[OF"    end-of-line         # end
+      bindkey "^[[1;5D" backward-word       # C-left
+      bindkey "^[[1;5C" forward-word        # C-right
+      bindkey "^[[3~"   delete-char         # delete
+      bindkey "^P"      yank                # C-p
+      bindkey "^X"      backward-kill-word  # C-x
+      bindkey "^Y"      copy-region-as-kill # C-y
     '';
   };
 }
