@@ -22,6 +22,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    bat jq                      # Utils
     charasay                    # Gabby characters
     gh git-extras gitnr lazygit # Git Gang
     fastfetch                   # System informations
@@ -32,8 +33,5 @@
     television                  # Fuzzy file finder
     tgpt                        # Chat AI on the terminal
     tree                        # Tree view
-
-    bat gcc fd                  # Dependency needs
-    jq                          # Utils
   ];
 }

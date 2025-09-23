@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./keymaps
@@ -27,5 +29,12 @@
       tabstop = 4;
       wrap = false;
     };
+
+    extraPackages = with pkgs; [
+    # Dependecy    # Required by
+      gcc          # TreeSitter
+      ripgrep      # Snacks.picker
+      wakatime-cli # Wakatime
+    ];
   };
 }

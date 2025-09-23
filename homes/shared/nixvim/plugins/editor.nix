@@ -10,7 +10,9 @@ in
 {
   programs.nixvim = {
     plugins = {
+
       guess-indent.enable = true;
+      nvim-autopairs.enable = true;
 
       spider = {
         enable = true;
@@ -23,6 +25,8 @@ in
       };
 
       trim.enable = true;
+
+      ts-autotag.enable = true;
 
       visual-multi = {
         enable = true;
@@ -45,6 +49,15 @@ in
       };
     };
 
+    extraConfigLua = ''
+      require("visual-surround").setup({
+          use_default_keymaps = true,
+          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "*", "_", "~" },
+          enable_wrapped_deletion = true,
+          exit_visual_mode = true,
+      })
+    '';
+
     extraPlugins = [
       (buildVimPlugin {
         name = "duplicate";
@@ -53,6 +66,15 @@ in
           repo = "duplicate.nvim";
           rev = "v1.1.0";
           hash = "sha256-k3Q7mk04dd2yql4NK5Lrm/AEy3lWp0xV2qvxqVly3lg=";
+        };
+      })
+      (buildVimPlugin {
+        name = "visual-surround";
+        src = fetchFromGitHub {
+          owner = "NStefan002";
+          repo = "visual-surround.nvim";
+          rev = "v1.0.1";
+          hash = "sha256-R1IuhysQODTJtJYETsWk/23/EWud7hphVM5ufKVUowU=";
         };
       })
     ];
