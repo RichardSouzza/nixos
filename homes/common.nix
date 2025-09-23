@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -22,15 +22,18 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    charasay          # Gabby characters
-    gh gitnr lazygit # Git Gang
-    fastfetch        # System informations
-    gtrash           # Trash manager
-    libqalculate     # Calculator
-    lsd              # LS Deluxe
-    systemctl-tui    # Systemd services manager
-    television       # Fuzzy file finder
-    tgpt             # Chat AI on the terminal
-    tree             # Tree view
+    charasay                    # Gabby characters
+    gh git-extras gitnr lazygit # Git Gang
+    fastfetch                   # System informations
+    gtrash                      # Trash manager
+    libqalculate                # Calculator
+    lsd                         # LS Deluxe
+    systemctl-tui               # Systemd services manager
+    television                  # Fuzzy file finder
+    tgpt                        # Chat AI on the terminal
+    tree                        # Tree view
+
+    bat gcc fd                  # Dependency needs
+    jq                          # Utils
   ];
 }

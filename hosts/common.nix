@@ -33,8 +33,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    git jq
-    neovim
+    git neovim
   ];
 
   programs.zsh.enable = true;
