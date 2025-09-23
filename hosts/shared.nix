@@ -56,7 +56,6 @@
     brightnessctl # Brightness controller
     btop          # Resource monitor
     kitty         # Feline terminal
-    librewolf     # Privacy fox
     nautilus      # Gnome files
     superfile     # A super filer
   ];
