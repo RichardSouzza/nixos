@@ -12,8 +12,8 @@ in
     plugins = {
       snacks = {
         settings = {
-          indent.enabled = true;
           notifier.enabled = true;
+          picker.enabled = true;
           quickfile.enabled = true;
         };
       };
@@ -24,6 +24,15 @@ in
     };
 
     keymaps = [
+      {
+        action = "<CMD>lua Snacks.picker.files({ hidden = true })<CR>";
+        key = "gf";
+        mode = "n";
+        options = {
+          desc = "Close buffer";
+          silent = true;
+        };
+      }
       {
         action = "<CMD>LazyGit<CR>";
         key = "gg";
