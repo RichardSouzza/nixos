@@ -5,20 +5,28 @@
       userName = "Richard Souza";
       userEmail = "souzza.richard25@gmail.com";
 
+      difftastic = {
+        enable = true;
+        enableAsDifftool = true;
+        background = "dark";
+        display = "side-by-side-show-both";
+      };
+
       extraConfig = {
         core = {
           editor = "nvim";
         };
         diff = {
           algorithm = "histogram";
-          tool = "nvimdiff";
         };
         difftool = {
-          cmd = "nvimdiff";
           prompt = false;
         };
         merge = {
           tool = "nvimdiff2";
+        };
+        pager = {
+          difftool = true;
         };
         push = {
           autoSetupRemote = true;
