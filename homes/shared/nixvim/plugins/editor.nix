@@ -1,3 +1,12 @@
+{ pkgs, ... }:
+
+let
+  inherit
+    (pkgs) fetchFromGitHub;
+  inherit
+    (pkgs.vimUtils) buildVimPlugin;
+
+in
 {
   programs.nixvim = {
     plugins = {
@@ -25,8 +34,16 @@
       };
     };
 
+    extraPlugins = [
+      (buildVimPlugin {
+        name = "duplicate";
+        src = fetchFromGitHub {
+          owner = "hinell";
+          repo = "duplicate.nvim";
+          rev = "v1.1.0";
+          hash = "sha256-k3Q7mk04dd2yql4NK5Lrm/AEy3lWp0xV2qvxqVly3lg=";
         };
-        };
+      })
     ];
   };
 }
