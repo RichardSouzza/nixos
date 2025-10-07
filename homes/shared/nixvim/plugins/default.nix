@@ -6,6 +6,7 @@
     ./fileExplorer.nix
     ./statusline.nix
     ./tabline.nix
+    ./terminal.nix
     ./theme.nix
     ./utils.nix
   ];
