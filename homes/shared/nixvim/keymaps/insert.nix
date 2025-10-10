@@ -27,5 +27,23 @@
         desc = "Delete word ahead of the cursor";
       };
     }
+    {
+      mode = "i";
+      key = "<S-enter>";
+      action = "<Esc>O";
+      options = {
+        silent = true;
+        desc = "New line above";
+      };
+    }
+    {
+      mode = "i";
+      key = "<A-enter>";
+      action = "<Esc>o";
+      options = {
+        silent = true;
+        desc = "New line bellow";
+      };
+    }
   ];
 }
