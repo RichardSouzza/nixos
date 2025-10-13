@@ -16,12 +16,15 @@ in
     plugins = {
       snacks = {
         settings = {
+          input.enabled = true;
           notifier.enabled = true;
           picker.enabled = true;
           quickfile.enabled = true;
+          scratch.enabled = true;
         };
       };
 
+      lazy.enable = true;
       lazygit.enable = true;
       wakatime.enable = true;
       which-key.enable = true;
