@@ -12,13 +12,18 @@ in
     plugins = {
 
       guess-indent.enable = true;
-      nvim-autopairs.enable = true;
+      nvim-autopairs = {
+        enable = true;
+        settings = {
+          fast_wrap.chars = [ "{" "[" "(" "\"" "'" "`"  "─" ];
+        };
+      };
 
       spider = {
         enable = true;
         settings = {
           customPatterns = {
-            patterns = [ ";" ];
+            patterns = [ ";" "%)$" "\\n$" ];
             overrideDefault = false;
           };
         };
@@ -50,9 +55,19 @@ in
     };
 
     extraConfigLua = ''
+      local npairs = require("nvim-autopairs")
+      local Rule = require("nvim-autopairs.rule")
+
+      npairs.add_rules {
+        Rule("{", "};", {"nix"})
+          :with_pair(function(opts)
+            return vim.bo.filetype == "nix"
+          end)
+      }
+
       require("visual-surround").setup({
           use_default_keymaps = true,
-          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "*", "_", "~" },
+          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "*", "_", "─", "~" },
           enable_wrapped_deletion = true,
           exit_visual_mode = true,
       })

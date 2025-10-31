@@ -1,39 +1,48 @@
 {
-  programs.nixvim.plugins = {
-    lsp.servers = {
-      cssls.enable = true;
+  programs.nixvim = {
+    globals = {
+      OmniSharp_server_use_mono = 1;
+    };
 
-      gopls.enable = true;
+    plugins = {
+      lsp.servers = {
+        csharp_ls.enable = false;
 
-      html.enable = true;
+        cssls.enable = true;
 
-      nixd = {
-        enable = true;
-        cmd = [
-          "nixd"
-          "--inlay-hints=false"
-          "--semantic-tokens"
-        ];
-      };
+        gopls.enable = true;
 
-      omnisharp = {
-        enable = false;
-        settings = {
-          enable_import_completion = true;
-          enable_roslyn_analyzers = true;
-          organize_imports_on_format = true;
+        html.enable = true;
+
+        jsonls.enable = true;
+
+        nixd = {
+          enable = true;
+          cmd = [ "nixd" "--inlay-hints=false" "--semantic-tokens" ];
         };
-      };
 
-      ruff.enable = true;
+        omnisharp = {
+          enable = false;
+          settings = {
+            enable_import_completion = true;
+            enable_roslyn_analyzers = true;
+            organize_imports_on_format = true;
+          };
+        };
 
-      tailwindcss.enable = true;
+        ruff.enable = true;
 
-      ts_ls = {
-        enable = true;
-        settings = {
-          completions = {
-            completeFunctionCalls = true;
+        tailwindcss.enable = true;
+
+        ts_ls = {
+          enable = true;
+          settings = {
+            completions = {
+              completeFunctionCalls = true;
+            };
+            javascript = {
+              format.enable = false;
+            };
           };
         };
       };
