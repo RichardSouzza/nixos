@@ -14,15 +14,43 @@
 
     nixpkgs.useGlobalPackages = true;
 
-    clipboard.providers.wl-copy.enable = true;
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
+
+    # Enable clip and powershell for WSL
+    extraConfigLua = ''
+      if vim.fn.has('wsl') == 1 then
+          vim.g.clipboard = {
+              name = 'WslClipboard',
+              copy = {
+                  ['+'] = 'clip.exe',
+                  ['*'] = 'clip.exe',
+              },
+              paste = {
+                  ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+                  ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+              },
+              cache_enabled = 0,
+          }
+      end
+    '';
 
     performance = {
-      combinePlugins.enable = true;
+      byteCompileLua.enable = true;
+      combinePlugins = {
+        enable = true;
+        standalonePlugins = [
+          "blink.cmp"
+          "nvim-treesitter"
+        ];
+      };
     };
 
     opts = {
       expandtab = true;
-      number = true;
+      relativenumber = true;
       scrolloff = 1000;
       showmode = false;
       shiftwidth = 2;
