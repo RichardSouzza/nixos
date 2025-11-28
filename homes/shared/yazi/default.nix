@@ -9,7 +9,7 @@
         owner = "yazi-rs";
         repo = "flavors";
         rev = "main";
-        hash = "sha256-tjXv4+KzHE/OI1ZURjttqsh4FgPsqqQ+aRxfAQ2vANQ=";
+        hash = "sha256-0CZrJ1f5lDY75XF5eR6m4hbg973pTZoAxzJKMCv+hag=";
       } + "/catppuccin-frappe.yazi";
     };
 

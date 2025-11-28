@@ -51,6 +51,11 @@
   virtualisation.docker.enable = true;
 
   # Install shared programs
+  programs = {
+    nix-ld.enable = true; # Unpatched binaries runner
+    nix-ld.libraries = [];
+  };
+
   environment.systemPackages = with pkgs; [
     brightnessctl # Brightness controller
     btop          # Resource monitor

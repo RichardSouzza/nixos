@@ -1,19 +1,30 @@
 {
   programs = {
-    git = {
+    difftastic = {
       enable = true;
-      userName = "Richard Souza";
-      userEmail = "souzza.richard25@gmail.com";
 
-      difftastic = {
+      git = {
         enable = true;
-        enableAsDifftool = true;
+        diffToolMode = true;
+      };
+
+      options = {
         background = "dark";
         display = "side-by-side-show-both";
       };
+    };
 
-      extraConfig = {
+    gh.enable = true;
+
+    git = {
+      enable = true;
+
+      settings = {
+        user.name = "Richard Souza";
+        user.email = "souzza.richard25@gmail.com";
+
         core = {
+          autocrlf = "input";
           editor = "nvim";
         };
         diff = {
@@ -34,6 +45,4 @@
       };
     };
   };
-
-  home.file.".gitconfig".source = ./gitconfig;
 }
