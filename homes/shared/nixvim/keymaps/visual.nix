@@ -14,8 +14,8 @@
       key = "<C-s>";
       action = "<Esc>:w<CR>";
       options = {
-        silent = true;
         desc = "Save file";
+        silent = true;
       };
     }
     {
@@ -23,8 +23,8 @@
       key = "<A-up>";
       action = ":m '<-2<CR>gv=gv";
       options = {
-        silent = true;
         desc = "Move selected lines up";
+        silent = true;
       };
     }
     {
@@ -32,8 +32,35 @@
       key = "<A-down>";
       action = ":m '>+1<CR>gv=gv";
       options = {
-        silent = true;
         desc = "Move selected lines down";
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<S-A-up>";
+      action = ":copy .-1<CR>^";
+      options = {
+        desc = "Duplicate selection up";
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<S-A-down>";
+      action = ":copy .<CR>^";
+      options = {
+        desc = "Duplicate selection down";
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<A-/>";
+      action = "gc";
+      options = {
+        desc = "Comment line";
+        silent = true;
       };
     }
     {
@@ -41,8 +68,8 @@
       key = "<";
       action = "<gv";
       options = {
-        silent = true;
         desc = "Unindent while keeping selection";
+        silent = true;
       };
     }
     {
@@ -50,8 +77,8 @@
       key = ">";
       action = ">gv";
       options = {
+        desc = "Indent while keeping selection";
         silent = true;
-        desc = "Indent while keeping selectio";
       };
     }
   ];

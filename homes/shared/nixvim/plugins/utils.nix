@@ -17,6 +17,7 @@ in
       snacks = {
         settings = {
           input.enabled = true;
+          lazygit.enabled = true;
           notifier.enabled = true;
           picker.enabled = true;
           quickfile.enabled = true;
@@ -25,7 +26,7 @@ in
       };
 
       lazy.enable = true;
-      lazygit.enable = true;
+      no-neck-pain.enable = true;
       wakatime.enable = true;
       which-key.enable = true;
     };
@@ -78,30 +79,30 @@ in
         key = "/";
         mode = "n";
         options = {
-          desc = "Find line";
+          desc = "Search line";
           silent = true;
         };
       }
       {
         action = "<CMD>lua Snacks.picker.grep({ regex = false })<CR>";
-        key = "fc";
+        key = "gc";
         mode = "n";
         options = {
-          desc = "Find code";
+          desc = "Search code";
           silent = true;
         };
       }
       {
         action = "<CMD>lua Snacks.picker.files({ hidden = true })<CR>";
-        key = "ff";
+        key = "gf";
         mode = "n";
         options = {
-          desc = "Find files";
+          desc = "Search file";
           silent = true;
         };
       }
       {
-        action = "<CMD>LazyGit<CR>";
+        action = "<CMD>lua Snacks.lazygit.open()<CR>";
         key = "gg";
         mode = "n";
         options = {

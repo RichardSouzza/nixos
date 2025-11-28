@@ -12,13 +12,18 @@ in
     plugins = {
 
       guess-indent.enable = true;
-      nvim-autopairs.enable = true;
+      nvim-autopairs = {
+        enable = true;
+        settings = {
+          fast_wrap.chars = [ "{" "[" "(" "\"" "'" "`"  "─" ];
+        };
+      };
 
       spider = {
         enable = true;
         settings = {
           customPatterns = {
-            patterns = [ ";" ];
+            patterns = [ ";" "%(" "%)$" "\\n$" ];
             overrideDefault = false;
           };
         };
@@ -32,42 +37,55 @@ in
         enable = true;
         settings = {
           default_mappings = 0;
+          leader = "\\";
           maps = {
+            "Add Cursor At Pos"    = "mp";
             "Add Cursor Up"        = "<C-Up>";
             "Add Cursor Down"      = "<C-Down>";
             "Align"                = "<A-a>";
             "Case Conversion Menu" = "<A-c>";
-            "Find Prev"            = "<C-[>";
-            "Find Under"           = "<C-]>";
+            "Find Under"           = "<C-n>";
             "Move Left"            = "<A-Left>";
             "Move Right"           = "<A-Right>";
+            "Start Regex Search"   = "mr";
+            "Select All"           = "ma";
           };
           mouse_mappings = 1;
           show_warnings = 1;
-          silent_exit = 0;
+          skip_shorter_lines = 0;
+          silent_exit = 1;
+          theme = "iceblue";
         };
       };
+
+      # windsurf-nvim = {
+      #   enable = true;
+      #   settings = {
+      #     enable_chat = true;
+      #   };
+      # };
     };
 
     extraConfigLua = ''
+      local npairs = require("nvim-autopairs")
+      local Rule = require("nvim-autopairs.rule")
+
+      npairs.add_rules {
+        Rule("{", "};", "nix")
+          :with_pair(function(opts)
+            return true
+          end)
+      }
+
       require("visual-surround").setup({
           use_default_keymaps = true,
-          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "*", "_", "~" },
+          surround_chars = { "{", "}", "[", "]", "(", ")", "'", '"', "`", "*", "_", "─", "~" },
           enable_wrapped_deletion = true,
           exit_visual_mode = true,
       })
     '';
 
     extraPlugins = [
-      (buildVimPlugin {
-        name = "duplicate";
-        src = fetchFromGitHub {
-          owner = "hinell";
-          repo = "duplicate.nvim";
-          rev = "v1.1.0";
-          hash = "sha256-k3Q7mk04dd2yql4NK5Lrm/AEy3lWp0xV2qvxqVly3lg=";
-        };
-      })
       (buildVimPlugin {
         name = "visual-surround";
         src = fetchFromGitHub {
