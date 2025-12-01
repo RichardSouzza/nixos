@@ -42,7 +42,6 @@
       combinePlugins = {
         enable = true;
         standalonePlugins = [
-          "blink.cmp"
           "nvim-treesitter"
         ];
       };
@@ -61,7 +60,7 @@
     extraPackages = with pkgs; [
     # Dependecy    # Required by
       gcc          # TreeSitter
-      ripgrep      # Snacks.picker
+      ripgrep      # Blink and Snacks.picker
       wakatime-cli # Wakatime
     ];
   };

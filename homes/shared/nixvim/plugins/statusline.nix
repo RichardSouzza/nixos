@@ -1,4 +1,11 @@
 let
+  breadcrumbs = {
+    __raw = ''
+      function()
+        return require('lspsaga.symbol.winbar').get_bar()
+      end
+    '';
+  };
   isNeoTree = {
     __raw = ''
       function()
@@ -35,11 +42,12 @@ in
 
             lualine_c = [
               { __unkeyed-1 = "branch";   cond = isNeoTree;    }
-              { __unkeyed-1 = "filename"; cond = isNotNeoTree; }
+              { __unkeyed-1 = breadcrumbs; cond = isNotNeoTree; }
             ];
 
             lualine_x = [
-              { __unkeyed-1 = "location"; cond = isNeoTree; }
+              { __unkeyed-1 = "location"; cond = isNeoTree;    }
+              { __unkeyed-1 = "encoding"; cond = isNotNeoTree; }
             ];
 
             lualine_y = [
