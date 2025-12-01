@@ -1,5 +1,6 @@
 {
   imports = [
+    ./formatters.nix
     ./keymaps.nix
     ./servers.nix
     ./utils.nix

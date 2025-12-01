@@ -42,6 +42,7 @@
       combinePlugins = {
         enable = true;
         standalonePlugins = [
+          "conform.nvim"
           "nvim-treesitter"
         ];
       };
@@ -61,6 +62,7 @@
     # Dependecy    # Required by
       gcc          # TreeSitter
       ripgrep      # Blink and Snacks.picker
+      sqlfluff     # SQL Formatter
       wakatime-cli # Wakatime
     ];
   };
