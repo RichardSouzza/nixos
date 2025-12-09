@@ -37,6 +37,7 @@
     settings = {
       mgr = {
         show_hidden = true;
+        sort_by = "natural";
       };
       plugin.prepend_fetchers = [
         {

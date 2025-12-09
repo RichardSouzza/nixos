@@ -6,9 +6,11 @@
     settings = {
       gui.sidePanelWidth = 0.2;
       git = {
-        paging = {
-          externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-        };
+        pagers = [
+          {
+            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+          }
+        ];
         parseEmoji = true;
       };
       notARepository = "skip";
