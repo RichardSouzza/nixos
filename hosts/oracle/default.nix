@@ -55,7 +55,6 @@
     librewolf
     light
     nautilus
-    neovim
     nwg-look
     swayosd
     tree

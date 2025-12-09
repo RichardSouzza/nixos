@@ -13,12 +13,9 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
+    neovim.url = "path:/home/richard/Neovim";
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
 
     nur = {
       url = "github:nix-community/NUR";
@@ -28,7 +25,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, nix-firefox-addons, nixvim, nur, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-wsl, home-manager, nix-firefox-addons, neovim, nur, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -49,7 +46,7 @@
           inherit pkgs;
 
           extraSpecialArgs = {
-            inherit username hostname inputs nixvim nurpkgs;
+            inherit username hostname inputs neovim nurpkgs;
           };
 
           modules = [
