@@ -1,0 +1,5 @@
+{
+  libqalculate = {
+    enable = true;
+  };
+}

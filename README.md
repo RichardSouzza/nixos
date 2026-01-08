@@ -5,13 +5,13 @@
 Rebuild NixOS with Flake:
 
 ```sh
-nixos-rebuild switch --flake /etc/nixos/#default
+nixos-rebuild switch --flake /etc/nixos/#hostname
 ```
 
 Update home:
 
 ```sh
-home-manager switch --flake /etc/nixos/#richard
+home-manager switch --flake /etc/nixos/#user@hostname
 ```
 
 List generations:
@@ -26,10 +26,12 @@ Delete older generations:
 nix-collect-garbage --delete-older-than 5d
 ```
 
-See Home Manager manual:
+Updating:
 
 ```sh
-man home-configuration.nix
+nix-channel --update
+nix flake update --flake /etc/nixos
+sudo nixos-rebuild switch --flake /etc/nixos/#hostname --upgrade-all
 ```
 
 ## Setup

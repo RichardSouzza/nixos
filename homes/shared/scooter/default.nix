@@ -1,0 +1,5 @@
+{
+  scooter = {
+    enable = true;
+  };
+}

@@ -13,7 +13,7 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    nixvim.url = "github:RichardSouzza/Nixvim";
+    nixvim.url = "path:/home/richard/Nixvim";
 
     nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
 

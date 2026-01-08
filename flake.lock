@@ -668,17 +668,14 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1765223299,
-        "narHash": "sha256-f17et6HZOCoM1Vqa7jVMNXAVU+V/z9jtsqKW7GUi2b4=",
-        "owner": "RichardSouzza",
-        "repo": "Nixvim",
-        "rev": "3685afe196ef0e2a72f0bc93aa6e357ca03f0f49",
-        "type": "github"
+        "lastModified": 1767883603,
+        "narHash": "sha256-OFzy6dKHP1Bo/rF9v+yKmkvAf59PEocWjmBAAV0aIjU=",
+        "path": "/home/richard/Nixvim",
+        "type": "path"
       },
       "original": {
-        "owner": "RichardSouzza",
-        "repo": "Nixvim",
-        "type": "github"
+        "path": "/home/richard/Nixvim",
+        "type": "path"
       }
     },
     "nixvim_2": {
@@ -691,11 +688,11 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1765196590,
-        "narHash": "sha256-DJuH2toKIEhqrAntJig2mlEH1Q5A5HN22JUCUtT+Y00=",
+        "lastModified": 1765446923,
+        "narHash": "sha256-xbjviwTvd8Wr4MvmDkAvWvADnYXe62XiazBTDl+z/dA=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "6ab2b305da7c48a697535c1e72f9294cb342cfac",
+        "rev": "83df07bf49e7c90b369b3d294af2d2c850f546c7",
         "type": "github"
       },
       "original": {

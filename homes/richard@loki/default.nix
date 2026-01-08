@@ -27,8 +27,6 @@ in
     discord
     docker docker-compose lazydocker
     gh gitnr lazygit
-    gtt
-    libqalculate
     nodejs_24
     obs-studio
     openssl

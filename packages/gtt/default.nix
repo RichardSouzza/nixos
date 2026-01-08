@@ -1,10 +1,9 @@
 { config, lib, pkgs, ... }:
 
-with lib;
-
 let
   cfg = config.gtt;
   settingsFormat = pkgs.formats.yaml { };
+  inherit (lib) mkEnableOption mkPackageOption mkOption mkIf;
 
 in
 {
@@ -49,15 +48,15 @@ in
 
     xdg.configFile = {
       "gtt/gtt.yaml" = mkIf (cfg.settings != { }) {
-        source = settingsFormat.generate "gtt-settings" cfg.settings;
+        source = settingsFormat.generate "gtt.yaml" cfg.settings;
       };
 
       "gtt/keymap.yaml" = mkIf (cfg.keymaps != { }) {
-        source = settingsFormat.generate "gtt-keymaps" cfg.keymaps;
+        source = settingsFormat.generate "keymap.yaml" cfg.keymaps;
       };
 
       "gtt/theme.yaml" = mkIf (cfg.themes != { }) {
-        source = settingsFormat.generate "gtt-themes" cfg.themes;
+        source = settingsFormat.generate "theme.yaml" cfg.themes;
       };
     };
   };

@@ -32,7 +32,7 @@
       gg    = "gitui";
       hms   = "home-manager switch --flake /etc/nixos/#${username}@${hostname} --impure";
       hr    = "hyprctl reload";
-      ls    = "lsd --group-directories-first";
+      ls    = "lsd --group-directories-first --literal";
       manc  = "man configuration.nix";
       manh  = "man home-configuration.nix";
       mann  = "man nixvim";
@@ -71,6 +71,10 @@
       bindkey "^P"      yank                # C-p
       bindkey "^X"      backward-kill-word  # C-x
       bindkey "^Y"      copy-region-as-kill # C-y
+
+      # Configure dotnet path
+      # export PATH="$HOME/.dotnet/tools:$PATH"
+      # export DOTNET_ROOT=$HOME/.dotnet
     '';
   };
 }
