@@ -1,12 +1,13 @@
-@define-color transparent   rgba(0, 0, 0, 0   );
-@define-color translucent   rgba(0, 0, 0, 0.25);
-@define-color red    #d20f39;
+@define-color transparent rgba(0, 0, 0, 0);
+@define-color translucent rgba(0, 0, 0, 0.3);
+@define-color red #d20f39;
 @define-color maroon #e64553;
-@define-color peach  #fe640b;
+@define-color peach #fe640b;
 @define-color yellow #df8e1d;
-@define-color green  #40a02b;
-@define-color teal   #179299;
-@define-color sky    #04a5e5;
+@define-color green #40a02b;
+@define-color teal #179299;
+@define-color sky #04a5e5;
+@define-color accent #309991;
 
 
 * {
@@ -20,13 +21,16 @@
     background: @transparent;
 }
 
-.modules-left, .modules-center, .modules-right {
+.modules-left,
+.modules-center,
+.modules-right {
     padding: 0 14px;
     border-radius: 20px;
 }
 
-.modules-left, .modules-right {
-    background: @sky;
+.modules-left,
+.modules-right {
+    background: @translucent;
 }
 
 .modules-center * {
@@ -34,7 +38,8 @@
     padding: 0;
 }
 
-#battery, #temperature {
+#battery,
+#temperature {
     padding: 0 2px;
     border-radius: 8px;
     animation-duration: 1s;
@@ -56,15 +61,27 @@
 }
 
 @keyframes warning {
-    0%   { }
-    90%  { background: @yellow; }
-    100% { background: @yellow; }
+    0% {}
+
+    90% {
+        background: @yellow;
+    }
+
+    100% {
+        background: @yellow;
+    }
 }
 
 @keyframes critical {
-    0%   { }
-    90%  { background: @red; }
-    100% { background: @red; }
+    0% {}
+
+    90% {
+        background: @red;
+    }
+
+    100% {
+        background: @red;
+    }
 }
 
 #workspaces button {
@@ -77,7 +94,7 @@
 }
 
 #workspaces button.active * {
-    color: @sky;
+    color: @accent;
 }
 
 #workspaces button:hover {

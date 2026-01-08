@@ -1,5 +1,7 @@
 {
   imports = [
-    ./gtt/package.nix
+    ./gtt
+    ./libqalculate
+    ./scooter
   ];
 }

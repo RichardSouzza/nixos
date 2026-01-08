@@ -34,18 +34,26 @@
   };
 
   # Enable battery saver
-  services.tlp.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      START_CHARGE_THRESH_BAT0 = 70;
+      STOP_CHARGE_THRESH_BAT0 = 80;
+    };
+  };
 
   # Enable Flatpak
-  services.flatpak.enable = true;
-
-  systemd.services.flatpak-repo = {
-    wantedBy= [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
+  # services.flatpak.enable = true;
+  #
+  # systemd.services.flatpak-repo = {
+  #   wantedBy= [ "multi-user.target" ];
+  #   path = [ pkgs.flatpak ];
+  #   script = ''
+  #     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  #   '';
+  # };
 
   # Enable Docker daemon
   virtualisation.docker.enable = true;

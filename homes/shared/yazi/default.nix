@@ -8,8 +8,8 @@
       "catppuccin-frappe" = pkgs.fetchFromGitHub {
         owner = "yazi-rs";
         repo = "flavors";
-        rev = "main";
-        hash = "sha256-0CZrJ1f5lDY75XF5eR6m4hbg973pTZoAxzJKMCv+hag=";
+        rev = "ffe6e3a16c5c51d7e2dedacf8de662fe2413f73a";
+        hash = "sha256-hEnrvfJwCAgM12QwPmjHEwF5xNrwqZH1fTIb/QG0NFI=";
       } + "/catppuccin-frappe.yazi";
     };
 

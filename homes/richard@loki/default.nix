@@ -24,26 +24,21 @@ in
   home.packages = with pkgs; [
     bluetui bluetuith
     dbeaver-bin
-    discord
     docker docker-compose lazydocker
     gh gitnr lazygit
-    gtt
-    libqalculate
-    nodejs_24
-    obs-studio
+    # jetbrains.rider
+    # nodejs_24
+    # obs-studio
     openssl
-    python311Full
     smile
     systemctl-tui
     television
+    # windsurf
     wiper
-  ] ++ (with pkgsUnstable; [
-    posting
-  ]);
+  ];
 
   programs = {
     home-manager.enable = true;
-
     btop = {
       enable = true;
       settings = {
