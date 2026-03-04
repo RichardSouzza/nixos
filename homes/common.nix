@@ -8,6 +8,7 @@
     ./shared/gtt
     ./shared/lazygit
     ./shared/libqalculate
+    ./shared/nushell
     ./shared/scooter
     ./shared/starship
     ./shared/tealdeer
@@ -43,8 +44,8 @@
   # Pkg name          # Description
     bat jq            # Utils
     charasay          # Gabby characters
-    dotnet-sdk_8     # .Net
-    dotnet-runtime_8 #
+    dotnet-sdk_10      # .Net
+    dotnet-runtime_10  #
     dotnet-ef         #
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
@@ -52,6 +53,9 @@
     lsd               # LS Deluxe
     ollama-rocm       # Ollama for AMD GPUs
     posting           # HTTP client
+    python311
+    python311Packages.pip
+    sqlfluff
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
     tgpt              # Chat AI on the terminal

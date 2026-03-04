@@ -6,6 +6,7 @@
     enableCompletion = true;
 
     autosuggestion.enable = true;
+    history.ignoreAllDups = true;
     syntaxHighlighting.enable = true;
 
     plugins = [
@@ -19,12 +20,23 @@
           sha256 = "sha256-4kUUBH2GTMb/d6PUNiSNFogkvDUSwMX823j4xsroJKs=";
         };
       }
+      {
+        name = "zsh-vi-mode";
+        file = "zsh-vi-mode.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "jeffreytse";
+          repo = "zsh-vi-mode";
+          rev = "v0.12.0";
+          sha256 = "sha256-EYr/jInRGZSDZj+QVAc9uLJdkKymx1tjuFBWgpsaCFw=";
+        };
+      }
     ];
 
     shellAliases = {
       act   = "sudo /etc/nixos/hosts/activation.sh";
       c     = "tput clear";
       cc    = "cd /etc/nixos";
+      cdc   = "cd ~/Nixvim";
       db    = "dbeaver";
       dok   = "lazydocker";
       e     = "superfile";
@@ -75,6 +87,9 @@
       # Configure dotnet path
       # export PATH="$HOME/.dotnet/tools:$PATH"
       # export DOTNET_ROOT=$HOME/.dotnet
+
+      # Disable Starship warnings
+      STARSHIP_LOG="error"
     '';
   };
 }

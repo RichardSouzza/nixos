@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -7,5 +7,8 @@
 
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    flutter
+    glab
+  ];
 }
