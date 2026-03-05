@@ -44,13 +44,14 @@
   # Pkg name          # Description
     bat jq            # Utils
     charasay          # Gabby characters
-    dotnet-sdk_10      # .Net
-    dotnet-runtime_10  #
+    dotnet-sdk_10     # .Net
+    dotnet-runtime_10 #
     dotnet-ef         #
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
     gtrash            # Trash manager
     lsd               # LS Deluxe
+    nodejs_25         # Node.js
     ollama-rocm       # Ollama for AMD GPUs
     posting           # HTTP client
     python311
