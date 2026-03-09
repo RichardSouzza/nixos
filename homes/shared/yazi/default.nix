@@ -53,6 +53,8 @@
       ];
     };
 
+    shellWrapperName = "y";
+
     theme = {
       flavor = {
         dark = "catppuccin-frappe";

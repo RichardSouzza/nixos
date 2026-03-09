@@ -51,14 +51,17 @@
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
     gtrash            # Trash manager
-    python3
+    libgcc
+    nodejs
+    python311
     lsd               # LS Deluxe
     # ollama-rocm       # Ollama for AMD GPUs
     # posting           # HTTP client
-    jetbrains.rider
+    # jetbrains.rider
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
     # tgpt              # Chat AI on the terminal
     tree              # Tree view
+    zlib
   ];
 }

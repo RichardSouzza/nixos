@@ -11,6 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # elephant.url = "github:abenz1267/elephant";
+
     hyprland.url = "github:hyprwm/Hyprland";
 
     nixvim.url = "path:/home/richard/Nixvim";

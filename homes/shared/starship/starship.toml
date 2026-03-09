@@ -5,6 +5,7 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$python\
 \n$character"""
 
 [username]
@@ -31,7 +32,7 @@ style = 'bold blue'
 
 [git_status]
 format = '([$ahead_behind$diverged]($style))'
-ahead  = '[⇡${count}](bold green)'
+ahead = '[⇡${count}](bold green)'
 behind = '[⇣${count}](bold yellow)'
 
 [nix_shell]

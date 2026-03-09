@@ -43,7 +43,6 @@
       dtree = "lsd --tree";
       tree  = "tree --gitignore --dirsfirst";
       v     = "nvim .";
-      y     = "yy";
     };
 
     initContent = ''
@@ -75,6 +74,10 @@
       # Configure dotnet path
       # export PATH="$HOME/.dotnet/tools:$PATH"
       # export DOTNET_ROOT=$HOME/.dotnet
+      export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib
+        pkgs.zlib.out
+      ]}"
     '';
   };
 }

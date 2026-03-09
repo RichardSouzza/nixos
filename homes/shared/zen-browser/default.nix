@@ -7,6 +7,7 @@
 
   programs.zen-browser = {
     enable = true;
+    suppressXdgMigrationWarning = true;
 
     policies = {
       DisableTelemetry = true;
@@ -41,6 +42,7 @@
           darkreader
           mouse-tooltip-translator-pdf
           qr-code-address-bar
+          tampermonkey
           ublock-origin
         ];
       };
@@ -63,8 +65,8 @@
   };
 
   home.activation.cleanupZen = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    rm -f /home/${username}/.zen/default/search.json.mozlz4
+    rm -f /home/${username}/.config/zen/default/search.json.mozlz4
   '';
 
-  home.file.".zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
+  home.file.".config/zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
 }

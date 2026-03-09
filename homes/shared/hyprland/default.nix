@@ -7,6 +7,12 @@ in
 {
   home.file = {
     ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+    ".config/hypr/pywal.sh".source = ./pywall.sh;
+  };
+
+  programs = {
+    feh.enable = true;
+    pywal.enable = true;
   };
 }
 // (if !builtins.pathExists hyprpaperConfig then
