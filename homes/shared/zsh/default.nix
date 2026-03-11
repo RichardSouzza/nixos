@@ -55,10 +55,19 @@
       dtree = "lsd --tree";
       tree  = "tree --gitignore --dirsfirst";
       v     = "nvim .";
+      vf    = "vf";
       y     = "yy";
     };
 
-    initContent = ''
+    initContent = # zsh
+    ''
+      # Open file in nvim with the current folder set to the git root
+      vf() {
+        file=$(fzf) || return
+        root=$(git -C "$(dirname "$file")" rev-parse --show-toplevel 2>/dev/null)
+        nvim "$file" +"cd ''${root:-$(dirname "$file")}"
+      }
+
       # Move to the current folder when exiting Yazi.
       # https://github.com/sxyazi/yazi/discussions/1034#discussioncomment-12891811
       function y() {

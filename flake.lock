@@ -668,8 +668,8 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1772734662,
-        "narHash": "sha256-iGJJilsrqJOeYExW9Ev6DwKkKQ588KXg2tIGkCR5F7U=",
+        "lastModified": 1773235353,
+        "narHash": "sha256-aeXjFaAVLEoVAlgSXAQpT2eHoOkPIaT6m/lH3Q/H2Po=",
         "path": "/home/richard/Nixvim",
         "type": "path"
       },

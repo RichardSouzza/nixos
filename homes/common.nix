@@ -49,6 +49,7 @@
     dotnet-ef         #
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
+    fzf
     gtrash            # Trash manager
     lsd               # LS Deluxe
     nodejs_25         # Node.js
