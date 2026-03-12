@@ -43,6 +43,33 @@
   # Permission manager.
   security.polkit.enable = true;
 
+  # Key Remapping Deamon
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "esc";
+            esc = "capslock";
+            kp1 = "end";
+            kp2 = "down";
+            kp3 = "pagedown";
+            kp4 = "left";
+            kp5 = "down";
+            kp6 = "right";
+            kp7 = "home";
+            kp8 = "up";
+            kp9 = "pageup";
+            kpdelete = "delete";
+            kpenter = "leftmeta";
+          };
+        };
+      };
+    };
+  };
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
