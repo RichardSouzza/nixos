@@ -45,22 +45,23 @@
     charasay          # Gabby characters
     distrobox
     distrobox-tui
-    dotnet-sdk_9     # .Net
-    # dotnet-runtime_8 #
-    dotnet-ef         #
+    dotnet-sdk_10     # .Net
+    dotnet-runtime_10
+    dotnet-ef
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
+    fzf
     gtrash            # Trash manager
-    libgcc
-    nodejs
-    python311
-    lsd               # LS Deluxe
-    # ollama-rocm       # Ollama for AMD GPUs
-    # posting           # HTTP client
     # jetbrains.rider
+    libgcc
+    lsd               # LS Deluxe
+    nodejs
+    posting           # HTTP client
+    python311
+    sqlfluff
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
-    # tgpt              # Chat AI on the terminal
+    tgpt              # Chat AI on the terminal
     tree              # Tree view
     zlib
   ];

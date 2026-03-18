@@ -25,15 +25,11 @@ in
     bluetui bluetuith
     dbeaver-bin
     docker docker-compose lazydocker
-    gh gitnr lazygit
-    # jetbrains.rider
-    # nodejs_24
-    # obs-studio
+    obs-studio
     openssl
     smile
     systemctl-tui
     television
-    # windsurf
     wiper
   ];
 

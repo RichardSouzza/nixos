@@ -6,6 +6,7 @@
     enableCompletion = true;
 
     autosuggestion.enable = true;
+    history.ignoreAllDups = true;
     syntaxHighlighting.enable = true;
 
     plugins = [
@@ -19,12 +20,23 @@
           sha256 = "sha256-4kUUBH2GTMb/d6PUNiSNFogkvDUSwMX823j4xsroJKs=";
         };
       }
+      {
+        name = "zsh-vi-mode";
+        file = "zsh-vi-mode.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "jeffreytse";
+          repo = "zsh-vi-mode";
+          rev = "v0.12.0";
+          sha256 = "sha256-EYr/jInRGZSDZj+QVAc9uLJdkKymx1tjuFBWgpsaCFw=";
+        };
+      }
     ];
 
     shellAliases = {
       act   = "sudo /etc/nixos/hosts/activation.sh";
       c     = "tput clear";
       cc    = "cd /etc/nixos";
+      cdc   = "cd ~/Nixvim";
       db    = "dbeaver";
       dok   = "lazydocker";
       e     = "superfile";
@@ -43,9 +55,19 @@
       dtree = "lsd --tree";
       tree  = "tree --gitignore --dirsfirst";
       v     = "nvim .";
+      vf    = "vf";
+      y     = "yy";
     };
 
-    initContent = ''
+    initContent = # zsh
+    ''
+      # Open file in nvim with the current folder set to the git root
+      vf() {
+        file=$(fzf) || return
+        root=$(git -C "$(dirname "$file")" rev-parse --show-toplevel 2>/dev/null)
+        nvim "$file" +"cd ''${root:-$(dirname "$file")}"
+      }
+
       # Move to the current folder when exiting Yazi.
       # https://github.com/sxyazi/yazi/discussions/1034#discussioncomment-12891811
       function y() {
@@ -78,6 +100,9 @@
         pkgs.stdenv.cc.cc.lib
         pkgs.zlib.out
       ]}"
+
+      # Disable Starship warnings
+      STARSHIP_LOG="error"
     '';
   };
 }
