@@ -1,5 +1,5 @@
 @define-color transparent rgba(0, 0, 0, 0);
-@define-color translucent rgba(0, 0, 0, 0.4);
+@define-color translucent rgba(0, 0, 0, 0.2);
 @define-color red #d20f39;
 @define-color maroon #e64553;
 @define-color peach #fe640b;
@@ -7,7 +7,7 @@
 @define-color green #40a02b;
 @define-color teal #179299;
 @define-color sky #04a5e5;
-@define-color accent #309991;
+@define-color accent #4c566a;
 
 
 * {
@@ -93,12 +93,12 @@
     font-size: 12px;
 }
 
-#workspaces button.active * {
-    color: @accent;
+#workspaces button.active {
+    border: 1px solid @accent;
 }
 
 #workspaces button:hover {
-    border: none;
+    animation-name: none;
     background: @translucent;
     box-shadow: none;
 }

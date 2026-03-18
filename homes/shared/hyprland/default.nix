@@ -6,9 +6,16 @@ let
 
 in
 {
-  home.file = {
-    ".config/hypr/hyprland.conf".source = ./hyprland.conf;
-    ".config/hypr/pywal.sh".source = ./pywall.sh;
+  home = {
+    packages = with pkgs;  [
+      bibata-cursors
+      hyprpicker
+      nordzy-cursor-theme
+    ];
+    file = {
+      ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+      ".config/hypr/pywal.sh".source = ./pywall.sh;
+    };
   };
 
   programs = {

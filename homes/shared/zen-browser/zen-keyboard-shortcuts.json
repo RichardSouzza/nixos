@@ -36,7 +36,7 @@
     },
     {
       "id": "key_selectLastTab",
-      "key": "9",
+      "key": "=",
       "keycode": null,
       "group": "windowAndTabManagement",
       "l10nId": null,
@@ -54,42 +54,6 @@
     },
     {
       "id": "key_selectTab8",
-      "key": "8",
-      "keycode": null,
-      "group": "windowAndTabManagement",
-      "l10nId": null,
-      "modifiers": {
-        "control": false,
-        "alt": true,
-        "shift": false,
-        "meta": false,
-        "accel": false
-      },
-      "action": null,
-      "disabled": false,
-      "reserved": false,
-      "internal": false
-    },
-    {
-      "id": "key_selectTab7",
-      "key": "7",
-      "keycode": null,
-      "group": "windowAndTabManagement",
-      "l10nId": null,
-      "modifiers": {
-        "control": false,
-        "alt": true,
-        "shift": false,
-        "meta": false,
-        "accel": false
-      },
-      "action": null,
-      "disabled": false,
-      "reserved": false,
-      "internal": false
-    },
-    {
-      "id": "key_selectTab6",
       "key": "6",
       "keycode": null,
       "group": "windowAndTabManagement",
@@ -107,7 +71,7 @@
       "internal": false
     },
     {
-      "id": "key_selectTab5",
+      "id": "key_selectTab7",
       "key": "5",
       "keycode": null,
       "group": "windowAndTabManagement",
@@ -125,7 +89,7 @@
       "internal": false
     },
     {
-      "id": "key_selectTab4",
+      "id": "key_selectTab6",
       "key": "4",
       "keycode": null,
       "group": "windowAndTabManagement",
@@ -143,7 +107,7 @@
       "internal": false
     },
     {
-      "id": "key_selectTab3",
+      "id": "key_selectTab5",
       "key": "3",
       "keycode": null,
       "group": "windowAndTabManagement",
@@ -161,8 +125,44 @@
       "internal": false
     },
     {
-      "id": "key_selectTab2",
+      "id": "key_selectTab4",
       "key": "2",
+      "keycode": null,
+      "group": "windowAndTabManagement",
+      "l10nId": null,
+      "modifiers": {
+        "control": false,
+        "alt": true,
+        "shift": false,
+        "meta": false,
+        "accel": false
+      },
+      "action": null,
+      "disabled": false,
+      "reserved": false,
+      "internal": false
+    },
+    {
+      "id": "key_selectTab3",
+      "key": "",
+      "keycode": null,
+      "group": "windowAndTabManagement",
+      "l10nId": null,
+      "modifiers": {
+        "control": false,
+        "alt": true,
+        "shift": false,
+        "meta": false,
+        "accel": false
+      },
+      "action": null,
+      "disabled": false,
+      "reserved": false,
+      "internal": false
+    },
+    {
+      "id": "key_selectTab2",
+      "key": "",
       "keycode": null,
       "group": "windowAndTabManagement",
       "l10nId": null,
@@ -602,7 +602,7 @@
     },
     {
       "id": "bookmarkAllTabsKb",
-      "key": "D",
+      "key": "E",
       "keycode": "",
       "group": "historyAndBookmarks",
       "l10nId": "zen-bookmark-this-page-shortcut",
@@ -1327,7 +1327,7 @@
     },
     {
       "id": "key_openDownloads",
-      "key": "J",
+      "key": "D",
       "keycode": "",
       "group": "other",
       "l10nId": "zen-downloads-shortcut",
@@ -1806,14 +1806,14 @@
     },
     {
       "id": "zen-toggle-sidebar",
-      "key": "c",
+      "key": "e",
       "keycode": "",
       "group": "zen-other",
       "l10nId": "zen-sidebar-shortcut-toggle",
       "modifiers": {
         "control": false,
         "alt": true,
-        "shift": false,
+        "shift": true,
         "meta": false,
         "accel": false
       },
@@ -1831,7 +1831,7 @@
       "modifiers": {
         "control": false,
         "alt": true,
-        "shift": true,
+        "shift": false,
         "meta": false,
         "accel": false
       },
@@ -1847,9 +1847,9 @@
       "group": "zen-other",
       "l10nId": "zen-text-action-copy-url-markdown-shortcut",
       "modifiers": {
-        "control": true,
+        "control": false,
         "alt": true,
-        "shift": false,
+        "shift": true,
         "meta": false,
         "accel": false
       },

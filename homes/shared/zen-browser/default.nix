@@ -7,7 +7,6 @@
 
   programs.zen-browser = {
     enable = true;
-    suppressXdgMigrationWarning = true;
 
     policies = {
       DisableTelemetry = true;
@@ -44,6 +43,7 @@
           qr-code-address-bar
           tampermonkey
           ublock-origin
+          zen-internet
         ];
       };
 
@@ -68,5 +68,8 @@
     rm -f /home/${username}/.config/zen/default/search.json.mozlz4
   '';
 
-  home.file.".config/zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
+  home.file = {
+    ".config/zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
+    ".config/zen/default/zen-themes.json".source = ./zen-mods-export.json;
+  };
 }
