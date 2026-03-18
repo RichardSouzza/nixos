@@ -15,6 +15,11 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     nixvim.url = "path:/home/richard/Nixvim";
 
     nix-firefox-addons.url = "github:osipog/nix-firefox-addons";

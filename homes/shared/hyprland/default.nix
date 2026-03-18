@@ -1,7 +1,8 @@
-{ lib, username, ... }:
+{ inputs, lib, pkgs, username, ... }:
 
 let
   hyprpaperConfig = "/home/${username}/.config/hypr/hyprpaper.conf";
+  hyprspace = inputs.Hyprspace.packages.${pkgs.system}.Hyprspace;
 
 in
 {
@@ -14,14 +15,23 @@ in
     feh.enable = true;
     pywal.enable = true;
   };
+
+  wayland.windowManager.hyprland = {
+    plugins = [
+      hyprspace
+    ];
+  };
 }
 // (if !builtins.pathExists hyprpaperConfig then
 {
   home.activation.mkHyprpaperConfig =
     lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
       cat <<-EOF > ~/.config/hypr/hyprpaper.conf
-      preload=~/imgs/wallpapers/
-      wallpaper=eDP-1, ~/imgs/wallpapers/
+      wallpaper {
+          monitor =
+          path = ~/imgs/wallpapers/
+      }
+      splash = false;
       EOF
     '';
 } else {})
