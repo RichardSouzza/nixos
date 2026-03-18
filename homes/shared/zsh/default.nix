@@ -56,7 +56,7 @@
       tree  = "tree --gitignore --dirsfirst";
       v     = "nvim .";
       vf    = "vf";
-      y     = "yy";
+      y     = "y";
     };
 
     initContent = # zsh
