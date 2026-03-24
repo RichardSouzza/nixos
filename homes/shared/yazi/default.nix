@@ -16,6 +16,7 @@
     initLua = ''
       require("full-border"):setup()
       require("git"):setup()
+      require("gvfs"):setup()
     '';
 
     keymap = {
@@ -25,13 +26,20 @@
           run = "plugin jump-to-char";
           desc = "Jump to char";
         }
+        {
+          on = "<C-d>";
+          run = "plugin drag";
+          desc = "Drag files";
+        }
       ];
     };
 
-    plugins = with pkgs; {
-      full-border = yaziPlugins.full-border;
-      git = yaziPlugins.git;
-      jump-to-char = yaziPlugins.jump-to-char;
+    plugins = with pkgs.yaziPlugins; {
+      drag = drag;
+      full-border = full-border;
+      git = git;
+      gvfs = gvfs;
+      jump-to-char = jump-to-char;
     };
 
     settings = {

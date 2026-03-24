@@ -103,6 +103,13 @@
 
       # Disable Starship warnings
       STARSHIP_LOG="error"
+
+      # Ensures the existence of tmpfs
+      if [ ! -d "/run/user/$UID" ]; then
+        export XDG_RUNTIME_DIR="/tmp/runtime-$UID"
+        mkdir -p "$XDG_RUNTIME_DIR"
+        chmod 700 "$XDG_RUNTIME_DIR"
+      fi
     '';
   };
 }

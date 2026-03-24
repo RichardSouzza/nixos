@@ -53,6 +53,8 @@
           main = {
             capslock = "esc";
             esc = "capslock";
+            kpdelete = "delete";
+            kpenter = "leftmeta";
             kp1 = "end";
             kp2 = "down";
             kp3 = "pagedown";
@@ -62,8 +64,6 @@
             kp7 = "home";
             kp8 = "up";
             kp9 = "pageup";
-            kpdelete = "delete";
-            kpenter = "leftmeta";
           };
         };
       };

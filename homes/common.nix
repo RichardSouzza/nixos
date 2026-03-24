@@ -58,6 +58,7 @@
     nodejs
     posting           # HTTP client
     python311
+    ripdrag           # Drag and drop
     sqlfluff
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
