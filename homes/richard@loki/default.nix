@@ -25,6 +25,8 @@ in
     bluetui bluetuith
     dbeaver-bin
     docker docker-compose lazydocker
+    gromit-mpx
+    localsend
     obs-studio
     openssl
     smile

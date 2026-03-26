@@ -29,17 +29,16 @@ in
 
   services.dunst = {
     enable = true;
-
     settings = {
       global = {
-        origin = "bottom-left";
+        origin = "bottom-center";
         offset = "44x36";
         corner_radius = 10;
         frame_width = 1;
         timeout = 1;
 
         background = nord0;
-        highlight = nord4;
+        highlight = slate-300;
         foreground = nord4;
         frame_color = nord3;
       };
