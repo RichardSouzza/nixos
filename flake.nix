@@ -46,13 +46,19 @@
         nurpkgs = pkgs;
       };
 
+      getColorsByHostname = (import ./homes/shared/colors).getColorsByHostname;
+
       makeHomeConfiguration = username: hostname:
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
-          extraSpecialArgs = {
-            inherit username hostname system inputs nixvim nurpkgs;
-          };
+          extraSpecialArgs =
+            let
+              colors = getColorsByHostname hostname;
+            in
+            {
+              inherit username hostname colors system inputs nixvim nurpkgs;
+            };
 
           modules = [
             (import (./homes + "/${username}@${hostname}"))

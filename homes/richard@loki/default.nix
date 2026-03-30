@@ -23,6 +23,7 @@ in
 
   home.packages = with pkgs; [
     bluetui bluetuith
+    cursor-cli
     dbeaver-bin
     docker docker-compose lazydocker
     gromit-mpx

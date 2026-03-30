@@ -11,6 +11,7 @@
 
         modules-left = [
           "cpu"
+          "custom/separator"
           "temperature"
         ];
 
@@ -22,16 +23,22 @@
           "pulseaudio"
           "custom/separator"
           "network"
+          "custom/separator"
           "battery"
+          "custom/separator"
           "clock"
         ];
 
         battery = {
-          format = "| {icon}  {capacity}% |";
-          format-icons = ["" "" "" "" ""];
+          format = "{icon} {capacity:2}%";
+          full-at = 80;
+          format-icons = {
+            default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+            charging = ["󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅"];
+          };
           states = {
             warning = 30;
-            critical = 15;
+            critical = 20;
           };
         };
 
@@ -56,11 +63,12 @@
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
           };
+          smooth-scrolling-threshold = 5;
         };
 
         cpu = {
           interval = 1;
-          format = "  {usage}%";
+          format = "  {usage:2}%";
         };
 
         "custom/separator" = {
@@ -97,7 +105,7 @@
         };
 
         temperature = {
-          format = "| {temperatureC}°C ";
+          format = "{temperatureC}°C ";
           critical-threshold = 80;
           tooltip = false;
         };
