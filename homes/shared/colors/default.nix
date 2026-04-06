@@ -40,14 +40,14 @@ let
       # primary = colors.;
       # secondary = colors.;
       # tertiary = colors.;
-      surface = colors.nord.base0;
-      outline = colors.nord.base3;
-      outlineVariant = colors.tailwindcss.slate-300;
+      surface = nord.base0;
+      outline = nord.base3;
+      outlineVariant = tailwindcss.slate-300;
 
-      background = colors.nord.base0;
-      highlight = colors.tailwindcss.slate-300;
-      foreground = colors.nord.base4;
-      frame_color = colors.nord.base3;
+      background = nord.base0;
+      highlight = tailwindcss.slate-300;
+      foreground = nord.base4;
+      frame_color = nord.base3;
     };
     magus = {
 
@@ -57,10 +57,7 @@ let
   getColorsByHostname = hostname:
     builtins.getAttr hostname colorsMapping;
 
-  colors = getColorsByHostname hostname;
-
 in
 {
-  inherit colors;
-  inherit getColorsByHostname;
+  colors = getColorsByHostname hostname;
 }

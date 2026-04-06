@@ -1,7 +1,7 @@
-{ colors, ... }:
+{ hostname, ... }:
 
 let
-  colors = (import ../colors).colors;
+  colors = (import ../colors).colors { hostname = hostname; };
 
 in
 {
