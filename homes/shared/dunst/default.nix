@@ -1,7 +1,7 @@
 { hostname, ... }:
 
 let
-  colors = (import ../colors).colors { hostname = hostname; };
+  colors = (import ../colors).colors;
 
 in
 {
@@ -22,10 +22,10 @@ in
         frame_width = 1;
         timeout = 1;
 
-        background = colors.nord.base0;
-        highlight = colors.tailwindcss.slate-300;
-        foreground = colors.nord.base4;
-        frame_color = colors.nord.base3;
+        # background = colors.nord.base0;
+        # highlight = colors.tailwindcss.slate-300;
+        # foreground = colors.nord.base4;
+        # frame_color = colors.nord.base3;
       };
     };
   };
