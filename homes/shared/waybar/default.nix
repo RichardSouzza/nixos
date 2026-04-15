@@ -31,6 +31,7 @@
 
         battery = {
           format = "{icon} {capacity:2}%";
+          format-charging = "{icon} {capacity:2}%";
           full-at = 100;
           format-icons = {
             default = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
