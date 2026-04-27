@@ -26,8 +26,10 @@ in
     dbeaver-bin
     docker docker-compose lazydocker
     gromit-mpx
+    hoppscotch
     localsend
     obs-studio
+    opencode-desktop
     openssl
     smile
     systemctl-tui
