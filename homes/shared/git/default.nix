@@ -27,6 +27,10 @@
         user.name = "Richard Souza";
         user.email = "souzza.richard25@gmail.com";
 
+        advice = {
+          defaultBranchName = false;
+        };
+
         core = {
           autocrlf = "input";
           editor = "nvim";

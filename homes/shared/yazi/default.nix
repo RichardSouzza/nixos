@@ -15,7 +15,6 @@
 
     initLua = ''
       require("full-border"):setup()
-      require("git"):setup()
       require("gvfs"):setup()
     '';
 
@@ -37,7 +36,6 @@
     plugins = with pkgs.yaziPlugins; {
       drag = drag;
       full-border = full-border;
-      git = git;
       gvfs = gvfs;
       jump-to-char = jump-to-char;
     };
@@ -48,11 +46,6 @@
         sort_by = "natural";
       };
       plugin.prepend_fetchers = [
-        {
-          id = "git";
-          name = "*";
-          run = "git";
-        }
         {
           id = "git";
           name = "*/";

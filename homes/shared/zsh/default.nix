@@ -103,7 +103,7 @@
       ]}"
 
       # Disable Starship warnings
-      STARSHIP_LOG="error"
+      export STARSHIP_LOG="error"
 
       # Ensures the existence of tmpfs
       if [ ! -d "/run/user/$UID" ]; then
