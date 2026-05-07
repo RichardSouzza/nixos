@@ -32,6 +32,10 @@
     };
   };
 
+  home.file = {
+    ".config/opencode/opencode.json".source = ../shared/opencode/opencode.json;
+  };
+
   home.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
   };
