@@ -8,10 +8,10 @@
       git = {
         pagers = [
           {
-            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+             pager = "${pkgs.delta}/bin/delta --dark --line-numbers --paging=never --syntax-theme=ansi";
           }
           {
-             pager = "${pkgs.delta}/bin/delta --dark --line-numbers --paging=never --syntax-theme=ansi";
+            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
           }
         ];
         parseEmoji = true;

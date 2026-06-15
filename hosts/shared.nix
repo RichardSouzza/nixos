@@ -69,7 +69,6 @@
     btop          # Resource monitor
     kitty         # Feline terminal
     nautilus      # Gnome files
-    superfile     # A super filer
   ];
 
   environment.extraInit = ''

@@ -28,13 +28,11 @@ in
     gromit-mpx
     hoppscotch
     localsend
-    obs-studio
     opencode-desktop
     openssl
     smile
     systemctl-tui
     television
-    wiper
   ];
 
   programs = {

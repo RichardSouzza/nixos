@@ -33,7 +33,7 @@
   };
 
   home.file = {
-    ".config/opencode/opencode.json".source = ../shared/opencode/opencode.json;
+    ".config/opencode/opencode.json".source = ./shared/opencode/opencode.json;
   };
 
   home.sessionVariables = {
@@ -47,11 +47,8 @@
   # Pkg name          # Description
     bat jq            # Utils
     charasay          # Gabby characters
-    distrobox
-    distrobox-tui
-    dotnet-sdk_10     # .Net
-    dotnet-runtime_10
-    dotnet-ef
+    # distrobox
+    # distrobox-tui
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
     fzf
@@ -59,11 +56,8 @@
     # jetbrains.rider
     libgcc
     lsd               # LS Deluxe
-    nodejs
-    posting           # HTTP client
     python311
     ripdrag           # Drag and drop
-    sqlfluff
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
     tgpt              # Chat AI on the terminal

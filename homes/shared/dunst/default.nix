@@ -18,6 +18,7 @@ in
       global = {
         origin = "bottom-center";
         offset = "44x36";
+        icon_position = "off";
         corner_radius = 10;
         frame_width = 1;
         timeout = 1;

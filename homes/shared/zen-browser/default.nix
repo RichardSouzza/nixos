@@ -47,7 +47,7 @@
         ];
       };
 
-      search.default = "ddg";
+      search.default = "google";
 
       settings = {
         "browser.translations.automaticallyPopup" = false;
