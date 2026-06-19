@@ -6,6 +6,8 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
+    elephant.url = "github:abenz1267/elephant";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,17 +15,18 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     nixvim.url = "path:/home/richard/Nixvim";
 
     nix-firefox-addons.url = "github:osipog/nix-firefox-addons";
 
     nur = {
       url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
