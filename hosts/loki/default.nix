@@ -36,9 +36,6 @@
   # Message-oriented middleware.
   services.dbus.enable = true;
 
-  # Backend for application launchers.
-  services.elephant.enable = true;
-
   # Permission manager.
   security.polkit.enable = true;
 

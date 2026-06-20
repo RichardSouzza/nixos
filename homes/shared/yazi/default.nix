@@ -8,14 +8,13 @@
       "catppuccin-frappe" = pkgs.fetchFromGitHub {
         owner = "yazi-rs";
         repo = "flavors";
-        rev = "ffe6e3a16c5c51d7e2dedacf8de662fe2413f73a";
-        hash = "sha256-hEnrvfJwCAgM12QwPmjHEwF5xNrwqZH1fTIb/QG0NFI=";
+        rev = "0f9204bc948c8313963f5c9d571a82edc201f8aa";
+        hash = "sha256-qWNArjWuxWL+rOjLzyIniW5hJgWiAWTCgXmMXJpaWZE=";
       } + "/catppuccin-frappe.yazi";
     };
 
     initLua = ''
       require("full-border"):setup()
-      require("gvfs"):setup()
     '';
 
     keymap = {
@@ -34,24 +33,21 @@
     };
 
     plugins = with pkgs.yaziPlugins; {
-      drag = drag;
-      full-border = full-border;
-      gvfs = gvfs;
-      jump-to-char = jump-to-char;
+      drag = drag;                 # https://github.com/Joao-Queiroga/drag.yazi
+      full-border = full-border;   # https://github.com/yazi-rs/plugins/tree/main/full-border.yazi
+      jump-to-char = jump-to-char; # https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi
+      mount = mount;               # https://github.com/yazi-rs/plugins/tree/main/mount.yazi
     };
 
     settings = {
       mgr = {
         show_hidden = true;
         sort_by = "natural";
+        prepend_keymap = {
+          on = "M";
+          run = "plugin mount";
+        };
       };
-      plugin.prepend_fetchers = [
-        {
-          id = "git";
-          name = "*/";
-          run = "git";
-        }
-      ];
     };
 
     shellWrapperName = "y";
