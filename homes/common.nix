@@ -56,7 +56,7 @@
     # jetbrains.rider
     libgcc
     lsd               # LS Deluxe
-    python311
+    python312 rye
     ripdrag           # Drag and drop
     systemctl-tui     # Systemd services manager
     television        # Fuzzy file finder
