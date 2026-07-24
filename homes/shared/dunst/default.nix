@@ -15,11 +15,12 @@ in
 
   services.dunst = {
     enable = true;
-
     settings = {
       global = {
         origin = "bottom-center";
-        offset = "0x36";
+        offset = "44x36";
+        icon_position = "off";
+        corner_radius = 10;
         frame_width = 1;
         frame_color = blue-900;
         background = slate-900;
