@@ -1,5 +1,9 @@
 {
   programs = {
+    delta = {
+      enable = true;
+    };
+
     difftastic = {
       enable = true;
 
@@ -22,6 +26,10 @@
       settings = {
         user.name = "Richard Souza";
         user.email = "souzza.richard25@gmail.com";
+
+        advice = {
+          defaultBranchName = "master";
+        };
 
         core = {
           autocrlf = "input";
