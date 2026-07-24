@@ -6,6 +6,7 @@
     enableCompletion = true;
 
     autosuggestion.enable = true;
+    history.ignoreAllDups = true;
     syntaxHighlighting.enable = true;
 
     plugins = [
@@ -19,12 +20,23 @@
           sha256 = "sha256-4kUUBH2GTMb/d6PUNiSNFogkvDUSwMX823j4xsroJKs=";
         };
       }
+      {
+        name = "zsh-vi-mode";
+        file = "zsh-vi-mode.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "jeffreytse";
+          repo = "zsh-vi-mode";
+          rev = "v0.12.0";
+          sha256 = "sha256-EYr/jInRGZSDZj+QVAc9uLJdkKymx1tjuFBWgpsaCFw=";
+        };
+      }
     ];
 
     shellAliases = {
       act   = "sudo /etc/nixos/hosts/activation.sh";
       c     = "tput clear";
       cc    = "cd /etc/nixos";
+      cdc   = "cd ~/Nixvim";
       db    = "dbeaver";
       dok   = "lazydocker";
       e     = "superfile";
@@ -32,7 +44,7 @@
       gg    = "gitui";
       hms   = "home-manager switch --flake /etc/nixos/#${username}@${hostname} --impure";
       hr    = "hyprctl reload";
-      ls    = "lsd --group-directories-first";
+      ls    = "lsd --group-directories-first --literal";
       manc  = "man configuration.nix";
       manh  = "man home-configuration.nix";
       mann  = "man nixvim";
@@ -40,13 +52,23 @@
       s     = "sudo -i";
       rm    = "gtrash put";
       rs    = "gtrash restore";
-      dtree = "lsd --tree";
-      tree  = "tree --gitignore --dirsfirst";
+      tgpt  = "tgpt --provider sky";
+      tree  = "lsd --tree";
+      tree2 = "tree --gitignore --dirsfirst";
       v     = "nvim .";
-      y     = "yy";
+      vf    = "vf";
+      y     = "y";
     };
 
-    initContent = ''
+    initContent = # zsh
+    ''
+      # Open file in nvim with the current folder set to the git root
+      vf() {
+        file=$(fzf) || return
+        root=$(git -C "$(dirname "$file")" rev-parse --show-toplevel 2>/dev/null)
+        nvim "$file" +"cd ''${root:-$(dirname "$file")}"
+      }
+
       # Move to the current folder when exiting Yazi.
       # https://github.com/sxyazi/yazi/discussions/1034#discussioncomment-12891811
       function y() {
@@ -71,6 +93,16 @@
       bindkey "^P"      yank                # C-p
       bindkey "^X"      backward-kill-word  # C-x
       bindkey "^Y"      copy-region-as-kill # C-y
+
+      # Disable Starship warnings
+      export STARSHIP_LOG="error"
+
+      # # Provide a fallback XDG runtime directory if the system didn't set one.
+      if [ -z "$XDG_RUNTIME_DIR" ]; then
+        export XDG_RUNTIME_DIR="/tmp/runtime-$UID"
+        mkdir -p "$XDG_RUNTIME_DIR"
+        chmod 700 "$XDG_RUNTIME_DIR"
+      fi
     '';
   };
 }
