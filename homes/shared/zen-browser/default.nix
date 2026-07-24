@@ -41,11 +41,13 @@
           darkreader
           mouse-tooltip-translator-pdf
           qr-code-address-bar
+          tampermonkey
           ublock-origin
+          zen-internet
         ];
       };
 
-      search.default = "ddg";
+      search.default = "google";
 
       settings = {
         "browser.translations.automaticallyPopup" = false;
@@ -63,8 +65,11 @@
   };
 
   home.activation.cleanupZen = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    rm -f /home/${username}/.zen/default/search.json.mozlz4
+    rm -f /home/${username}/.config/zen/default/search.json.mozlz4
   '';
 
-  home.file.".zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
+  home.file = {
+    ".config/zen/default/zen-keyboard-shortcuts.json".source = ./zen-keyboard-shortcuts.json;
+    ".config/zen/default/zen-themes.json".source = ./zen-mods-export.json;
+  };
 }
