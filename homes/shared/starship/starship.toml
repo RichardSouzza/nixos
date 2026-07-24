@@ -11,6 +11,8 @@ $git_branch\
 $git_status\
 \n$character"""
 
+scan_timeout = 200
+
 [username]
 format = '[$user]($style)'
 style_user = 'white'
