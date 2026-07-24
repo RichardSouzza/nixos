@@ -1,12 +1,14 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   imports = [
+    inputs.nixvim.homeModules.${system}.nixvim
     ./shared/btop
     ./shared/git
     ./shared/gtt
     ./shared/lazygit
-    ./shared/neovim
+    ./shared/libqalculate
+    ./shared/scooter
     ./shared/starship
     ./shared/tealdeer
     ./shared/yazi
@@ -14,32 +16,41 @@
     ../packages
   ];
 
-  home.username = "richard";
-  home.homeDirectory = "/home/richard";
-
   nixpkgs.config = {
     allowUnfree = true;
   };
 
-  programs = {
-    home-manager.enable = true;
-  };
+  home.username = "richard";
+  home.homeDirectory = "/home/richard";
 
   home.packages = with pkgs; [
-  # Pkg name         # Description
-    bat jq           # Utils
-    charasay         # Gabby characters
-    git-extras gitnr # Git Gang
-    fastfetch        # System informations
-    gtrash           # Trash manager
-    libqalculate     # Calculator
-    lsd              # LS Deluxe
-    posting          # HTTP client
-    systemctl-tui    # Systemd services manager
-    television       # Fuzzy file finder
-    tgpt             # Chat AI on the terminal
-    tree             # Tree view
-    # ========== My Neovim ===========================
-    inputs.neovim.packages.${pkgs.system}.default
+  # =======================================================
+  # Pkg Name          # Description
+  # ===== Utils ===========================================
+    bat jq            # Utils
+    charasay          # Gabby characters
+    git-extras gitnr  # Git Gang
+    fastfetch         # System informations
+    fzf               # Fuzzy finder
+  # ===== Dev stuff =======================================
+    python312 rye     # Python
+  # ===== Sys utils ===========================================
+    gtrash            # Trash manager
+    lsd               # LS Deluxe
+    tgpt              # Chat AI on the terminal
+    tree              # Tree view
   ];
+
+  home.file = {
+    ".config/opencode/opencode.json".source = ./shared/opencode/opencode.json;
+  };
+
+  programs = {
+    home-manager.enable = true;
+
+    nixvim = {
+      enable = true;
+      defaultEditor = true;
+    };
+  };
 }

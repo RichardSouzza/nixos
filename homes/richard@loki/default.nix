@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  pkgsUnstable = import <nixpkgs> {};
+  # pkgsUnstable = import <nixpkgs> {};
 
 in
 {
@@ -15,46 +15,37 @@ in
     ../shared/zen-browser
   ];
 
-  home.username = "richard";
-  home.homeDirectory = "/home/richard";
   home.stateVersion = "24.11";
 
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    bluetui bluetuith
-    dbeaver-bin
-    discord
-    docker docker-compose lazydocker
-    gh gitnr lazygit
-    gtt
-    libqalculate
-    nodejs_24
-    obs-studio
-    openssl
-    python311Full
-    smile
-    systemctl-tui
-    television
-    wiper
-  ] ++ (with pkgsUnstable; [
-    posting
-  ]);
+  # =======================================================
+  # Pkg Name                         # Description
+  # ===== Applications ====================================
+    dbeaver-bin                      # Database client
+    hoppscotch                       # API tester
+    jetbrains.rider                  # C# IDE
+    localsend                        # File sharing
+    opencode-desktop                 # Code agent
+    smile                            # Emoji picker
+  # ===== TUIs ============================================
+    bluetui bluetuith                # Bluetooth TUI
+    docker docker-compose lazydocker # Docker
+    systemctl-tui                    # Systemctl TUI
+  # ===== Utils ===========================================
+    gromit-mpx                       # Screen annotation
+    ripdrag                          # Drag and drop
+  # ===== Dev stuff =======================================
+    dotnet-sdk_10                    # Dotnet SDK
+  ];
 
   programs = {
-    home-manager.enable = true;
-
     btop = {
       enable = true;
       settings = {
         color_theme = "adapta";
         update_ms = 100;
-      };
-    };
-
-    yazi.settings = {
-      manager = {
-        show_hidden = true;
       };
     };
   };
