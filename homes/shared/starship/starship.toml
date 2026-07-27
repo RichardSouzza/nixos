@@ -1,11 +1,17 @@
 format = """
-$nix_shell\
 $username\
 $hostname\
 $directory\
+$golang\
+$java\
+$nix_shell\
+$python\
+$rust\
 $git_branch\
 $git_status\
 \n$character"""
+
+scan_timeout = 200
 
 [username]
 format = '[$user]($style)'
@@ -31,9 +37,26 @@ style = 'bold blue'
 
 [git_status]
 format = '([$ahead_behind$diverged]($style))'
-ahead  = '[⇡${count}](bold green)'
+ahead = '[⇡${count}](bold green)'
 behind = '[⇣${count}](bold yellow)'
 
+[golang]
+symbol = '🐹 '
+format = '[$symbol($version )]($style) '
+
+[java]
+symbol = '☕ '
+format = '[${symbol}(${version} )]($style) '
+
 [nix_shell]
-format = '$symbol'
 symbol = '❄️ '
+format = '[$symbol$state( \($name\))]($style) '
+
+[python]
+symbol = '🐍 '
+python_binary = 'python3'
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
+
+[rust]
+symbol = '🦀 '
+format = '[$symbol($version )]($style) '
