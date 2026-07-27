@@ -32,7 +32,7 @@
         };
       };
       theme = "tokyonight";
-      translator = "Bing";
+      translator = "Google";
       transparent = true;
     };
 

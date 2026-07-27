@@ -27,10 +27,9 @@
         user.name = "Richard Souza";
         user.email = "souzza.richard25@gmail.com";
 
-        advice = {
-          defaultBranchName = "master";
+        commit = {
+          gpgsign = true;
         };
-
         core = {
           autocrlf = "input";
           editor = "nvim";
@@ -40,6 +39,9 @@
         };
         difftool = {
           prompt = false;
+        };
+        init = {
+          defaultBranch = "master";
         };
         merge = {
           tool = "nvimdiff2";
