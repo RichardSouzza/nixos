@@ -1,4 +1,4 @@
-{ lib, username, ... }:
+{ lib, pkgs, username, ... }:
 
 let
   hyprpaperConfig = "/home/${username}/.config/hypr/hyprpaper.conf";
@@ -9,9 +9,46 @@ in
     packages = with pkgs;  [
       bibata-cursors
       nordzy-cursor-theme
+      hyprpicker
     ];
     file = {
       ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+    };
+  };
+
+  programs = {
+    hyprlock = {
+      enable = true;
+    };
+  };
+
+  services = {
+    hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          lock_cmd = "pidof hyprlock || hyprlock";
+          unlock_cmd = "pkill --signal SIGUSR1 hyprlock";
+          before_sleep_cmd = "loginctl lock-session";
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+        };
+
+        listener = [
+          {
+            timeout = 300;
+            on-timeout = "loginctl lock-session";
+          }
+          {
+            timeout = 600;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+          {
+            timeout = 1800;
+            on-timeout = "systemctl suspend";
+          }
+        ];
+      };
     };
   };
 }
@@ -20,8 +57,11 @@ in
   home.activation.mkHyprpaperConfig =
     lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
       cat <<-EOF > ~/.config/hypr/hyprpaper.conf
-      preload=~/imgs/wallpapers/
-      wallpaper=eDP-1, ~/imgs/wallpapers/
+      wallpaper {
+          monitor =
+          path = ~/imgs/wallpapers/
+      }
+      splash = false;
       EOF
     '';
 } else {})
