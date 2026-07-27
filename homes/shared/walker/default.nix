@@ -1,8 +1,19 @@
 {
-  services.walker = {
-    enable = true;
-    settings = {
-      theme = "default";
+  services = {
+    elephant = {
+      enable = true;
+      settings = {
+        providers = {
+          default = [
+            "desktopapplications"
+            "runner"
+          ];
+        };
+      };
+    };
+    walker = {
+      enable = true;
+      systemd.enable = true;
     };
   };
 }
