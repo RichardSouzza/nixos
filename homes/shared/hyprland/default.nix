@@ -5,8 +5,14 @@ let
 
 in
 {
-  home.file = {
-    ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  home = {
+    packages = with pkgs;  [
+      bibata-cursors
+      nordzy-cursor-theme
+    ];
+    file = {
+      ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+    };
   };
 }
 // (if !builtins.pathExists hyprpaperConfig then
