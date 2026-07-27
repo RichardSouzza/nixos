@@ -1,10 +1,9 @@
 { config, lib, pkgs, ... }:
 
-with lib;
-
 let
   cfg = config.gtt;
-  settingsFormat = pkgs.formats.yaml { };
+  yamlFormat = pkgs.formats.yaml { };
+  inherit (lib) mkEnableOption mkPackageOption mkOption mkIf;
 
 in
 {
@@ -14,7 +13,7 @@ in
     gtt.package = mkPackageOption pkgs "gtt" { nullable = true; };
 
     gtt.settings = mkOption {
-      inherit (settingsFormat) type;
+      inherit (yamlFormat) type;
       default = { };
       description = ''
         GTT configuration.
@@ -24,7 +23,7 @@ in
     };
 
     gtt.keymaps = mkOption {
-      inherit (settingsFormat) type;
+      inherit (yamlFormat) type;
       default = { };
       description = ''
         GTT keymap file.
@@ -34,7 +33,7 @@ in
     };
 
     gtt.themes = mkOption {
-      inherit (settingsFormat) type;
+      inherit (yamlFormat) type;
       default = { };
       description = ''
         GTT theme file.
@@ -49,15 +48,15 @@ in
 
     xdg.configFile = {
       "gtt/gtt.yaml" = mkIf (cfg.settings != { }) {
-        source = settingsFormat.generate "gtt-settings" cfg.settings;
+        source = yamlFormat.generate "gtt.yaml" cfg.settings;
       };
 
       "gtt/keymap.yaml" = mkIf (cfg.keymaps != { }) {
-        source = settingsFormat.generate "gtt-keymaps" cfg.keymaps;
+        source = yamlFormat.generate "keymap.yaml" cfg.keymaps;
       };
 
       "gtt/theme.yaml" = mkIf (cfg.themes != { }) {
-        source = settingsFormat.generate "gtt-themes" cfg.themes;
+        source = yamlFormat.generate "theme.yaml" cfg.themes;
       };
     };
   };
