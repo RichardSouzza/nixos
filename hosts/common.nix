@@ -36,7 +36,11 @@
     git
   ];
 
-  programs.zsh.enable = true;
+  programs = {
+    nix-ld.enable = true;
+    nix-ld.libraries = [];
+    zsh.enable = true;
+  };
 
   environment.etc = {
     "gitconfig".source = ../modules/git/gitconfig;

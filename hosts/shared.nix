@@ -52,8 +52,6 @@
 
   # Install shared programs
   programs = {
-    nix-ld.enable = true; # Unpatched binaries runner
-    nix-ld.libraries = [];
   };
 
   environment.systemPackages = with pkgs; [
@@ -61,7 +59,6 @@
     btop          # Resource monitor
     kitty         # Feline terminal
     nautilus      # Gnome files
-    superfile     # A super filer
   ];
 
   environment.extraInit = ''
