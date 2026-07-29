@@ -17,6 +17,7 @@ in
   };
 
   programs = {
+    feh.enable = true;
     hyprlock = {
       enable = true;
     };
