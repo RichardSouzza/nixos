@@ -5,13 +5,13 @@
 Rebuild NixOS with Flake:
 
 ```sh
-nixos-rebuild switch --flake /etc/nixos/#default
+nixos-rebuild switch --flake /etc/nixos/#hostname
 ```
 
 Update home:
 
 ```sh
-home-manager switch --flake /etc/nixos/#richard
+home-manager switch --flake /etc/nixos/#user@hostname
 ```
 
 List generations:
@@ -20,16 +20,12 @@ List generations:
 nixos-rebuild list-generations
 ```
 
-Delete older generations:
+Updating:
 
 ```sh
-nix-collect-garbage --delete-older-than 5d
-```
-
-See Home Manager manual:
-
-```sh
-man home-configuration.nix
+nix-channel --update
+nix flake update <input> --flake /etc/nixos
+sudo nixos-rebuild switch --flake /etc/nixos/#hostname --upgrade-all
 ```
 
 ## Setup
@@ -96,7 +92,66 @@ sudo nmcli connection add type wifi \
     ssid <SSID> \
     wifi-sec.key-mgmt wpa-eap \
     802-1x.eap peap \
-    802-1x.identity "<identity>"
+    802-1x.identity "<identity>" \
     802-1x.password "<password>" \
     802-1x.phase2-auth mschapv2
+```
+
+## Cleanup
+
+Remove old generations:
+
+```sh
+sudo nix-collect-garbage -d # root
+nix-collect-garbage -d      # user
+```
+
+Optimise Nix store:
+
+```sh
+sudo nix-store --optimise
+```
+
+All in on:
+
+```sh
+sudo nix-collect-garbage -d && nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --optimise
+```
+
+## Rollback
+
+Rollback system:
+
+```sh
+nixos-rebuild list-generations
+sudo nix-env --switch-generation <generation_number>
+```
+
+Rollback home:
+
+```sh
+home-manager generations
+/nix/store/...-home-manager-generation/activate
+```
+
+Rollback channels:
+
+```sh
+sudo nix-channel --list-generations
+sudo nix-channel --rollback <generation_number>
+```
+
+## Troubleshooting
+
+`Pre-switch check 'switchInhibitors' failed`
+
+This happens because the new build is replacing critical system components
+that could cause problems if swapped while the system is running.
+
+To apply the new build, enable its activation for the next boot and
+then restart.
+
+```sh
+nixos-rebuild boot --flake /etc/nixos/#magus
+reboot
 ```
