@@ -4,7 +4,7 @@
       ./../common.nix
       ./../shared.nix
       ./../../modules/hyprland
-      ./../../modules/nvidia
+      # ./../../modules/nvidia
       ./hardware-configuration.nix
     ];
 
@@ -48,9 +48,9 @@
         settings = {
           main = {
             capslock = "esc";
-            esc = "capslock";
             kpdelete = "delete";
-            kpenter = "leftmeta";
+            leftalt = "layer(alt)";
+            kpenter = "enter";
             kp1 = "end";
             kp2 = "down";
             kp3 = "pagedown";
@@ -60,6 +60,9 @@
             kp7 = "home";
             kp8 = "up";
             kp9 = "pageup";
+          };
+          alt = {
+            esc = "capslock";
           };
         };
       };

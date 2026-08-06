@@ -37,22 +37,6 @@
     "updatedAt": "2025-11-16",
     "enabled": true
   },
-  "1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6": {
-    "id": "1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6",
-    "name": "Remove Tab X",
-    "description": "Removes the X from tabs which closes them.",
-    "homepage": "https://github.com/xXMacMillanXx/remove-tab-x",
-    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6/chrome.css",
-    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6/readme.md",
-    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6/image.png",
-    "author": "xXMacMillanXx",
-    "version": "1.1.1",
-    "tags": [],
-    "createdAt": "2025-03-11",
-    "updatedAt": "2026-02-18",
-    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1b88a6d1-d931-45e8-b6c3-bfdca2c7e9d6/preferences.json",
-    "enabled": true
-  },
   "642854b5-88b4-4c40-b256-e035532109df": {
     "id": "642854b5-88b4-4c40-b256-e035532109df",
     "name": "Transparent Zen",

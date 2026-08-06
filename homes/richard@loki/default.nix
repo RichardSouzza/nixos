@@ -25,11 +25,14 @@ in
     bluetui bluetuith
     dbeaver-bin
     docker docker-compose lazydocker
+    grim
     gromit-mpx
     hoppscotch
     localsend
     opencode-desktop
     openssl
+    satty
+    slurp
     smile
     systemctl-tui
     television
