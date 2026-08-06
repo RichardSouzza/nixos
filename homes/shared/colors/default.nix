@@ -1,6 +1,4 @@
-{ hostname, ... }:
-
-let
+rec {
   palletes = {
     nord = {
       base0  = "#2e3440";
@@ -37,27 +35,23 @@ let
 
   colorsMapping = with palletes;  {
     loki = {
-      # primary = colors.;
-      # secondary = colors.;
-      # tertiary = colors.;
-      surface = nord.base0;
-      outline = nord.base3;
-      outlineVariant = tailwindcss.slate-300;
-
+      # Dunst
       background = nord.base0;
       highlight = tailwindcss.slate-300;
       foreground = nord.base4;
       frame_color = nord.base3;
-    };
-    magus = {
 
+      # Zen Browser
+      accentColor = nord.base2;
+      textHighlightBackground = nord.base2;
+      textSelectAttentionBackground = nord.base14;
+    };
+
+    oracle = {
+      # TODO: Set colors
     };
   };
 
   getColorsByHostname = hostname:
     builtins.getAttr hostname colorsMapping;
-
-in
-{
-  colors = getColorsByHostname hostname;
 }

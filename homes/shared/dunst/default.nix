@@ -1,9 +1,5 @@
-{ hostname, ... }:
+{ colors, ... }:
 
-let
-  colors = (import ../colors { inherit hostname; }).colors;
-
-in
 {
   home.file = {
     ".config/hypr/notify-brightness.sh".source = ./notify-brightness.sh;

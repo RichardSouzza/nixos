@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, username, ... }:
+{ colors, inputs, lib, pkgs, username, ... }:
 
 {
   imports = [
@@ -56,7 +56,9 @@
         "layout.css.zoom" = "1.1";
         "layout.spellcheckDefault" = 0;
         "middlemouse.paste" = false;
-        "zen.theme.accent-color" = "#424A62";
+        "ui.textHighlightBackground" = colors.textHighlightBackground;
+        "ui.textSelectAttentionBackground" = colors.textSelectAttentionBackground;
+        "zen.theme.accent-color" = colors.accentColor;
         "zen.theme.color-prefs.use-workspace-colors" = true;
         "zen.view.use-single-toolbar" = true;
         "zen.welcome-screen.seen" = true;
