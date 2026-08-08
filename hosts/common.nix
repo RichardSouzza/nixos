@@ -44,6 +44,5 @@
 
   environment.etc = {
     "gitconfig".source = ../modules/git/gitconfig;
-    "tlp.conf".source = ../modules/tlp/tlp.conf;
   };
 }

@@ -1,11 +1,12 @@
 {
   imports =
     [
+      ./hardware-configuration.nix
       ./../common.nix
       ./../shared.nix
       ./../../modules/hyprland
       ./../../modules/nvidia
-      ./hardware-configuration.nix
+      ./../../modules/tlp
     ];
 
   # Configure LUKS encryption.

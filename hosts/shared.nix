@@ -33,9 +33,6 @@
     pulse.enable = true;
   };
 
-  # Enable battery saver
-  services.tlp.enable = true;
-
   # Enable Flatpak
   services.flatpak.enable = true;
 
