@@ -1,10 +1,5 @@
-let
-  blue-700  = "#1d4ed8";
-  blue-900  = "#1e3a8a";
-  slate-300 = "#cbd5e1";
-  slate-900 = "#0f172a";
+{ colors, ... }:
 
-in
 {
   home.file = {
     ".config/hypr/notify-brightness.sh".source = ./notify-brightness.sh;
@@ -22,11 +17,12 @@ in
         icon_position = "off";
         corner_radius = 10;
         frame_width = 1;
-        frame_color = blue-900;
-        background = slate-900;
-        foreground = slate-300;
-        highlight = blue-700;
         timeout = 1;
+
+        background = colors.background;
+        highlight = colors.highlight;
+        foreground = colors.foreground;
+        frame_color = colors.frame_color;
       };
     };
   };
