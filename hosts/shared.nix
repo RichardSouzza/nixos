@@ -48,15 +48,19 @@
   virtualisation.docker.enable = true;
 
   # Install shared programs
-  programs = {
-  };
-
   environment.systemPackages = with pkgs; [
     brightnessctl # Brightness controller
     btop          # Resource monitor
     kitty         # Feline terminal
     nautilus      # Gnome files
   ];
+
+  programs = {
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
+    };
+  };
 
   environment.extraInit = ''
     unset -v SSH_ASKPASS

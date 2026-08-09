@@ -51,8 +51,8 @@
         settings = {
           main = {
             capslock = "esc";
-            esc = "capslock";
             kpdelete = "delete";
+            leftalt = "layer(alt)";
             kpenter = "enter";
             kp1 = "end";
             kp2 = "down";
@@ -63,6 +63,9 @@
             kp7 = "home";
             kp8 = "up";
             kp9 = "pageup";
+          };
+          alt = {
+            esc = "capslock";
           };
         };
       };

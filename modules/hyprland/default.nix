@@ -12,7 +12,6 @@
 
   environment.systemPackages = with pkgs; [
     clipse
-    grimblast
     gtk4
     hyprland
     hyprpaper

@@ -91,14 +91,14 @@
 
         pulseaudio = {
           format = "{icon}  {volume}%";
-          format-bluetooth = "{icon}  {volume}% ";
+          format-bluetooth = "{icon}  {volume}%";
           format-muted = "";
           format-icons = {
             default = ["" "" "" "" "" "" "" "" "" ""]; # 0% - 10% - 50% - 100%
             car = "";
-            hands-free = "";
-            headphone = "";
-            headset = "";
+            hands-free = "";
+            headphone = "";
+            headset = "";
             phone = "";
             phone-muted = "";
             portable = "";

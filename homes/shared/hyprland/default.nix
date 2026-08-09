@@ -7,12 +7,25 @@ in
 {
   home = {
     packages = with pkgs;  [
-      bibata-cursors
-      nordzy-cursor-theme
-      hyprpicker
+    # Package name        # Description
+    # =================================
+      bibata-cursors      # Cursor
+      grimblast           # Screenshot
+      nordzy-cursor-theme # Cursor
+      hyprpicker          # Eyedropper
+      hyprpolkitagent     # Polkit authentication agent
     ];
+
     file = {
       ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+    };
+
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      name = "Nordzy";
+        package = pkgs.nordzy-cursor-theme;
+        size = 22;
     };
   };
 

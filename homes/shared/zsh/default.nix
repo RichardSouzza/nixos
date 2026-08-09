@@ -39,6 +39,7 @@
       cdc   = "cd ~/Nixvim";
       db    = "dbeaver";
       dok   = "lazydocker";
+      dtree  = "lsd --tree";
       e     = "superfile";
       g     = "lazygit";
       gg    = "gitui";
@@ -53,8 +54,7 @@
       rm    = "gtrash put";
       rs    = "gtrash restore";
       tgpt  = "tgpt --provider sky";
-      tree  = "lsd --tree";
-      tree2 = "tree --gitignore --dirsfirst";
+      tree  = "tree --gitignore --dirsfirst";
       v     = "nvim .";
       vf    = "vf";
       y     = "y";

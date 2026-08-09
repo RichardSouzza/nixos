@@ -28,7 +28,7 @@
         user.email = "souzza.richard25@gmail.com";
 
         commit = {
-          gpgsign = true;
+          gpgsign = false;
         };
         core = {
           autocrlf = "input";

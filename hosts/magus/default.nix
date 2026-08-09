@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -15,6 +15,10 @@
   wsl.enable = true;
   wsl.defaultUser = "richard";
   wsl.wslConf.network.hostname = "magus";
+
+  users.users.richard = {
+    linger = true;
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 

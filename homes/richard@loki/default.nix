@@ -10,6 +10,7 @@ in
     ../shared/dunst
     ../shared/hyprland
     ../shared/kitty
+    ../shared/rider
     ../shared/walker
     ../shared/waybar
     ../shared/zen-browser
@@ -21,23 +22,20 @@ in
 
   home.packages = with pkgs; [
   # =======================================================
-  # Pkg Name                         # Description
-  # ===== Applications ====================================
-    dbeaver-bin                      # Database client
-    hoppscotch                       # API tester
-    jetbrains.rider                  # C# IDE
-    localsend                        # File sharing
-    opencode-desktop                 # Code agent
-    smile                            # Emoji picker
-  # ===== TUIs ============================================
-    bluetui bluetuith                # Bluetooth TUI
-    docker docker-compose lazydocker # Docker
-    systemctl-tui                    # Systemctl TUI
-  # ===== Utils ===========================================
-    gromit-mpx                       # Screen annotation
-    ripdrag                          # Drag and drop
-  # ===== Dev stuff =======================================
-    dotnet-sdk_10                    # Dotnet SDK
+  # Pkg Name                          # Description
+  # ===== Applications =====================================
+    dbeaver-bin                       # Database client
+    hoppscotch                        # API tester
+    localsend                         # File sharing
+    opencode-desktop                  # Code agent
+    smile                             # Emoji picker
+  # ===== TUIs =============================================
+    bluetui bluetuith                 # Bluetooth TUI
+    docker docker-compose lazydocker  # Docker
+    systemctl-tui                     # Systemctl TUI
+  # ===== Utils ============================================
+    gromit-mpx                        # Screen annotation
+    ripdrag                           # Drag and drop
   ];
 
   programs = {
