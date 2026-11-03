@@ -50,6 +50,7 @@
       search.default = "google";
 
       settings = {
+        "browser.tabs.hoverPreview.enabled" = true;
         "browser.translations.automaticallyPopup" = false;
         "extensions.autoDisableScopes" = 0;
         "extensions.update.enabled" = false;

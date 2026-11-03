@@ -112,7 +112,7 @@ Optimise Nix store:
 sudo nix-store --optimise
 ```
 
-All in on:
+All in one:
 
 ```sh
 sudo nix-collect-garbage -d && nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --optimise

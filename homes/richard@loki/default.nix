@@ -21,21 +21,25 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-  # =======================================================
+  # ======================================================
   # Pkg Name                          # Description
-  # ===== Applications =====================================
+  # ===== Applications ===================================
     dbeaver-bin                       # Database client
     hoppscotch                        # API tester
     localsend                         # File sharing
     opencode-desktop                  # Code agent
     smile                             # Emoji picker
-  # ===== TUIs =============================================
+  # ===== TUIs ===========================================
     bluetui bluetuith                 # Bluetooth TUI
     docker docker-compose lazydocker  # Docker
     systemctl-tui                     # Systemctl TUI
-  # ===== Utils ============================================
+  # ===== Utils ==========================================
     gromit-mpx                        # Screen annotation
     ripdrag                           # Drag and drop
+  # ===== Temp =;=========================================
+    dart
+    openjdk8
+    android-studio
   ];
 
   programs = {

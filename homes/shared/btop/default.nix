@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       color_theme = "adapta";
-      update_ms = 100;
+      update_ms = 1000;
     };
   };
 }

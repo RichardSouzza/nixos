@@ -24,18 +24,19 @@
   home.homeDirectory = "/home/richard";
 
   home.packages = with pkgs; [
-  # =======================================================
+  # ============================================
   # Pkg Name          # Description
-  # ===== Utils ===========================================
+  # ===== Utils ================================
     bat jq            # Utils
     charasay          # Gabby characters
     chroncal          # Calendar
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
     fzf               # Fuzzy finder
-  # ===== Dev stuff =======================================
+  # ===== Dev stuff ============================
+    nodejs            # Node.js
     python312         # Python
-  # ===== Sys utils ===========================================
+  # ===== Sys utils ============================
     gtrash            # Trash manager
     lsd               # LS Deluxe
     tgpt              # Chat AI on the terminal
