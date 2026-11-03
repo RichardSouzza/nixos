@@ -15,6 +15,7 @@
   wsl.enable = true;
   wsl.defaultUser = "richard";
   wsl.wslConf.network.hostname = "magus";
+  wsl.interop.register = true;
 
   users.users.richard = {
     linger = true;

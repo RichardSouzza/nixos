@@ -29,11 +29,12 @@
   # ===== Utils ===========================================
     bat jq            # Utils
     charasay          # Gabby characters
+    chroncal          # Calendar
     git-extras gitnr  # Git Gang
     fastfetch         # System informations
     fzf               # Fuzzy finder
   # ===== Dev stuff =======================================
-    python312 rye     # Python
+    python312         # Python
   # ===== Sys utils ===========================================
     gtrash            # Trash manager
     lsd               # LS Deluxe

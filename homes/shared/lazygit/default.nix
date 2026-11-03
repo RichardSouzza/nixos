@@ -6,12 +6,13 @@
     settings = {
       gui.sidePanelWidth = 0.2;
       git = {
-        pagers = [
+        diffRenderers = [
           {
-             pager = "${pkgs.delta}/bin/delta --dark --line-numbers --paging=never --syntax-theme=ansi";
+             command = "${pkgs.delta}/bin/delta --dark --line-numbers --paging=never --syntax-theme=ansi";
           }
           {
-            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+             command = "${pkgs.difftastic}/bin/difft --color=always";
+             type = "extDiff";
           }
         ];
         parseEmoji = true;
