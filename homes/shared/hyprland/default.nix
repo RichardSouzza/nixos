@@ -17,7 +17,7 @@ in
     ];
 
     file = {
-      ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+      ".config/hypr/hyprland.lua".source = ./hyprland.lua;
     };
 
     pointerCursor = {
