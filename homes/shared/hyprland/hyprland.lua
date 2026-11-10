@@ -283,7 +283,7 @@ hl.bind("SUPER + C", hl.dsp.exec_cmd("kitty --class clipse -e clipse"))
 
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus --new-window"))
 
-hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = 1 }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 
 hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 
@@ -305,7 +305,7 @@ hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grimblast --notify --freeze copy outpu
 
 hl.bind("Print", hl.dsp.exec_cmd("grimblast --notify --freeze copy area"))
 
-hl.bind("F11", hl.dsp.window.fullscreen())
+hl.bind("F11", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
 -- Move focus with SUPER + arrow keys
 
@@ -391,13 +391,13 @@ hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
 
 hl.bind("SUPER + SHIFT + Page_Up", hl.dsp.window.move({ workspace = "special:magic" }))
 
-hl.bind("SUPER + SHIFT + Page_Down", hl.dsp.window.move({ direction = "previous" }))
+hl.bind("SUPER + SHIFT + Page_Down", hl.dsp.window.move({ workspace = "previous" }))
 
 -- Move/resize windows with SUPER + LMB/RMB and dragging
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize({ x = 0, y = 0, relative = true }), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Gromit keybinds
 
@@ -451,7 +451,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Ignore maximize requests from apps. You'll probably like this.
 
 hl.window_rule({
-    name  = "supress-maximize-events,",
+    name  = "supress-maximize-events",
     match = {
         class = ".*",
     },
@@ -530,72 +530,20 @@ hl.workspace_rule({
     gaps_in = 0,
     gaps_out = 0,
     decorate = false,
-    border = false,
-    on-created-empty = "gromit-mpx -a -o 0",
+    no_border = true,
+    on_created_empty = "gromit-mpx -a -o 0",
 })
 
 hl.window_rule({
-    name  = "size_100__100__365",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
+    name  = "gromit",
+    match = { class = "^(Gromit-mpx)$" },
     size = { "100%", "100%" },
-})
-
-hl.window_rule({
-    name  = "no_blur_on_366",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "no_blur on"
-})
-
-hl.window_rule({
-    name  = "no_anim_on_367",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "no_anim on"
-})
-
-hl.window_rule({
-    name  = "no_dim_on_368",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "no_dim on"
-})
-
-hl.window_rule({
-    name  = "no_shadow_on_369",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "no_shadow on"
-})
-
-hl.window_rule({
-    name  = "opacity_1_override_370",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
+    no_blur = true,
+    no_anim = true,
+    no_dim = true,
+    no_shadow = true,
     opacity = { 1, "override" },
-})
-
-hl.window_rule({
-    name  = "suppress_event_fulls_371",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "suppress_event fullscreen"
-})
-
-hl.window_rule({
-    name  = "suppress_event_fulls_372",
-    match = {
-        class = "^(Gromit-mpx)$",
-    },
-    -- TODO: review rule: "suppress_event fullscreen maximize"
+    suppress_event = "fullscreen maximize",
 })
 
 -- Configure Kitty
@@ -639,59 +587,25 @@ hl.window_rule({
 -- https://github.com/hyprwm/Hyprland/issues/2412
 
 hl.window_rule({
-    name  = "center_true_384",
-    match = {
-        class = "jetbrains-.*",
-        title = "splash",
-        float = true,
-    },
+    name  = "jetbrains-splash",
+    match = { class = "jetbrains-.*", title = "splash", float = true },
     center = true,
+    no_focus = true,
 })
 
 hl.window_rule({
-    name  = "no_focus_true_385",
-    match = {
-        class = "jetbrains-.*",
-        title = "splash",
-        float = true,
-    },
-    -- TODO: review rule: "no_focus true"
+    name  = "jetbrains-win-popups",
+    match = { class = "jetbrains-.*", title = "win.*", float = true },
+    no_focus = true,
 })
 
 hl.window_rule({
-    name  = "no_focus_true_386",
-    match = {
-        class = "jetbrains-.*",
-        title = "win.*",
-        float = true,
-    },
-    -- TODO: review rule: "no_focus true"
-})
-
-hl.window_rule({
-    name  = "no_blur_true_387",
-    match = {
-        class = "jetbrains-.*",
-        float = true,
-    },
-    -- TODO: review rule: "no_blur true"
-})
-
-hl.window_rule({
-    name  = "no_initial_focus_tru_388",
-    match = {
-        class = "jetbrains-.*",
-        float = true,
-    },
-    -- TODO: review rule: "no_initial_focus true"
-})
-
-hl.window_rule({
-    name  = "opacity_1_override_1_389",
-    match = {
-        class = "jetbrains-.*",
-        float = true,
-    },
+    name  = "jetbrains-floating",
+    match = { class = "jetbrains-.*", float = true },
+    no_blur = true,
+    no_initial_focus = true,
+    -- Se o hyprctl reload reclamar desta linha, tente a forma em string:
+    -- opacity = "1 override 1 override 1 override",
     opacity = { 1, "override", 1, "override", 1 },
 })
 
