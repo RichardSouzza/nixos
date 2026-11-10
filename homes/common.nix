@@ -31,15 +31,15 @@
     charasay          # Gabby characters
     chroncal          # Calendar
     git-extras gitnr  # Git Gang
-    fastfetch         # System informations
-    fzf               # Fuzzy finder
   # ===== Dev stuff ============================
     nodejs            # Node.js
     python312         # Python
   # ===== Sys utils ============================
+    fastfetch         # System informations
+    fzf               # Fuzzy finder
     gtrash            # Trash manager
     lsd               # LS Deluxe
-    tgpt              # Chat AI on the terminal
+    ripgrep           # Fastter grep
     tree              # Tree view
   ];
 
