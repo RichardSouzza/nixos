@@ -3,6 +3,8 @@
 {
   imports = [
     ../common.nix
+    (../. + "/richard@magus/chezmoi")
+    (../. + "/richard@magus/zsh")
   ];
 
   home.stateVersion = "25.05";

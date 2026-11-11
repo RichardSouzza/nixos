@@ -1,0 +1,2 @@
+sourceDir = "~/.local/share/chezmoi-win"
+destDir = "/mnt/c/Users/richards"
