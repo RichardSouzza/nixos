@@ -25,6 +25,16 @@
           desc = "Jump to char";
         }
         {
+          on = "<PageUp>";
+          run = "seek -1";
+          desc = "Scroll up preview window";
+        }
+        {
+          on = "<PageDown>";
+          run = "seek 1";
+          desc = "Scroll up preview window";
+        }
+        {
           on = "<C-d>";
           run = "plugin drag";
           desc = "Drag files";
