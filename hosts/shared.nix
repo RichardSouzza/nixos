@@ -1,57 +1,26 @@
 { pkgs, ... }:
 
 {
-  # Use the systemd-boot EFI boot loader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Configure network
-  networking.networkmanager.enable = true;
-
-  # Time zone
-  time.timeZone = "America/Maceio";
-
-  # Internationalisation properties
-  i18n.defaultLocale = "pt_BR.UTF-8";
-  console = {
-    font = "ter-v14n";
-    keyMap = "br-abnt2";
-    packages = with pkgs; [
-      terminus_font
-    ];
-  };
-
-  # Add fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    texlivePackages.josefin
+  imports = [
+    ../modules/system/core/boot
+    ../modules/system/hardware/bluetooth
+    ../modules/system/packages/fonts
+    ../modules/system/services/dbus
+    ../modules/system/services/docker
+    ../modules/system/services/flatpak
+    ../modules/system/services/gdm
+    ../modules/system/services/networkmanager
+    ../modules/system/services/pipewire
+    ../modules/system/services/polkit
+    ../modules/system/services/xserver
   ];
 
-  # Enable sound
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
+  # Install and configure shared programs
 
-  # Enable Flatpak
-  services.flatpak.enable = true;
-
-  systemd.services.flatpak-repo = {
-    wantedBy= [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  # Enable Docker daemon
-  virtualisation.docker.enable = true;
-
-  # Install shared programs
   environment.systemPackages = with pkgs; [
     brightnessctl # Brightness controller
     btop          # Resource monitor
-    kitty         # Feline terminal
+    kitty         # Terminal
     nautilus      # Gnome files
   ];
 
@@ -61,10 +30,6 @@
       terminal = "kitty";
     };
   };
-
-  environment.extraInit = ''
-    unset -v SSH_ASKPASS
-  '';
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

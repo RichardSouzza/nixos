@@ -1,5 +1,5 @@
 {
-  libqalculate = {
+  programs.libqalculate = {
     enable = true;
     settings = {
       "Mode" = {

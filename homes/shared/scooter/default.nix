@@ -1,5 +1,5 @@
 {
-  scooter = {
+  programs.scooter = {
     enable = true;
     settings = {
       keys = {

@@ -13,7 +13,7 @@
     ./shared/tealdeer
     ./shared/yazi
     ./shared/zsh
-    ../packages
+    ../modules/home
   ];
 
   nixpkgs.config = {

@@ -1,18 +1,18 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.libqalculate;
+  cfg = config.programs.libqalculate;
   iniFormat = pkgs.formats.ini { };
   inherit (lib) mkEnableOption mkPackageOption mkOption mkIf;
 
 in
 {
-  options = {
-    libqalculate.enable = mkEnableOption "Enable Qalculate!";
+  options.programs.libqalculate = {
+    enable = mkEnableOption "Qalculate!, a multi-purpose cross-platform desktop calculator";
 
-    libqalculate.package = mkPackageOption pkgs "libqalculate" { nullable = true; };
+    package = mkPackageOption pkgs "libqalculate" { nullable = true; };
 
-    libqalculate.settings = mkOption {
+    settings = mkOption {
       inherit (iniFormat) type;
       default = { };
       description = ''

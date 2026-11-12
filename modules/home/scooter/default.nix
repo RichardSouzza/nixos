@@ -1,18 +1,18 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.scooter;
+  cfg = config.programs.scooter;
   tomlFormat = pkgs.formats.toml { };
   inherit (lib) mkEnableOption mkPackageOption mkOption mkIf;
 
 in
 {
-  options = {
-    scooter.enable = mkEnableOption "Enable Scooter";
+  options.programs.scooter = {
+    enable = mkEnableOption "Scooter, an interactive find-and-replace terminal UI app";
 
-    scooter.package = mkPackageOption pkgs "scooter" { nullable = true; };
+    package = mkPackageOption pkgs "scooter" { nullable = true; };
 
-    scooter.settings = mkOption {
+    settings = mkOption {
       inherit (tomlFormat) type;
       default = { };
       description = ''

@@ -1,5 +1,5 @@
 {
-  gtt = {
+  programs.gtt = {
     enable = true;
 
     settings = {

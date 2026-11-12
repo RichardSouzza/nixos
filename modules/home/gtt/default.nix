@@ -1,28 +1,28 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.gtt;
+  cfg = config.programs.gtt;
   yamlFormat = pkgs.formats.yaml { };
   inherit (lib) mkEnableOption mkPackageOption mkOption mkIf;
 
 in
 {
-  options = {
-    gtt.enable = mkEnableOption "Enable Google Translate TUI (GTT)";
+  options.programs.gtt = {
+    enable = mkEnableOption "Enable Google Translate TUI (GTT)";
 
-    gtt.package = mkPackageOption pkgs "gtt" { nullable = true; };
+    package = mkPackageOption pkgs "gtt" { nullable = true; };
 
-    gtt.settings = mkOption {
+    settings = mkOption {
       inherit (yamlFormat) type;
       default = { };
       description = ''
         GTT configuration.
 
-        See <https://github.com/eeeXun/gtt/blob/master/config.go#L39-L63> for documentation.
+        See <https://github.com/eeeXun/gtt/blob/75f8679186eac64a957160352fe3b529ac556a9e/config.go#L39-L62> for documentation.
       '';
     };
 
-    gtt.keymaps = mkOption {
+    keymaps = mkOption {
       inherit (yamlFormat) type;
       default = { };
       description = ''
@@ -32,7 +32,7 @@ in
       '';
     };
 
-    gtt.themes = mkOption {
+    themes = mkOption {
       inherit (yamlFormat) type;
       default = { };
       description = ''

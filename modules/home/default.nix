@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./gtt
+    ./libqalculate
+    ./scooter
+  ];
+}

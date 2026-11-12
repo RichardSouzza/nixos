@@ -1,13 +1,14 @@
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./../common.nix
-      ./../shared.nix
-      ./../../modules/hyprland
-      ./../../modules/nvidia
-      ./../../modules/tlp
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../common.nix
+    ../shared.nix
+    ../../modules/system/hardware/nvidia
+    ../../modules/system/programs/hyprland
+    ../../modules/system/services/keyd
+    ../../modules/system/services/libinput
+    ../../modules/system/services/tlp
+  ];
 
   # Configure LUKS encryption.
   boot.initrd.luks.devices = {
@@ -18,58 +19,6 @@
 
   # Configure hostname.
   networking.hostName = "loki";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable GNOME Display Manager.
-  services.displayManager.gdm.enable = true;
-
-  # Configure keymap in X11.
-  services.xserver.xkb.layout = "br";
-  services.xserver.xkb.model = "pc105";
-
-  # Enable Bluetooth.
-  hardware.bluetooth.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  # Message-oriented middleware.
-  services.dbus.enable = true;
-
-  # Permission manager.
-  security.polkit.enable = true;
-
-  # Key Remapping Deamon
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      default = {
-        ids = [ "*" ];
-        settings = {
-          main = {
-            capslock = "esc";
-            kpdelete = "delete";
-            leftalt = "layer(alt)";
-            kpenter = "enter";
-            kp1 = "end";
-            kp2 = "down";
-            kp3 = "pagedown";
-            kp4 = "left";
-            kp5 = "down";
-            kp6 = "right";
-            kp7 = "home";
-            kp8 = "up";
-            kp9 = "pageup";
-          };
-          alt = {
-            esc = "capslock";
-          };
-        };
-      };
-    };
-  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
