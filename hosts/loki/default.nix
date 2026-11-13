@@ -13,7 +13,7 @@
   # Configure LUKS encryption.
   boot.initrd.luks.devices = {
     crypted = {
-      device = "/dev/disk/by-uuid/92aaebc1-b40b-44bc-aca7-0d7e2a03a274";
+      device = "/dev/disk/by-uuid/11182106-3f53-4153-84ab-167615beb2e6";
     };
   };
 
@@ -36,6 +36,6 @@
   # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
   # and migrated your data accordingly.
   #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion.
-  system.stateVersion = "24.11"; # Did you read the comment?
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+  system.stateVersion = "26.05"; # Did you read the comment?
 }

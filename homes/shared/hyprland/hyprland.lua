@@ -542,43 +542,31 @@ hl.window_rule({
     no_anim = true,
     no_dim = true,
     no_shadow = true,
-    opacity = { 1, "override" },
+    opacity = "1 override",
     suppress_event = "fullscreen maximize",
 })
 
 -- Configure Kitty
 
 hl.window_rule({
-    name  = "opacity_0_8_0_8_375",
-    match = {
-        class = "kitty",
-    },
-    opacity = { 0.8, 0.8 },
+    match = { class = "kitty" },
+    opacity = "0.8 0.8",
 })
 
 -- Configure Smile
 
 hl.window_rule({
-    name  = "float_true_378",
-    match = {
-        class = "(it.mijorus.smile)",
-    },
+    match = { class = "(it.mijorus.smile)" },
     float = true,
 })
 
 hl.window_rule({
-    name  = "pin_true_379",
-    match = {
-        class = "(it.mijorus.smile)",
-    },
+    match = { class = "(it.mijorus.smile)" },
     pin = true,
 })
 
 hl.window_rule({
-    name  = "border_size_1_380",
-    match = {
-        class = "(it.mijorus.smile)",
-    },
+    match = { class = "(it.mijorus.smile)" },
     border_size = 1,
 })
 
@@ -604,9 +592,7 @@ hl.window_rule({
     match = { class = "jetbrains-.*", float = true },
     no_blur = true,
     no_initial_focus = true,
-    -- Se o hyprctl reload reclamar desta linha, tente a forma em string:
-    -- opacity = "1 override 1 override 1 override",
-    opacity = { 1, "override", 1, "override", 1 },
+    opacity = "1 override 1 override 1 override",
 })
 
 -- ###################
