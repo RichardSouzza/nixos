@@ -18,14 +18,14 @@ hl.monitor({
     output   = "eDP-1",
     mode     = "preferred",
     position = "auto",
-    scale    = 1.25,
+    scale    = 1.25
 })
 
 hl.monitor({
     output   = "eDP-2",
     mode     = "preferred",
     position = "auto",
-    scale    = 1,
+    scale    = 1
 })
 
 -- #############################
@@ -91,9 +91,9 @@ hl.config({
         layout = "dwindle",
         col = {
             active_border = "rgba(4c566aff)",
-            inactive_border = "rgba(2e3440ff)",
-        },
-    },
+            inactive_border = "rgba(2e3440ff)"
+        }
+    }
 })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#decoration
@@ -105,7 +105,7 @@ hl.config({
             enabled = true,
             range = 4,
             render_power = 3,
-            color = "rgba(1a1a1aee)",
+            color = "rgba(1a1a1aee)"
         },
         -- https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
@@ -114,38 +114,38 @@ hl.config({
             new_optimizations = true,
             noise = 0,
             passes = 3,
-            size = 10,
-        },
-    },
+            size = 10
+        }
+    }
 })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#animations
 
 hl.config({
     animations = {
-        enabled = true,
+        enabled = true
         -- https://wiki.hyprland.org/Configuring/Animations/ for more
-    },
+    }
 })
 hl.curve("easeOutQuint", {
     type = "bezier",
-    points = { { 0.23, 1 }, { 0.32, 1 } },
+    points = { { 0.23, 1 }, { 0.32, 1 } }
 })
 hl.curve("easeInOutCubic", {
     type = "bezier",
-    points = { { 0.65, 0.05 }, { 0.36, 1 } },
+    points = { { 0.65, 0.05 }, { 0.36, 1 } }
 })
 hl.curve("linear", {
     type = "bezier",
-    points = { { 0, 0 }, { 1, 1 } },
+    points = { { 0, 0 }, { 1, 1 } }
 })
 hl.curve("almostLinear", {
     type = "bezier",
-    points = { { 0.50, 0.5 }, { 0.75, 1 } },
+    points = { { 0.50, 0.5 }, { 0.75, 1 } }
 })
 hl.curve("quick", {
     type = "bezier",
-    points = { { 0.15, 0 }, { 0.10, 1 } },
+    points = { { 0.15, 0 }, { 0.10, 1 } }
 })
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
@@ -186,8 +186,8 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "a
 
 hl.config({
     master = {
-        new_status = "master",
-    },
+        new_status = "master"
+    }
 })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#misc
@@ -200,18 +200,18 @@ hl.config({
         -- If true disables the random hyprland logo / anime girl background. :(
         force_default_wallpaper = 0,
         -- Set to 0 or 1 to disable the anime mascot wallpapers
-        focus_on_activate = true,
+        focus_on_activate = true
         -- Move focus when a window is activated
-    },
+    }
 })
 
 -- https://wiki.hypr.land/Configuring/XWayland/#hidpi-xwayland
 
 hl.config({
     xwayland = {
-        force_zero_scaling = true,
+        force_zero_scaling = true
         -- Fix JetBrains IDEs scaling
-    },
+    }
 })
 
 -- #############
@@ -228,9 +228,9 @@ hl.config({
         sensitivity = 0,
         -- -1.0 - 1.0, 0 means no modification.
         touchpad = {
-            natural_scroll = true,
-        },
-    },
+            natural_scroll = true
+        }
+    }
 })
 
 -- https://wiki.hyprland.org/Configuring/Variables/#gestures
@@ -239,13 +239,13 @@ hl.config({
     gestures = {
         workspace_swipe_touch = true,
         workspace_swipe_cancel_ratio = 0.2,
-        workspace_swipe_forever = true,
-    },
+        workspace_swipe_forever = true
+    }
 })
 hl.gesture({
     ["fingers"] = 3,
     ["direction"] = "horizontal",
-    ["action"] = "workspace",
+    ["action"] = "workspace"
 })
 
 -- Example per-device config
@@ -254,15 +254,15 @@ hl.gesture({
 
 hl.device({
     name = "epic-mouse-v1",
-    sensitivity = -0.5,
+    sensitivity = -0.5
 })
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#cursor
 
 hl.config({
     cursor = {
-        no_hardware_cursors = true,
-    },
+        no_hardware_cursors = true
+    }
 })
 
 -- ###################
@@ -271,8 +271,8 @@ hl.config({
 
 hl.config({
     binds = {
-        hide_special_on_workspace_change = true,
-    },
+        hide_special_on_workspace_change = true
+    }
 })
 
 -- App binds
@@ -405,7 +405,7 @@ hl.bind("SUPER + Z", hl.dsp.workspace.toggle_special("gromit"))
 
 hl.bind("SUPER + Z", hl.dsp.submap("gromit"))
 
-hl.define_submap("gromit", function()
+hl.define_submap("gromit", function ()
     hl.bind("SUPER + Z", hl.dsp.workspace.toggle_special("gromit"))
     hl.bind("SUPER + Z", hl.dsp.submap("reset"))
     hl.bind("CTRL + R", hl.dsp.exec_cmd("gromit-mpx --redo"))
@@ -415,16 +415,27 @@ hl.define_submap("gromit", function()
     hl.bind("Escape", hl.dsp.submap("reset"))
 end)
 
-
 -- Laptop multimedia keys for volume and LCD brightness
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && source ~/.config/hypr/notify-volume-change.sh"))
+hl.bind(
+    "XF86AudioRaiseVolume",
+    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && source ~/.config/hypr/notify-volume-change.sh")
+)
 
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && source ~/.config/hypr/notify-volume-change.sh"))
+hl.bind(
+    "XF86AudioLowerVolume",
+    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && source ~/.config/hypr/notify-volume-change.sh")
+)
 
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && source ~/.config/hypr/notify-volume-toggle.sh"))
+hl.bind(
+    "XF86AudioMute",
+    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && source ~/.config/hypr/notify-volume-toggle.sh")
+)
 
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && source ~/.config/hypr/notify-microphone-toggle.sh"))
+hl.bind(
+    "XF86AudioMicMute",
+    hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && source ~/.config/hypr/notify-microphone-toggle.sh")
+)
 
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+ && source ~/.config/hypr/notify-brightness.sh"))
 
@@ -451,26 +462,26 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Ignore maximize requests from apps. You'll probably like this.
 
 hl.window_rule({
-    name  = "supress-maximize-events",
-    match = {
-        class = ".*",
+    name           = "supress-maximize-events",
+    match          = {
+        class = ".*"
     },
-    suppress_event = "maximize",
+    suppress_event = "maximize"
 })
 
 -- Fix some dragging issues with XWayland
 
 hl.window_rule({
-    name  = "xwayland-drag-fix",
-    match = {
+    name     = "xwayland-drag-fix",
+    match    = {
         class = "^$",
         title = "^$",
         float = true,
         fullscreen = false,
         pin = false,
-        xwayland = true,
+        xwayland = true
     },
-    no_focus = true,
+    no_focus = true
 })
 
 -- Configure Clipse
@@ -478,49 +489,49 @@ hl.window_rule({
 hl.window_rule({
     name  = "float_true_356",
     match = {
-        class = "clipse",
+        class = "clipse"
     },
-    float = true,
+    float = true
 })
 
 hl.window_rule({
     name  = "move_60_560_357",
     match = {
-        class = "clipse",
+        class = "clipse"
     },
-    move = { 60, 560 },
+    move  = { 60, 560 }
 })
 
 hl.window_rule({
     name  = "pin_true_358",
     match = {
-        class = "clipse",
+        class = "clipse"
     },
-    pin = true,
+    pin   = true
 })
 
 hl.window_rule({
     name  = "size_440_300_359",
     match = {
-        class = "clipse",
+        class = "clipse"
     },
-    size = { 440, 300 },
+    size  = { 440, 300 }
 })
 
 hl.window_rule({
-    name  = "stay_focused_true_360",
-    match = {
-        class = "clipse",
+    name         = "stay_focused_true_360",
+    match        = {
+        class = "clipse"
     },
-    stay_focused = true,
+    stay_focused = true
 })
 
 hl.window_rule({
-    name  = "border_size_1_361",
-    match = {
-        class = "clipse",
+    name        = "border_size_1_361",
+    match       = {
+        class = "clipse"
     },
-    border_size = 1,
+    border_size = 1
 })
 
 -- Configure Gromit
@@ -531,43 +542,43 @@ hl.workspace_rule({
     gaps_out = 0,
     decorate = false,
     no_border = true,
-    on_created_empty = "gromit-mpx -a -o 0",
+    on_created_empty = "gromit-mpx -a -o 0"
 })
 
 hl.window_rule({
-    name  = "gromit",
-    match = { class = "^(Gromit-mpx)$" },
-    size = { "100%", "100%" },
-    no_blur = true,
-    no_anim = true,
-    no_dim = true,
-    no_shadow = true,
-    opacity = "1 override",
-    suppress_event = "fullscreen maximize",
+    name           = "gromit",
+    match          = { class = "^(Gromit-mpx)$" },
+    size           = { "100%", "100%" },
+    no_blur        = true,
+    no_anim        = true,
+    no_dim         = true,
+    no_shadow      = true,
+    opacity        = "1 override",
+    suppress_event = "fullscreen maximize"
 })
 
 -- Configure Kitty
 
 hl.window_rule({
     match = { class = "kitty" },
-    opacity = "0.8 0.8",
+    opacity = "0.8 0.8"
 })
 
 -- Configure Smile
 
 hl.window_rule({
     match = { class = "(it.mijorus.smile)" },
-    float = true,
+    float = true
 })
 
 hl.window_rule({
     match = { class = "(it.mijorus.smile)" },
-    pin = true,
+    pin = true
 })
 
 hl.window_rule({
     match = { class = "(it.mijorus.smile)" },
-    border_size = 1,
+    border_size = 1
 })
 
 -- Fix JetBrains IDEs focus
@@ -575,24 +586,24 @@ hl.window_rule({
 -- https://github.com/hyprwm/Hyprland/issues/2412
 
 hl.window_rule({
-    name  = "jetbrains-splash",
-    match = { class = "jetbrains-.*", title = "splash", float = true },
-    center = true,
-    no_focus = true,
+    name     = "jetbrains-splash",
+    match    = { class = "jetbrains-.*", title = "splash", float = true },
+    center   = true,
+    no_focus = true
 })
 
 hl.window_rule({
-    name  = "jetbrains-win-popups",
-    match = { class = "jetbrains-.*", title = "win.*", float = true },
-    no_focus = true,
+    name     = "jetbrains-win-popups",
+    match    = { class = "jetbrains-.*", title = "win.*", float = true },
+    no_focus = true
 })
 
 hl.window_rule({
-    name  = "jetbrains-floating",
-    match = { class = "jetbrains-.*", float = true },
-    no_blur = true,
+    name             = "jetbrains-floating",
+    match            = { class = "jetbrains-.*", float = true },
+    no_blur          = true,
     no_initial_focus = true,
-    opacity = "1 override 1 override 1 override",
+    opacity          = "1 override 1 override 1 override"
 })
 
 -- ###################
@@ -611,13 +622,13 @@ hl.window_rule({
 
 -- Or execute your favorite apps at launch like this:
 
-hl.on("hyprland.start", function()
+hl.on("hyprland.start", function ()
     hl.exec_cmd("clipse -listen")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("elephant")
     hl.exec_cmd("hyprctl setcursor Nordzy-cursors 22")
     hl.exec_cmd("walker --gapplication-service")
-    hl.exec_cmd("waybar")
+    -- hl.exec_cmd("waybar")
     hl.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1")
     hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0")
 end)

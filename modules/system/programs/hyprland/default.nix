@@ -13,7 +13,6 @@
   environment.systemPackages = with pkgs; [
     clipse
     gtk4
-    hyprland
     hyprpaper
     hyprpicker
     nwg-look
