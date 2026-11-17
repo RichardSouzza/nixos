@@ -1,6 +1,5 @@
 {
   imports = [
-    ./gtt
     ./libqalculate
     ./scooter
   ];

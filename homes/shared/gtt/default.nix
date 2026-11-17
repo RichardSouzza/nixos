@@ -8,7 +8,6 @@
         language = {
           apertium = "English";
           bing     = "English";
-          chatgpt  = "English";
           deepl    = "English";
           depplx   = "English";
           google   = "English";
@@ -23,7 +22,6 @@
         language = {
           apertium = "Portuguese";
           bing     = "Portuguese (Brazil)";
-          chatgpt  = "Portuguese (Portugal, Brazil)";
           deepl    = "Portuguese";
           depplx   = "Portuguese";
           google   = "Portuguese (Portugal, Brazil)";

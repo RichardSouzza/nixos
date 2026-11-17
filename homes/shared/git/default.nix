@@ -9,7 +9,7 @@
 
       git = {
         enable = true;
-        diffToolMode = true;
+        mode = "difftool"; # only configure difftastic as a git difftool
       };
 
       options = {
@@ -33,6 +33,7 @@
         core = {
           autocrlf = "input";
           editor = "nvim";
+          filemode = false;
         };
         diff = {
           algorithm = "histogram";

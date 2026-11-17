@@ -24,23 +24,23 @@
   home.homeDirectory = "/home/richard";
 
   home.packages = with pkgs; [
-  # ============================================
-  # Pkg Name          # Description
-  # ===== Utils ================================
-    bat jq            # Utils
-    charasay          # Gabby characters
-    chroncal          # Calendar
-    git-extras gitnr  # Git Gang
-  # ===== Dev stuff ============================
-    nodejs            # Node.js
-    python312         # Python
-  # ===== Sys utils ============================
-    fastfetch         # System informations
-    fzf               # Fuzzy finder
-    gtrash            # Trash manager
-    lsd               # LS Deluxe
-    ripgrep           # Fastter grep
-    tree              # Tree view
+  # ===================================================
+  # Pkg Name                    # Description
+  # ===== Utils =======================================
+    bat jq                      # Utils
+    charasay                    # Gabby characters
+    chroncal                    # Calendar
+    git-crypt git-extras gitnr  # Git Gang
+  # ===== Dev stuff ===================================
+    nodejs                      # Node.js
+    python312                   # Python
+  # ===== Sys utils ===================================
+    fastfetch                   # System informations
+    fzf                         # Fuzzy finder
+    gtrash                      # Trash manager
+    lsd                         # LS Deluxe
+    ripgrep                     # Fastter grep
+    tree                        # Tree view
   ];
 
   home.file = {
