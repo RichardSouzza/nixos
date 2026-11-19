@@ -3,17 +3,17 @@
 {
   imports = [
     inputs.nixvim.homeModules.${system}.nixvim
-    ./shared/btop
-    ./shared/git
-    ./shared/gtt
-    ./shared/lazygit
-    ./shared/libqalculate
-    ./shared/scooter
-    ./shared/starship
-    ./shared/tealdeer
-    ./shared/yazi
-    ./shared/zsh
-    ../modules/home
+    ../modules/home/btop
+    ../modules/home/git
+    ../modules/home/gtt
+    ../modules/home/lazygit
+    ../modules/home/libqalculate
+    ../modules/home/scooter
+    ../modules/home/starship
+    ../modules/home/tealdeer
+    ../modules/home/yazi
+    ../modules/home/zsh
+    ../modules/options
   ];
 
   nixpkgs.config = {
