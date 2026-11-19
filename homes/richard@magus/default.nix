@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../common.nix
     (../. + "/richard@magus/chezmoi")
     (../. + "/richard@magus/zsh")
   ];

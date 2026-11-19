@@ -6,7 +6,6 @@ let
 in
 {
   imports = [
-    ../common.nix
     ../shared/dunst
     ../shared/hyprland
     ../shared/kitty

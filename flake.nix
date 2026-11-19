@@ -61,6 +61,7 @@
             };
 
           modules = [
+            (import ./homes/common.nix)
             (import (./homes + "/${username}@${hostname}"))
           ];
         };
@@ -81,11 +82,6 @@
             ./hosts/magus
             nixos-wsl.nixosModules.default
           ];
-        };
-
-        oracle = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [ ./hosts/oracle ];
         };
       };
 
