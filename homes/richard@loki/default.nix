@@ -33,7 +33,6 @@ in
     docker docker-compose lazydocker  # Docker
     systemctl-tui                     # Systemctl TUI
   # ===== Utils ==========================================
-    gromit-mpx                        # Screen annotation
     ripdrag                           # Drag and drop
   # ===== Temp =;=========================================
     dart

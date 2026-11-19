@@ -399,22 +399,6 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Gromit keybinds
-
-hl.bind("SUPER + Z", hl.dsp.workspace.toggle_special("gromit"))
-
-hl.bind("SUPER + Z", hl.dsp.submap("gromit"))
-
-hl.define_submap("gromit", function ()
-    hl.bind("SUPER + Z", hl.dsp.workspace.toggle_special("gromit"))
-    hl.bind("SUPER + Z", hl.dsp.submap("reset"))
-    hl.bind("CTRL + R", hl.dsp.exec_cmd("gromit-mpx --redo"))
-    hl.bind("CTRL + Z", hl.dsp.exec_cmd("gromit-mpx --undo"))
-    hl.bind("CTRL + C", hl.dsp.exec_cmd("gromit-mpx --clear"))
-    hl.bind("Escape", hl.dsp.workspace.toggle_special("gromit"))
-    hl.bind("Escape", hl.dsp.submap("reset"))
-end)
-
 -- Laptop multimedia keys for volume and LCD brightness
 
 hl.bind(
@@ -534,29 +518,6 @@ hl.window_rule({
     border_size = 1
 })
 
--- Configure Gromit
-
-hl.workspace_rule({
-    workspace = "special:gromit",
-    gaps_in = 0,
-    gaps_out = 0,
-    decorate = false,
-    no_border = true,
-    on_created_empty = "gromit-mpx -a -o 0"
-})
-
-hl.window_rule({
-    name           = "gromit",
-    match          = { class = "^(Gromit-mpx)$" },
-    size           = { "100%", "100%" },
-    no_blur        = true,
-    no_anim        = true,
-    no_dim         = true,
-    no_shadow      = true,
-    opacity        = "1 override",
-    suppress_event = "fullscreen maximize"
-})
-
 -- Configure Kitty
 
 hl.window_rule({
@@ -628,7 +589,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("elephant")
     hl.exec_cmd("hyprctl setcursor Nordzy-cursors 22")
     hl.exec_cmd("walker --gapplication-service")
-    -- hl.exec_cmd("waybar")
     hl.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1")
     hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0")
 end)
