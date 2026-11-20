@@ -46,7 +46,7 @@
         nurpkgs = pkgs;
       };
 
-      getColorsByHostname = (import ./homes/shared/colors).getColorsByHostname;
+      getColorsByHostname = (import ./modules/home/system/colors).getColorsByHostname;
 
       makeHomeConfiguration = username: hostname:
         home-manager.lib.homeManagerConfiguration {

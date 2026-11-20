@@ -3,16 +3,16 @@
 {
   imports = [
     inputs.nixvim.homeModules.${system}.nixvim
-    ../modules/home/btop
-    ../modules/home/git
-    ../modules/home/gtt
-    ../modules/home/lazygit
-    ../modules/home/libqalculate
-    ../modules/home/scooter
-    ../modules/home/starship
-    ../modules/home/tealdeer
-    ../modules/home/yazi
-    ../modules/home/zsh
+    ../modules/home/system/starship
+    ../modules/home/system/zsh
+    ../modules/home/tools/btop
+    ../modules/home/tools/git
+    ../modules/home/tools/gtt
+    ../modules/home/tools/lazygit
+    ../modules/home/tools/libqalculate
+    ../modules/home/tools/scooter
+    ../modules/home/tools/tealdeer
+    ../modules/home/tools/yazi
     ../modules/options
   ];
 
@@ -44,7 +44,7 @@
   ];
 
   home.file = {
-    ".config/opencode/opencode.json".source = ./shared/opencode/opencode.json;
+    ".config/opencode/opencode.json".source = ../modules/home/tools/opencode/opencode.json;
   };
 
   programs = {

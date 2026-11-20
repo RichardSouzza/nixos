@@ -6,13 +6,13 @@ let
 in
 {
   imports = [
-    ../shared/dunst
-    ../shared/hyprland
-    ../shared/kitty
-    ../shared/rider
-    ../shared/walker
-    ../shared/waybar
-    ../shared/zen-browser
+    ../../modules/home/apps/rider
+    ../../modules/home/apps/zen-browser
+    ../../modules/home/system/dunst
+    ../../modules/home/system/hyprland
+    ../../modules/home/system/kitty
+    ../../modules/home/system/walker
+    ../../modules/home/system/waybar
   ];
 
   home.stateVersion = "24.11";
