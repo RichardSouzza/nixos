@@ -35,8 +35,6 @@ in
   # ===== Utils ==========================================
     ripdrag                           # Drag and drop
   # ===== Temp =;=========================================
-    dart
-    openjdk8
     android-studio
   ];
 }
