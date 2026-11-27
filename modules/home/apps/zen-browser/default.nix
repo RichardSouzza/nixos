@@ -41,7 +41,6 @@
           darkreader
           mouse-tooltip-translator-pdf
           qr-code-address-bar
-          tampermonkey
           ublock-origin
           zen-internet
         ];
@@ -60,7 +59,9 @@
         "ui.textHighlightBackground" = colors.textHighlightBackground;
         "ui.textSelectAttentionBackground" = colors.textSelectAttentionBackground;
         "zen.theme.accent-color" = colors.accentColor;
+        "zen.theme.acrylic-elements" = true;
         "zen.theme.color-prefs.use-workspace-colors" = true;
+        "zen.theme.gradient.show-custom-colors" = true;
         "zen.view.use-single-toolbar" = true;
         "zen.welcome-screen.seen" = true;
       };

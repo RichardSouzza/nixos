@@ -1,13 +1,25 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./hardware-configuration.nix
     ../common.nix
-    ../shared.nix
+    ../../modules/system/core/boot
+    ../../modules/system/hardware/bluetooth
     ../../modules/system/hardware/nvidia
+    ../../modules/system/packages/fonts
     ../../modules/system/programs/hyprland
+    ../../modules/system/services/dbus
+    ../../modules/system/services/docker
+    ../../modules/system/services/flatpak
+    ../../modules/system/services/gdm
     ../../modules/system/services/keyd
     ../../modules/system/services/libinput
+    ../../modules/system/services/networkmanager
+    ../../modules/system/services/pipewire
+    ../../modules/system/services/polkit
     ../../modules/system/services/tlp
+    ../../modules/system/services/xserver
   ];
 
   # Configure LUKS encryption.
@@ -19,6 +31,25 @@
 
   # Configure hostname.
   networking.hostName = "loki";
+
+  # Install and configure programs
+  environment.systemPackages = with pkgs; [
+    brightnessctl # Brightness controller
+    btop          # Resource monitor
+    kitty         # Terminal
+    nautilus      # Gnome files
+  ];
+
+  programs = {
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
+    };
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
